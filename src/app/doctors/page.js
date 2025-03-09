@@ -25,8 +25,8 @@ export default function Doctors() {
             <h2 className="section-title">의료진 소개</h2>
 
             <div className="doctor-profile">
-              <div className="doctor-image-container">
-                <img src="/5.png" alt="강남제 원장" className="doctor-image" />
+              <div className="clean-doctor-image">
+                <img src="/5.png" alt="강남제 원장" />
               </div>
 
               <div className="doctor-info">

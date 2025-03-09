@@ -1687,41 +1687,24 @@ footer {
   color: #333;
 }
 
-/* 의료진 소개 페이지 프로필 스타일 */
-.doctor-profile-section .doctor-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  text-align: center;
-}
-
-.doctor-profile-section .doctor-image-container {
+/* 깔끔한 의사 이미지 스타일 - 완전히 새로운 접근 */
+.clean-doctor-image {
   width: 220px;
   height: 220px;
-  overflow: hidden;
-  border-radius: 50%;
   margin-bottom: 2rem;
-  border: 8px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.doctor-profile-section .doctor-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.clean-doctor-image img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* 가상 요소 제거 */
+/* 기존 스타일 제거 */
+.doctor-profile-section .doctor-image-container,
+.doctor-profile-section .doctor-image,
 .doctor-profile-section .doctor-image-container::before,
 .doctor-profile-section .doctor-image-container::after {
   display: none;
