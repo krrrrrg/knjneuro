@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -24,7 +27,12 @@ export default function Navbar() {
             <Link href="/about">병원소개</Link>
           </li>
           <li>
-            <Link href="/services">진료안내</Link>
+            <Link
+              href="/services"
+              className={pathname === "/services" ? "active" : ""}
+            >
+              진료 안내
+            </Link>
           </li>
           <li>
             <Link href="/doctors">의료진</Link>
