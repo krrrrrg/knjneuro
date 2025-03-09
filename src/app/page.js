@@ -380,16 +380,27 @@ export default function Home() {
       <section id="doctors" data-aos="fade-up">
         <div className="container">
           <h2>의료진 소개</h2>
-          <div className="doctor-card">
-            <div className="doctor-image-wrapper">
-              <img src="/5.png" alt="강남제 원장" />
+          <div className="doctor-profile">
+            <img src="/5.png" alt="강남제 원장" className="doctor-image" />
+            <div className="doctor-info">
+              <h3>강남제 원장</h3>
+              <p className="doctor-title">신경과 전문의</p>
+              <p
+                className="doctor-brief"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  width: "100%",
+                  fontSize: "clamp(12px, 3vw, 16px)",
+                }}
+              >
+                두통 / 수면장애 / 뇌졸중 전문
+              </p>
+              <Link href="/doctors" className="more-btn">
+                자세히 보기
+              </Link>
             </div>
-            <h3>강남제 원장</h3>
-            <p className="doctor-specialty">신경과 전문의</p>
-            <p>두통 / 수면장애 / 뇌졸중 전문</p>
-            <Link href="/doctors" className="btn-secondary">
-              자세히 보기
-            </Link>
           </div>
         </div>
       </section>
