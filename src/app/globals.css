@@ -371,6 +371,7 @@ a {
 
   /* 햄버거 버튼 스타일 개선 */
   .hamburger {
+    display: block !important; /* 강제로 표시 */
     width: 30px;
     height: 24px;
     margin-right: 10px; /* 오른쪽 여백 추가 */
