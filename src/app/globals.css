@@ -1704,14 +1704,14 @@ footer {
 .doctor-profile-section .doctor-image-container {
   width: 220px;
   height: 220px;
-  border-radius: 0;
+  overflow: hidden;
+  border-radius: 50%;
   margin-bottom: 2rem;
-  border: none;
-  box-shadow: none;
-  background-image: url("/5.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  border: 8px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .doctor-profile-section .doctor-image {
@@ -1724,7 +1724,7 @@ footer {
 /* 가상 요소 제거 */
 .doctor-profile-section .doctor-image-container::before,
 .doctor-profile-section .doctor-image-container::after {
-  content: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
