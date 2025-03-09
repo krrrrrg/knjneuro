@@ -77,6 +77,7 @@ export default function Navbar() {
               href="https://blog.naver.com/kangnamjeneurology"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ display: "block" }}
             >
               블로그
             </a>
