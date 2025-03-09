@@ -514,7 +514,13 @@ export default function Home() {
       </footer>
 
       <div className="floating-button">
-        <Link href="/blog">블로그</Link>
+        <a
+          href="https://blog.naver.com/kangnamjeneurology"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          블로그
+        </a>
       </div>
     </>
   );

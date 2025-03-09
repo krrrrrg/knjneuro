@@ -73,7 +73,13 @@ export default function Navbar() {
             <Link href="/map">오시는 길</Link>
           </li>
           <li>
-            <Link href="/blog">블로그</Link>
+            <a
+              href="https://blog.naver.com/kangnamjeneurology"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              블로그
+            </a>
           </li>
         </ul>
       </div>
