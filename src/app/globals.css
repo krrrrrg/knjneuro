@@ -546,16 +546,7 @@ a {
 }
 
 #doctors .doctor-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  text-align: center;
+  display: none;
 }
 
 #doctors .doctor-image {
@@ -1826,4 +1817,29 @@ footer {
   .doctor-name {
     font-size: 1.8rem;
   }
+}
+
+/* 불필요한 doctor-profile 스타일 제거 */
+.doctor-profile {
+  display: none;
+}
+
+/* doctor-card 스타일 유지 및 강화 */
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
