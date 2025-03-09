@@ -547,15 +547,15 @@ a {
 
 #doctors .doctor-profile {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  max-width: 800px;
+  max-width: 400px;
   margin: 0 auto;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  gap: 2rem;
+  text-align: center;
 }
 
 #doctors .doctor-image {
@@ -567,10 +567,12 @@ a {
   padding: 8px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
 }
 
 #doctors .doctor-info {
-  flex: 1;
+  width: 100%;
+  text-align: center;
 }
 
 #doctors .doctor-info h3 {
@@ -607,16 +609,41 @@ a {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* 테두리 효과 */
+#doctors .doctor-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px white;
+  z-index: 2;
+}
+
+/* 배경 효과 */
+#doctors .doctor-image::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background-color: #f0f4ff;
+  z-index: -1;
+}
+
 /* 반응형 스타일 */
 @media (max-width: 768px) {
   #doctors .doctor-profile {
-    flex-direction: column;
-    text-align: center;
     padding: 1.5rem;
   }
 
   #doctors .doctor-image {
-    margin-bottom: 1.5rem;
+    width: 180px;
+    height: 180px;
   }
 }
 
