@@ -1709,8 +1709,8 @@ footer {
   border: 8px solid white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-image: url("/5.png");
-  background-size: 130%; /* 배경 이미지 크기 확대 */
-  background-position: center; /* 중앙 정렬 유지 */
+  background-size: 170%; /* 배경 이미지 크기 더 확대 */
+  background-position: center 40%; /* 위치 조정 */
 }
 
 .doctor-profile-section .doctor-image {
