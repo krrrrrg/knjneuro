@@ -26,11 +26,7 @@ export default function Doctors() {
 
             <div className="doctor-profile">
               <div className="doctor-image-container">
-                <img
-                  src="/images/doctor.jpg"
-                  alt="강남제 원장"
-                  className="doctor-image"
-                />
+                <img src="/5.png" alt="강남제 원장" className="doctor-image" />
               </div>
 
               <div className="doctor-info">
