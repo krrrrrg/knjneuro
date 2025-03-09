@@ -32,6 +32,19 @@ export default function Navbar() {
     setIsMenuOpen(false);
   }, [pathname]);
 
+  // 메뉴가 열려 있을 때 배경 스크롤 방지
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className="navbar">
       <div className="nav-container">
