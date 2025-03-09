@@ -1704,13 +1704,14 @@ footer {
 .doctor-profile-section .doctor-image-container {
   width: 220px;
   height: 220px;
-  border-radius: 50%;
+  border-radius: 0;
   margin-bottom: 2rem;
-  border: 8px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  box-shadow: none;
   background-image: url("/5.png");
-  background-size: 170%; /* 배경 이미지 크기 더 확대 */
-  background-position: center 40%; /* 위치 조정 */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .doctor-profile-section .doctor-image {
