@@ -25,12 +25,11 @@ export default function Doctors() {
             <h2 className="section-title">의료진 소개</h2>
 
             <div className="doctor-profile">
-              <div className="clean-doctor-image">
-                <img src="/5.png" alt="강남제 원장" />
-              </div>
-
-              <div className="doctor-info">
-                <h3 className="doctor-name">강남제 원장</h3>
+              <div className="doctor-card">
+                <div className="doctor-image-wrapper">
+                  <img src="/5.png" alt="강남제 원장" />
+                </div>
+                <h3>강남제 원장</h3>
                 <p className="doctor-specialty">신경과 전문의</p>
 
                 <div className="doctor-education">
