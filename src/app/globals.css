@@ -546,7 +546,16 @@ a {
 }
 
 #doctors .doctor-profile {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
 }
 
 #doctors .doctor-image {
@@ -1842,4 +1851,9 @@ footer {
 .doctor-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 의료진 소개 페이지에서만 doctor-profile 숨기기 */
+.doctor-profile-section .doctor-profile {
+  display: none;
 }
