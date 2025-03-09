@@ -85,6 +85,9 @@ export default function Navbar() {
           <li>
             <Link href="/map">오시는 길</Link>
           </li>
+          <li>
+            <Link href="/blog">블로그</Link>
+          </li>
         </ul>
       </div>
     </nav>
