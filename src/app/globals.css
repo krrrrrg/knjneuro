@@ -1600,23 +1600,17 @@ body {
   background-color: #0056b3;
 }
 
-/* 푸터 스타일 수정 */
+/* 푸터 스타일 */
 footer {
-  background: #333;
-  color: white;
-  padding: 4rem 0; /* 좌우 패딩 제거 */
-  width: 100%;
-  margin-top: auto;
+  background-color: #222;
+  color: #fff;
+  padding: 4rem 0;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem; /* 좌우 패딩을 여기서 적용 */
-  width: auto; /* width: 100% 제거 */
 }
 
 .footer-info h3 {
@@ -1656,14 +1650,14 @@ footer {
 
 @media (max-width: 768px) {
   footer {
-    padding: 3rem 0; /* 좌우 패딩 제거 */
+    padding: 3rem 0;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: center;
-    padding: 0 2rem; /* 좌우 패딩 유지 */
+    padding: 0 2rem;
   }
 }
 

@@ -1,30 +1,37 @@
-import React from "react";
+import Link from "next/link";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-gray-100 py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-gray-600">
-              © 2025 KNJ 신경과의원. 모든 권리 보유.
+    <footer>
+      <div className="container">
+        <div className="footer-content">
+          <div className="footer-info">
+            <h3>강남제신경과의원</h3>
+            <p>부산시 수영구 수영로 697, 홍인빌딩 5층</p>
+            <p style={{ color: "white", WebkitTextFillColor: "white" }}>
+              Tel:{" "}
+              <a
+                href="tel:051-759-7676"
+                style={{
+                  color: "white",
+                  WebkitTextFillColor: "white",
+                  textDecoration: "none",
+                }}
+              >
+                051-759-7676
+              </a>
             </p>
           </div>
-          <div className="flex space-x-4">
-            <a href="/privacy" className="text-gray-600 hover:text-gray-900">
-              개인정보처리방침
-            </a>
-            <a href="/about" className="text-gray-600 hover:text-gray-900">
-              병원소개
-            </a>
-            <a href="/map" className="text-gray-600 hover:text-gray-900">
-              오시는 길
-            </a>
+          <div className="footer-links">
+            <Link href="/privacy">개인정보보처리방침</Link>
+            <Link href="/terms">이용약관</Link>
+            <Link href="/map">오시는 길</Link>
           </div>
+        </div>
+        <div className="copyright">
+          <p>&copy; 2024 강남제신경과의원. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
