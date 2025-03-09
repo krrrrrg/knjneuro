@@ -1794,19 +1794,16 @@ footer {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  overflow: hidden;
   margin-bottom: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url("/5.png");
+  background-size: cover;
+  background-position: center;
 }
 
+/* 이미지 태그 숨김 */
 .doctor-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  display: none;
 }
 
 .doctor-name {
