@@ -1687,7 +1687,8 @@ footer {
   color: #333;
 }
 
-.doctor-profile {
+/* 의료진 소개 페이지 프로필 스타일 */
+.doctor-profile-section .doctor-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1700,7 +1701,7 @@ footer {
   text-align: center;
 }
 
-.doctor-image-container {
+.doctor-profile-section .doctor-image-container {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -1712,7 +1713,7 @@ footer {
   overflow: hidden;
 }
 
-.doctor-image {
+.doctor-profile-section .doctor-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -1722,7 +1723,7 @@ footer {
 }
 
 /* 테두리 효과 */
-.doctor-image-container::before {
+.doctor-profile-section .doctor-image-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1735,7 +1736,7 @@ footer {
 }
 
 /* 배경 효과 */
-.doctor-image-container::after {
+.doctor-profile-section .doctor-image-container::after {
   content: "";
   position: absolute;
   top: -4px;
@@ -1748,9 +1749,22 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .doctor-image-container {
+  .doctor-profile-section .doctor-profile {
+    padding: 1.5rem;
+  }
+
+  .doctor-profile-section .doctor-image-container {
     width: 200px;
     height: 200px;
+  }
+
+  #doctors .doctor-profile {
+    padding: 1.5rem;
+  }
+
+  #doctors .doctor-image {
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -1787,11 +1801,11 @@ footer {
 
 /* 반응형 스타일 */
 @media (max-width: 768px) {
-  .doctor-profile {
+  .doctor-profile-section .doctor-profile {
     padding: 1.5rem;
   }
 
-  .doctor-image-container {
+  .doctor-profile-section .doctor-image-container {
     width: 200px;
     height: 200px;
   }
