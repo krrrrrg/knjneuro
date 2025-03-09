@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "올바른/경로/Footer";
 
 export default function About() {
   return (
