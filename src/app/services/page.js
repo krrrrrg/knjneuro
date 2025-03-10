@@ -63,6 +63,7 @@ export default function Services() {
       <main className="page-content">
         <section id="services" data-aos="fade-up">
           <div className="container">
+            <br />
             <h2>진료안내</h2>
             <div className="service-grid">
               <div className="service-card" data-service="headache">
