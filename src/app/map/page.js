@@ -94,7 +94,7 @@ export default function Map() {
 
         const infowindow = new window.naver.maps.InfoWindow({
           content: contentString,
-          maxWidth: 300,
+          maxWidth: 100,
           backgroundColor: "transparent",
           borderColor: "transparent",
           borderWidth: 0,
