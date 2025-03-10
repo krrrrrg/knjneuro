@@ -351,11 +351,15 @@ a {
     height: calc(100vh - 72px);
     background-color: white;
     z-index: 999;
-    padding: 20px;
+    padding: 0; /* 상단 여백 제거 */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     overflow-y: auto !important;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .nav-links.active li:first-child {
+    border-top: 1px solid #eaeaea;
   }
 
   .nav-links.active li {
@@ -366,14 +370,10 @@ a {
     border-bottom: 1px solid #eaeaea;
   }
 
-  .nav-links.active li:last-child {
-    border-bottom: none;
-  }
-
   .nav-links.active li a,
   .nav-links.active li a:visited {
     display: block;
-    padding: 18px 0;
+    padding: 20px 0; /* 높이 약간 증가 */
     font-size: 18px;
     font-weight: 500;
     color: var(--text-color);
@@ -384,6 +384,23 @@ a {
   .nav-links.active li a.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    font-weight: 600; /* 글자 두께 증가 */
+  }
+
+  .nav-links.active li a.active {
+    position: relative;
+  }
+
+  .nav-links.active li a.active:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
   }
 
   /* 메뉴 오버레이 제거 (전체 화면 메뉴로 대체) */
@@ -1726,7 +1743,7 @@ footer {
 @media (max-width: 768px) {
   .nav-links.active {
     height: calc(100vh - 72px);
-    padding: 20px 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2375,7 +2392,7 @@ li {
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px); /* 애니메이션 시작 위치 조정 */
   }
   to {
     opacity: 1;
