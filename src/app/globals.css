@@ -1278,122 +1278,148 @@ input[type="text"]::placeholder {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* 모달 창 스타일 개선 - 중앙 정렬 및 내부 스크롤 */
-.modal-overlay {
+/* 모달 스타일 완전 개선 - KNJ 신경과 스타일 */
+.modal {
+  display: none;
   position: fixed;
-  top: 0;
+  z-index: 1000;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1100;
-  padding: 20px;
 }
 
 .modal-content {
   position: relative;
   background-color: #fff;
-  border-radius: 16px;
   width: 90%;
-  max-width: 550px;
-  max-height: 80vh;
+  max-width: 600px;
+  max-height: 85vh;
+  border-radius: 20px;
   overflow-y: auto;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  padding: 25px;
-  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* 모달 제목 스타일 */
-.modal-content h2 {
+.modal-content h2.modal-title {
   color: #1e3bb3;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  text-align: center;
+  margin: 0;
+  padding: 25px 20px;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /* 모달 섹션 스타일 */
-.modal-content h3 {
-  color: #333;
-  font-size: 18px;
+.modal-section {
+  background-color: #f8f9ff;
+  margin: 20px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.modal-section h3 {
+  color: #1e3bb3;
+  font-size: 20px;
   font-weight: 600;
-  margin: 20px 0 10px;
+  margin: 0 0 20px 0;
 }
 
-/* 모달 리스트 스타일 */
-.modal-content ul {
-  list-style-type: none;
+/* 리스트 스타일 */
+.modal-section ul {
+  list-style: none;
   padding: 0;
-  margin: 0 0 20px;
+  margin: 0;
 }
 
-.modal-content ul li {
+.modal-section ul li {
   position: relative;
-  padding-left: 16px;
-  margin-bottom: 8px;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
   line-height: 1.5;
-  font-size: 15px;
 }
 
-.modal-content ul li::before {
-  content: "•";
+.modal-section ul li:before {
+  content: "✓";
   position: absolute;
   left: 0;
   color: #1e3bb3;
 }
 
 /* 모달 닫기 버튼 */
-.close-button {
+.modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 24px;
-  height: 24px;
+  top: 25px;
+  right: 25px;
+  width: 22px;
+  height: 22px;
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 1;
+  z-index: 5;
 }
 
-.close-button::before,
-.close-button::after {
+.modal-close:before,
+.modal-close:after {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #666;
+  background-color: #888;
   top: 50%;
   left: 0;
 }
 
-.close-button::before {
+.modal-close:before {
   transform: rotate(45deg);
 }
 
-.close-button::after {
+.modal-close:after {
   transform: rotate(-45deg);
 }
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
   .modal-content {
-    width: 95%;
-    max-height: 75vh;
+    width: 90%;
+    max-height: 80vh;
+  }
+
+  .modal-content h2.modal-title {
+    font-size: 22px;
     padding: 20px 15px;
   }
 
-  .modal-content h2 {
+  .modal-section {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .modal-section h3 {
     font-size: 18px;
-    padding-bottom: 12px;
     margin-bottom: 15px;
   }
 
-  .modal-content ul li {
-    font-size: 14px;
+  .modal-section ul li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .modal-close {
+    top: 20px;
+    right: 20px;
   }
 }
 
