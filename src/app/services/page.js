@@ -253,12 +253,10 @@ export default function Services() {
                 <h3>주요 질환</h3>
               </div>
               <ul>
-                <li>손발 저림</li>
-                <li>경추통증</li>
-                <li>요통</li>
-                <li>근골격계 통증</li>
-                <li>안면마비</li>
-                <li>삼차신경통</li>
+                <li>손발 저림 (손목터널, 발목터널 증후군)</li>
+                <li>근골격계 통증 (목, 허리, 어깨통증, 오십견, 근막 통증 증후군 등)</li>
+                <li>요추, 경추간판장애</li>
+                <li>삼차신경통 (안면마비, 구안와사)</li>
               </ul>
             </div>
             <div className="detail-section">
@@ -268,9 +266,7 @@ export default function Services() {
               <ul>
                 <li>신경전도검사</li>
                 <li>근전도검사</li>
-                <li>자율신경검사</li>
-                <li>척추 MRI</li>
-                <li>X-ray 검사</li>
+                <li>신경, 근 골격 초음파</li>
               </ul>
             </div>
           </div>
