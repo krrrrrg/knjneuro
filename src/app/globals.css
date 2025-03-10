@@ -1787,104 +1787,143 @@ footer {
 
 /* 의료진 소개 페이지 스타일 */
 .doctor-profile-section {
-  padding: 4rem 0;
-  background-color: #ffffff;
+  padding: 120px 0 60px;
+  background-color: #fff;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #333;
+  color: var(--text-color);
 }
 
-/* 깔끔한 의사 이미지 스타일 - 완전히 새로운 접근 */
-.clean-doctor-image {
-  width: 220px;
-  height: 220px;
-  margin-bottom: 2rem;
+.doctor-card {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
 }
 
-.clean-doctor-image img {
-  max-width: 100%;
-  height: auto;
+.doctor-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-/* 기존 스타일 제거 */
-.doctor-profile-section .doctor-image-container,
-.doctor-profile-section .doctor-image,
-.doctor-profile-section .doctor-image-container::before,
-.doctor-profile-section .doctor-image-container::after {
-  display: none;
+.doctor-image-container {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 2rem;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  .doctor-profile-section .doctor-profile {
-    padding: 1.5rem;
-  }
-
-  .doctor-profile-section .doctor-image-container {
-    width: 200px;
-    height: 200px;
-  }
-
-  #doctors .doctor-profile {
-    padding: 1.5rem;
-  }
-
-  #doctors .doctor-image {
-    width: 180px;
-    height: 180px;
-  }
+.doctor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
-.doctor-name {
-  font-size: 2rem;
+.doctor-info {
+  text-align: center;
+  width: 100%;
+}
+
+.doctor-info h3 {
+  font-size: 2.2rem;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
-  color: #333;
 }
 
 .doctor-specialty {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
 }
 
 .doctor-education {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
 }
 
 .doctor-education p {
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: #555;
 }
 
 .doctor-expertise h4 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .doctor-expertise p {
-  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-  .doctor-profile-section .doctor-profile {
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+  .doctor-profile {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .doctor-image-container {
+    margin: 0 3rem 0 0;
+    flex-shrink: 0;
+  }
+
+  .doctor-info {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .doctor-image-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .doctor-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .doctor-specialty {
+    font-size: 1.1rem;
+  }
+
+  .doctor-education p,
+  .doctor-expertise p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-image-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .doctor-card {
     padding: 1.5rem;
   }
 
-  .doctor-profile-section .doctor-image-container {
-    width: 200px;
-    height: 200px;
-  }
-
-  .doctor-name {
-    font-size: 1.8rem;
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
