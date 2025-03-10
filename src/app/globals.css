@@ -108,10 +108,19 @@ a {
 /* 서비스 상세 스타일 개선 */
 .service-detail {
   display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s;
 }
 
 .service-detail.active {
   display: block !important;
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  overflow: visible;
   animation: fadeIn 0.4s ease-in-out;
 }
 

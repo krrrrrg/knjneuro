@@ -6,57 +6,76 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 
 export default function Services() {
+  // 모달 함수를 컴포넌트 본문에 직접 선언
+  const showServiceDetail = (serviceId) => {
+    console.log(`모달 열기: ${serviceId}`);
+    
+    const modal = document.getElementById("serviceModal");
+    
+    // 모달 표시
+    if (modal) {
+      modal.style.display = "block";
+    } else {
+      console.error("모달 요소를 찾을 수 없습니다.");
+      return;
+    }
+    
+    // 모든 상세 내용 숨기기 (display 속성 직접 사용)
+    const allDetails = document.querySelectorAll(".service-detail");
+    console.log(`모든 상세 요소 수: ${allDetails.length}`);
+    
+    allDetails.forEach((detail) => {
+      detail.style.display = "none";
+      // 클래스도 제거
+      detail.classList.remove("active");
+      console.log(`숨긴 요소: ${detail.id}`);
+    });
+    
+    // 선택한 요소만 표시
+    const selectedDetail = document.getElementById(`${serviceId}Detail`);
+    if (selectedDetail) {
+      // 직접 스타일과 클래스 모두 설정
+      selectedDetail.style.display = "block";
+      selectedDetail.classList.add("active");
+      console.log(`표시한 요소: ${selectedDetail.id}`);
+    } else {
+      console.error(`선택한 서비스 요소를 찾을 수 없음: ${serviceId}Detail`);
+    }
+  };
+
   useEffect(() => {
     // AOS 초기화
     if (typeof window !== "undefined" && window.AOS) {
       window.AOS.init();
     }
 
-    // 모달 기능 구현
+    // 모달 닫기 기능 구현
     const modal = document.getElementById("serviceModal");
-    const serviceCards = document.querySelectorAll(".service-card");
     const closeButton = document.querySelector(".close-button");
-
-    const showServiceDetail = (serviceId) => {
-      modal.style.display = "block";
-      
-      // 모든 서비스 상세 내용에서 active 클래스 제거
-      document.querySelectorAll(".service-detail").forEach((detail) => {
-        detail.classList.remove("active");
-      });
-      
-      // 선택한 서비스에만 active 클래스 추가
-      const selectedDetail = document.getElementById(`${serviceId}Detail`);
-      if (selectedDetail) {
-        selectedDetail.classList.add("active");
-        console.log(`표시된 서비스: ${serviceId}`);
-      } else {
-        console.error(`서비스 ID를 찾을 수 없음: ${serviceId}`);
-      }
-    };
-
-    serviceCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const serviceId = card.getAttribute("data-service");
-        showServiceDetail(serviceId);
-      });
-    });
 
     if (closeButton) {
       closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
-        // 모든 서비스 상세 내용에서 active 클래스 제거
-        document.querySelectorAll(".service-detail").forEach((detail) => {
+        console.log("모달 닫기 버튼 클릭");
+        if (modal) modal.style.display = "none";
+        
+        // 모든 상세 내용 숨기기
+        const allDetails = document.querySelectorAll(".service-detail");
+        allDetails.forEach((detail) => {
+          detail.style.display = "none";
           detail.classList.remove("active");
         });
       });
     }
 
     window.addEventListener("click", (event) => {
-      if (event.target === modal) {
+      if (modal && event.target === modal) {
+        console.log("모달 외부 클릭으로 닫기");
         modal.style.display = "none";
-        // 모든 서비스 상세 내용에서 active 클래스 제거
-        document.querySelectorAll(".service-detail").forEach((detail) => {
+        
+        // 모든 상세 내용 숨기기
+        const allDetails = document.querySelectorAll(".service-detail");
+        allDetails.forEach((detail) => {
+          detail.style.display = "none";
           detail.classList.remove("active");
         });
       }
@@ -64,33 +83,15 @@ export default function Services() {
 
     // 컴포넌트 언마운트 시 이벤트 리스너 제거
     return () => {
-      serviceCards.forEach((card) => {
-        const handleClick = () => {
-          const serviceId = card.getAttribute("data-service");
-          showServiceDetail(serviceId);
-        };
-        card.removeEventListener("click", handleClick);
-      });
+      console.log("컴포넌트 언마운트: 이벤트 리스너 제거");
       
+      // 닫기 버튼 이벤트 제거
       if (closeButton) {
-        const handleClose = () => {
-          modal.style.display = "none";
-          document.querySelectorAll(".service-detail").forEach((detail) => {
-            detail.classList.remove("active");
-          });
-        };
-        closeButton.removeEventListener("click", handleClose);
+        closeButton.removeEventListener("click", () => {});
       }
       
-      const handleWindowClick = (event) => {
-        if (event.target === modal) {
-          modal.style.display = "none";
-          document.querySelectorAll(".service-detail").forEach((detail) => {
-            detail.classList.remove("active");
-          });
-        }
-      };
-      window.removeEventListener("click", handleWindowClick);
+      // 창 클릭 이벤트 제거
+      window.removeEventListener("click", () => {});
     };
   }, []);
 
@@ -104,7 +105,11 @@ export default function Services() {
             <br />
             <h2>진료안내</h2>
             <div className="service-grid">
-              <div className="service-card" data-service="headache">
+              <div 
+                className="service-card" 
+                data-service="headache"
+                onClick={() => showServiceDetail("headache")}
+              >
                 <Image
                   src="/images/두통.png"
                   alt="두통"
@@ -114,7 +119,11 @@ export default function Services() {
                 <h3>뇌 신경계 질환</h3>
                 <p>뇌졸중, 치매, 파킨슨씨병, 떨림 등</p>
               </div>
-              <div className="service-card" data-service="sleep">
+              <div 
+                className="service-card" 
+                data-service="sleep"
+                onClick={() => showServiceDetail("sleep")}
+              >
                 <Image
                   src="/images/수면.png"
                   alt="수면장애"
@@ -124,7 +133,11 @@ export default function Services() {
                 <h3>두통 및 어지럼증</h3>
                 <p>편두통 및 이석증, 메니에르병</p>
               </div>
-              <div className="service-card" data-service="dementia">
+              <div 
+                className="service-card" 
+                data-service="dementia"
+                onClick={() => showServiceDetail("dementia")}
+              >
                 <Image
                   src="/images/치매.png"
                   alt="치매"
@@ -134,7 +147,11 @@ export default function Services() {
                 <h3>신경 통증 클리닉</h3>
                 <p>손발 저림, 근골격계 통증, 안면마비</p>
               </div>
-              <div className="service-card" data-service="internal">
+              <div 
+                className="service-card" 
+                data-service="internal"
+                onClick={() => showServiceDetail("internal")}
+              >
                 <Image
                   src="/images/치매.png"
                   alt="내과"
@@ -160,35 +177,31 @@ export default function Services() {
             <div className="detail-content">
               <div className="detail-section">
                 <div className="service-section">
-                  <h3>주요 증상</h3>
+                  <h3>주요 질환</h3>
                 </div>
                 <ul>
-                  <li>만성 편두통</li>
-                  <li>긴장성 두통</li>
-                  <li>군발성 두통</li>
-                  <li>경추성 두통</li>
+                  <li>뇌졸중</li>
+                  <li>치매</li>
+                  <li>파킨슨씨병</li>
+                  <li>떨림</li>
+                  <li>골다공증</li>
+                  <li>자율신경계 이상</li>
+                  <li>스트레스</li>
                 </ul>
               </div>
               <div className="detail-section">
                 <div className="service-section">
-                  <h3>진단 방법</h3>
+                  <h3>관련 검사</h3>
                 </div>
                 <ul>
-                  <li>두통 일기를 통한 분석</li>
-                  <li>신경학적 검사</li>
-                  <li>필요시 MRI, CT 검사</li>
-                  <li>혈액 검사</li>
-                </ul>
-              </div>
-              <div className="detail-section">
-                <div className="service-section">
-                  <h3>치료 방법</h3>
-                </div>
-                <ul>
-                  <li>약물 치료</li>
-                  <li>주사 치료</li>
-                  <li>생활습관 개선</li>
-                  <li>스트레스 관리</li>
+                  <li>동맥경화도검사</li>
+                  <li>뇌혈류초음파검사</li>
+                  <li>경동맥초음파검사</li>
+                  <li>자율신경기능검사</li>
+                  <li>스트레스검사</li>
+                  <li>심전도검사</li>
+                  <li>골밀도검사</li>
+                  <li>인지기능(치매)검사</li>
                 </ul>
               </div>
             </div>
