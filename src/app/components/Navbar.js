@@ -11,6 +11,12 @@ export default function Navbar() {
   // 햄버거 메뉴 토글 함수
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // 메뉴가 열려있을 때 body 스크롤 방지
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   };
 
   // 화면 크기가 변경될 때 메뉴 상태 관리
@@ -18,6 +24,7 @@ export default function Navbar() {
     const handleResize = () => {
       if (window.innerWidth > 768 && isMenuOpen) {
         setIsMenuOpen(false);
+        document.body.style.overflow = "";
       }
     };
 
@@ -30,6 +37,7 @@ export default function Navbar() {
   // 페이지 변경 시 메뉴 닫기
   useEffect(() => {
     setIsMenuOpen(false);
+    document.body.style.overflow = "";
   }, [pathname]);
 
   return (
@@ -40,37 +48,52 @@ export default function Navbar() {
             <img src="/images/logo2.png" alt="강남제신경과의원" />
           </Link>
         </div>
-        <div
+        <button
           className={`hamburger ${isMenuOpen ? "active" : ""}`}
           onClick={toggleMenu}
+          aria-label="메뉴 열기"
         >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
+        {isMenuOpen && (
+          <div className="menu-overlay" onClick={toggleMenu}></div>
+        )}
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
-            <Link href="/">홈</Link>
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+              홈
+            </Link>
           </li>
           <li>
-            <Link href="/about">병원소개</Link>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+              병원소개
+            </Link>
           </li>
           <li>
             <Link
               href="/services"
               className={pathname === "/services" ? "active" : ""}
+              onClick={() => setIsMenuOpen(false)}
             >
               진료 안내
             </Link>
           </li>
           <li>
-            <Link href="/doctors">의료진</Link>
+            <Link href="/doctors" onClick={() => setIsMenuOpen(false)}>
+              의료진
+            </Link>
           </li>
           <li>
-            <Link href="/reservation">진료문의</Link>
+            <Link href="/reservation" onClick={() => setIsMenuOpen(false)}>
+              진료문의
+            </Link>
           </li>
           <li>
-            <Link href="/map">오시는 길</Link>
+            <Link href="/map" onClick={() => setIsMenuOpen(false)}>
+              오시는 길
+            </Link>
           </li>
           <li>
             <a
@@ -78,6 +101,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "block" }}
+              onClick={() => setIsMenuOpen(false)}
             >
               블로그
             </a>
