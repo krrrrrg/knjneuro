@@ -71,10 +71,6 @@ export default function Home() {
     function initMap() {
       try {
         if (typeof naver !== "undefined" && document.getElementById("map")) {
-          // 지도 컨테이너 사이즈 확인
-          const mapContainer = document.getElementById("map");
-          const containerWidth = mapContainer.clientWidth;
-          
           var mapOptions = {
             center: new naver.maps.LatLng(35.1678376, 129.115742),
             zoom: 17,
@@ -82,20 +78,16 @@ export default function Home() {
             zoomControlOptions: {
               position: naver.maps.Position.TOP_RIGHT,
             },
-            size: new naver.maps.Size(containerWidth, 400),
+            mapDataControl: false,
+            scaleControl: false,
           };
 
           var map = new naver.maps.Map("map", mapOptions);
           
-          // 지도 생성 후 스타일 재적용
-          setTimeout(() => {
-            const mapDiv = document.getElementById('map');
-            const mapElements = mapDiv.querySelectorAll('div');
-            mapElements.forEach(el => {
-              el.style.width = '100%';
-              el.style.maxWidth = '100%';
-            });
-          }, 100);
+          // 지도 스타일 강제 적용
+          const mapContainer = document.getElementById('map');
+          mapContainer.style.width = '100%';
+          mapContainer.style.height = '100%';
 
           var marker = new naver.maps.Marker({
             position: new naver.maps.LatLng(35.1678376, 129.115742),
@@ -536,43 +528,24 @@ export default function Home() {
 
       <section id="location" data-aos="fade-up">
         <div className="container">
-          <div className="map-content">
-            <div className="map-container">
-              <div id="map" style={{ width: "100%", height: "600px" }}></div>
+          <h2>오시는 길</h2>
+          <div className="location-preview">
+            <div className="map-preview-container">
+              <div id="map" style={{ width: "100%", height: "400px" }}></div>
             </div>
-            <div className="location-info">
-              <div className="info-section">
-                <h3 className="info-title">주소</h3>
+            <div className="location-preview-info">
+              <div className="preview-section">
+                <h3>주소</h3>
                 <p>부산시 수영구 수영로 697</p>
                 <p>홍인빌딩 5층</p>
               </div>
-
-              <div className="info-section">
-                <h3 className="info-title">대중교통</h3>
-                <div className="transport-details">
-                  <h4>지하철</h4>
-                  <p>2호선, 3호선 수영역 3번 출구 도보 1분</p>
-
-                  <h4>버스</h4>
-                  <p>
-                    <strong>일반버스</strong><br />
-                    수영교차로 / 수영역 하차<br />
-                    5-1, 20, 39, 40, 42, 49, 51, 54, 62, 63, 131, 141, 141(심야), 155, 210, 1001, 1003, 1003(심야), 2026
-                  </p>
-                  <p>
-                    <strong>마을버스</strong><br />
-                    수영교차로.팔도시장 : 해운대구3
-                  </p>
-                </div>
+              <div className="preview-section">
+                <h3>대중교통</h3>
+                <p><strong>지하철:</strong> 2호선, 3호선 수영역 3번 출구 도보 1분</p>
               </div>
-
-              <div className="info-section">
-                <h3 className="info-title">주차</h3>
-                <p>지정주차장 : 남강민물장어 주차장</p>
-                <p>부산시 수영구 수영로 725번길 55 (병원 뒷편, 킹마트 맞은편 가게)</p>
-                <p className="parking-note">※ 주차 후 접수대에 말씀해주시면 주차권 드립니다.</p>
-                <p className="parking-note">※ 건물 내에 주차장이 없어서 불편 드린 점 너른 양해 부탁드립니다.</p>
-              </div>
+              <Link href="/map" className="map-detail-btn">
+                상세보기
+              </Link>
             </div>
           </div>
         </div>

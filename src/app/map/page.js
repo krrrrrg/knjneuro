@@ -19,9 +19,9 @@ export default function Map() {
     // 네이버 지도 초기화 함수
     function initMap() {
       try {
-        // 지도 컨테이너 사이즈 확인
         const mapContainer = document.getElementById("map");
-        const containerWidth = mapContainer.clientWidth;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight - 80; // 헤더 높이 고려
         
         const mapOptions = {
           center: new window.naver.maps.LatLng(35.1678376, 129.115742),
@@ -30,20 +30,23 @@ export default function Map() {
           zoomControlOptions: {
             position: window.naver.maps.Position.TOP_RIGHT,
           },
-          size: new window.naver.maps.Size(containerWidth, 400),
+          mapDataControl: false,
+          scaleControl: false,
+          size: new window.naver.maps.Size(windowWidth, windowHeight),
         };
 
         const map = new window.naver.maps.Map("map", mapOptions);
 
-        // 지도 생성 후 스타일 재적용
-        setTimeout(() => {
-          const mapDiv = document.getElementById('map');
-          const mapElements = mapDiv.querySelectorAll('div');
-          mapElements.forEach(el => {
-            el.style.width = '100%';
-            el.style.maxWidth = '100%';
-          });
-        }, 100);
+        // 지도 스타일 강제 적용
+        mapContainer.style.width = '100%';
+        mapContainer.style.height = '100%';
+        
+        const allMapDivs = mapContainer.querySelectorAll('div');
+        for (let div of allMapDivs) {
+          if (div.style) {
+            div.style.width = '100%';
+          }
+        }
 
         const marker = new window.naver.maps.Marker({
           position: new window.naver.maps.LatLng(35.1678376, 129.115742),
@@ -103,51 +106,49 @@ export default function Map() {
     <>
       <Navbar />
 
-      <main className="page-content">
-        <section className="map-section" data-aos="fade-up">
-          <div className="container">
-            <h2>오시는 길</h2>
-            <div className="map-content">
-              <div className="map-container">
-                <div id="map" style={{ width: "100%", height: "600px" }}></div>
+      <main>
+        <div className="map-fullwidth">
+          <div id="map" style={{ width: "100%", height: "calc(100vh - 80px)" }}></div>
+        </div>
+        
+        <div className="info-container">
+          <div className="section">
+            <h2 className="section-title">주소</h2>
+            <div className="section-content">
+              <p>부산시 수영구 수영로 697</p>
+              <p>홍인빌딩 5층</p>
+            </div>
+          </div>
+          
+          <div className="section">
+            <h2 className="section-title">대중교통</h2>
+            <div className="section-content">
+              <h3 className="transport-title">지하철</h3>
+              <p>2호선, 3호선 수영역 3번 출구 도보 1분</p>
+              
+              <h3 className="transport-title">버스</h3>
+              <div className="bus-info">
+                <p className="bus-type">일반버스</p>
+                <p>수영교차로 / 수영역 하차</p>
+                <p>5-1, 20, 39, 40, 42, 49, 51, 54, 62, 63, 131, 141, 141(심야), 155, 210, 1001, 1003, 1003(심야), 2026</p>
               </div>
-              <div className="location-info">
-                <div className="info-section">
-                  <h3 className="info-title">주소</h3>
-                  <p>부산시 수영구 수영로 697</p>
-                  <p>홍인빌딩 5층</p>
-                </div>
-
-                <div className="info-section">
-                  <h3 className="info-title">대중교통</h3>
-                  <div className="transport-details">
-                    <h4>지하철</h4>
-                    <p>2호선, 3호선 수영역 3번 출구 도보 1분</p>
-
-                    <h4>버스</h4>
-                    <p>
-                      <strong>일반버스</strong><br />
-                      수영교차로 / 수영역 하차<br />
-                      5-1, 20, 39, 40, 42, 49, 51, 54, 62, 63, 131, 141, 141(심야), 155, 210, 1001, 1003, 1003(심야), 2026
-                    </p>
-                    <p>
-                      <strong>마을버스</strong><br />
-                      수영교차로.팔도시장 : 해운대구3
-                    </p>
-                  </div>
-                </div>
-
-                <div className="info-section">
-                  <h3 className="info-title">주차</h3>
-                  <p>지정주차장 : 남강민물장어 주차장</p>
-                  <p>부산시 수영구 수영로 725번길 55 (병원 뒷편, 킹마트 맞은편 가게)</p>
-                  <p className="parking-note">※ 주차 후 접수대에 말씀해주시면 주차권 드립니다.</p>
-                  <p className="parking-note">※ 건물 내에 주차장이 없어서 불편 드린 점 너른 양해 부탁드립니다.</p>
-                </div>
+              <div className="bus-info">
+                <p className="bus-type">마을버스</p>
+                <p>수영교차로.팔도시장 : 해운대구3</p>
               </div>
             </div>
           </div>
-        </section>
+          
+          <div className="section">
+            <h2 className="section-title">주차</h2>
+            <div className="section-content">
+              <p>지정주차장 : 남강민물장어 주차장</p>
+              <p>부산시 수영구 수영로 725번길 55 (병원 뒷편, 킹마트 맞은편 가게)</p>
+              <p className="note">※ 주차 후 접수대에 말씀해주시면 주차권 드립니다.</p>
+              <p className="note">※ 건물 내에 주차장이 없어서 불편 드린 점 너른 양해 부탁드립니다.</p>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />

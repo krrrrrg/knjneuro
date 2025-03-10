@@ -2938,3 +2938,147 @@ li {
   }
 }
 
+/* 맵 페이지 스타일 */
+.map-fullwidth {
+  width: 100%;
+  height: calc(100vh - 80px);
+  position: relative;
+  z-index: 1;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  margin: 40px 0;
+  border-top: 3px solid #4051b5;
+  padding-top: 15px;
+}
+
+.section-title {
+  color: #4051b5;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.transport-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  color: #333;
+}
+
+.bus-info {
+  margin-bottom: 15px;
+}
+
+.bus-type {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .map-fullwidth {
+    height: 400px;
+  }
+  
+  .section {
+    margin: 30px 0;
+  }
+  
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+/* 메인 페이지 지도 미리보기 스타일 */
+.location-preview {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.map-preview-container {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+
+.location-preview-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.preview-section {
+  margin-bottom: 20px;
+}
+
+.preview-section h3 {
+  color: #4051b5;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.preview-section p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.map-detail-btn {
+  display: inline-block;
+  background-color: #4051b5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.map-detail-btn:hover {
+  background-color: #303f9f;
+}
+
+@media (max-width: 768px) {
+  .location-preview {
+    flex-direction: column;
+  }
+  
+  .map-preview-container {
+    height: 300px;
+  }
+  
+  .map-detail-btn {
+    width: 100%;
+  }
+}
+
