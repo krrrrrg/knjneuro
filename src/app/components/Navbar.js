@@ -7,11 +7,28 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // 햄버거 메뉴 토글 함수
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // 스크롤 감지 기능
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // 화면 크기가 변경될 때 메뉴 상태 관리
   useEffect(() => {
@@ -33,7 +50,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         <div className="logo">
           <Link href="/">
@@ -51,7 +68,11 @@ export default function Navbar() {
         </button>
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
-            <Link href="/" onClick={() => setIsMenuOpen(false)} tabIndex="0">
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === "/" ? "active" : ""}
+            >
               홈
             </Link>
           </li>
@@ -59,7 +80,7 @@ export default function Navbar() {
             <Link
               href="/about"
               onClick={() => setIsMenuOpen(false)}
-              tabIndex="0"
+              className={pathname === "/about" ? "active" : ""}
             >
               병원소개
             </Link>
@@ -69,7 +90,6 @@ export default function Navbar() {
               href="/services"
               className={pathname === "/services" ? "active" : ""}
               onClick={() => setIsMenuOpen(false)}
-              tabIndex="0"
             >
               진료 안내
             </Link>
@@ -78,7 +98,7 @@ export default function Navbar() {
             <Link
               href="/doctors"
               onClick={() => setIsMenuOpen(false)}
-              tabIndex="0"
+              className={pathname === "/doctors" ? "active" : ""}
             >
               의료진
             </Link>
@@ -87,13 +107,17 @@ export default function Navbar() {
             <Link
               href="/reservation"
               onClick={() => setIsMenuOpen(false)}
-              tabIndex="0"
+              className={pathname === "/reservation" ? "active" : ""}
             >
               진료문의
             </Link>
           </li>
           <li>
-            <Link href="/map" onClick={() => setIsMenuOpen(false)} tabIndex="0">
+            <Link
+              href="/map"
+              onClick={() => setIsMenuOpen(false)}
+              className={pathname === "/map" ? "active" : ""}
+            >
               오시는 길
             </Link>
           </li>
@@ -103,7 +127,6 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
-              tabIndex="0"
             >
               블로그
             </a>
