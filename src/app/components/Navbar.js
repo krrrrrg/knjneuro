@@ -59,12 +59,16 @@ export default function Navbar() {
         </button>
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" onClick={() => setIsMenuOpen(false)} tabIndex="0">
               홈
             </Link>
           </li>
           <li>
-            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href="/about"
+              onClick={() => setIsMenuOpen(false)}
+              tabIndex="0"
+            >
               병원소개
             </Link>
           </li>
@@ -73,22 +77,31 @@ export default function Navbar() {
               href="/services"
               className={pathname === "/services" ? "active" : ""}
               onClick={() => setIsMenuOpen(false)}
+              tabIndex="0"
             >
               진료 안내
             </Link>
           </li>
           <li>
-            <Link href="/doctors" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href="/doctors"
+              onClick={() => setIsMenuOpen(false)}
+              tabIndex="0"
+            >
               의료진
             </Link>
           </li>
           <li>
-            <Link href="/reservation" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href="/reservation"
+              onClick={() => setIsMenuOpen(false)}
+              tabIndex="0"
+            >
               진료문의
             </Link>
           </li>
           <li>
-            <Link href="/map" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/map" onClick={() => setIsMenuOpen(false)} tabIndex="0">
               오시는 길
             </Link>
           </li>
@@ -98,6 +111,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
+              tabIndex="0"
             >
               블로그
             </a>
