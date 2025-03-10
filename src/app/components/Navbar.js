@@ -57,9 +57,6 @@ export default function Navbar() {
           <span></span>
           <span></span>
         </button>
-        {isMenuOpen && (
-          <div className="menu-overlay" onClick={toggleMenu}></div>
-        )}
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
@@ -100,7 +97,6 @@ export default function Navbar() {
               href="https://blog.naver.com/kangnamjeneurology"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "block" }}
               onClick={() => setIsMenuOpen(false)}
             >
               블로그

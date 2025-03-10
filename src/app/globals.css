@@ -345,22 +345,50 @@ a {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background: white;
+    top: 72px; /* 헤더 높이에 맞춤 */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: white;
     z-index: 999;
-    padding: 80px 2rem 2rem;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     overflow-y: auto !important;
-    -ms-overflow-style: auto !important;
-    scrollbar-width: auto !important;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .nav-links.active li {
-    margin: 1rem 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .nav-links.active li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links.active li a,
+  .nav-links.active li a:visited {
+    display: block;
+    padding: 18px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active li a:hover,
+  .nav-links.active li a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+
+  /* 메뉴 오버레이 제거 (전체 화면 메뉴로 대체) */
+  .menu-overlay {
+    display: none !important;
   }
 
   /* 네비게이션 바 스타일 개선 */
@@ -394,6 +422,7 @@ a {
   /* 햄버거 버튼 오른쪽 정렬 */
   .hamburger {
     display: block;
+    margin-right: 10px;
   }
 
   .hamburger span {
@@ -2340,4 +2369,44 @@ li {
 
 .menu-overlay.active {
   display: block;
+}
+
+/* 메뉴 애니메이션 효과 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-links.active li {
+  animation: fadeInDown 0.3s ease forwards;
+  animation-delay: calc(0.1s * var(--item-index, 0));
+}
+
+/* 각 메뉴 항목에 지연 시간 변수 추가 */
+.nav-links.active li:nth-child(1) {
+  --item-index: 1;
+}
+.nav-links.active li:nth-child(2) {
+  --item-index: 2;
+}
+.nav-links.active li:nth-child(3) {
+  --item-index: 3;
+}
+.nav-links.active li:nth-child(4) {
+  --item-index: 4;
+}
+.nav-links.active li:nth-child(5) {
+  --item-index: 5;
+}
+.nav-links.active li:nth-child(6) {
+  --item-index: 6;
+}
+.nav-links.active li:nth-child(7) {
+  --item-index: 7;
 }
