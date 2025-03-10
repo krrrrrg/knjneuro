@@ -126,10 +126,10 @@ export default function Home() {
     function loadNaverMap() {
       if (typeof window !== "undefined" && document.getElementById("map")) {
         if (typeof naver === "undefined") {
-          // 네이버 지도 스크립트 로드
+          // 네이버 지도 스크립트 로드 - 올바른 ID와 URL 사용
           const script = document.createElement("script");
           script.src =
-            "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7kndwl5egx";
+            "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4h549yr3fc";
           script.async = true;
           script.onload = initMap;
           document.head.appendChild(script);
