@@ -75,52 +75,60 @@ a {
 }
 
 .hamburger {
+  display: block;
+  width: 32px;
+  height: 32px;
   position: relative;
-  z-index: 1002;
-  width: 30px;
-  height: 24px;
-  margin-left: auto;
-  cursor: pointer;
+  margin-left: auto !important;
+  margin-right: 10px;
+  padding: 0;
   background: transparent;
   border: none;
-  padding: 0;
-  display: none;
+  cursor: pointer;
+  z-index: 1002;
+  transition: all 0.3s ease;
 }
 
 .hamburger span {
-  display: block;
   position: absolute;
-  height: 3px;
-  width: 100%;
+  width: 24px !important;
+  height: 2px;
   background: var(--primary-color);
-  border-radius: 3px;
+  border-radius: 4px;
+  left: 4px;
   transition: all 0.3s ease;
 }
 
 .hamburger span:nth-child(1) {
-  top: 0;
+  top: 10px;
+  width: 24px;
 }
 
 .hamburger span:nth-child(2) {
-  top: 10px;
+  top: 18px;
+  width: 24px;
 }
 
 .hamburger span:nth-child(3) {
-  top: 20px;
+  top: 26px;
+  width: 24px;
 }
 
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg);
-  top: 10px;
+  top: 16px;
+  width: 24px;
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: translateX(-16px);
 }
 
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg);
-  top: 10px;
+  top: 16px;
+  width: 24px;
 }
 
 .nav-links a {
@@ -345,15 +353,18 @@ a {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 72px;
+    top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 72px);
-    background-color: white;
+    height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    background: white;
     z-index: 999;
     padding: 0;
     margin: 0;
-    overflow-y: auto;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.active li:first-child {
@@ -364,133 +375,95 @@ a {
     width: 100%;
     padding: 0;
     margin: 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid rgba(234, 234, 234, 0.5);
   }
 
   .nav-links.active li a,
   .nav-links.active li a:visited {
-    display: block;
-    padding: 15px 0;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+    font-size: 17px;
     font-weight: 500;
-    color: var(--text-color);
+    color: #444;
     text-align: center;
     width: 100%;
-    height: auto;
-    line-height: 1.2;
+    position: relative;
+    transition: all 0.25s ease;
   }
 
   .nav-links.active li a:hover,
   .nav-links.active li a.active {
-    background-color: var(--secondary-color);
     color: var(--primary-color);
+    background: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 0.2px;
   }
 
-  .nav-links.active li a.active:before {
-    display: none;
+  .nav-links.active li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 12px;
+    width: 20px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    opacity: 1;
+    transform: translateY(8px);
   }
 
-  .nav-links.active li a.active {
-    font-weight: 700;
-    color: var(--primary-color);
+  .nav-links.active li:active {
+    transform: scale(0.98);
   }
 
-  /* 메뉴 오버레이 제거 (전체 화면 메뉴로 대체) */
-  .menu-overlay {
-    display: none !important;
+  .nav-links.active::-webkit-scrollbar {
+    width: 3px;
   }
 
-  /* 네비게이션 바 스타일 개선 */
-  .navbar {
-    height: 72px; /* 고정 높이 설정 */
-    display: flex;
-    align-items: center;
+  .nav-links.active::-webkit-scrollbar-thumb {
+    background: rgba(45, 91, 255, 0.2);
+    border-radius: 3px;
   }
 
   .nav-container {
+    padding: 0 15px;
+    justify-content: space-between;
     height: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center; /* 중앙 정렬 추가 */
-    position: relative; /* 상대 위치 설정 */
-    width: 100%; /* 너비 100% 설정 */
   }
 
-  /* 로고 중앙 정렬 및 크기 조정 */
-  .logo {
-    position: absolute; /* 절대 위치 설정 */
-    left: 50%; /* 가운데 정렬 */
-    transform: translateX(-50%); /* 정확한 중앙 정렬 */
-    z-index: 1001;
+  .hamburger {
+    margin: 0 0 0 auto;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 10px;
+    width: 24px;
+  }
+
+  .hamburger span:nth-child(2) {
+    top: 18px;
+    width: 24px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 26px;
+    width: 24px;
+  }
+
+  .nav-links.active {
+    overflow-y: scroll !important;
+    height: calc(100vh - 70px);
+    padding-bottom: 100px;
   }
 
   .logo img {
-    height: 40px; /* 로고 크기 증가 */
+    height: 36px;
   }
 
-  /* 햄버거 버튼 오른쪽 정렬 */
-  .hamburger {
-    display: block;
-    margin-right: 5px;
-    width: 28px;
-    height: 22px;
-    transition: all 0.3s ease;
-  }
-
-  .hamburger span {
-    height: 2px;
-    background: var(--primary-color);
-    border-radius: 4px;
-    transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 7px);
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -7px);
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    max-width: 85%;
-    margin: 0 auto;
-  }
-
-  .page-content section {
-    min-height: auto;
-    padding: 4rem 0;
-  }
-
-  .doctors-grid {
-    grid-template-columns: 1fr;
-    min-height: 700px;
-    gap: 2rem;
-  }
-
-  .doctor-card {
-    padding: 1.5rem;
-  }
-
-  .doctor-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .doctor-nav button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
+  .menu-overlay {
+    display: none !important;
   }
 }
 
@@ -1746,7 +1719,7 @@ footer {
 /* 메뉴 항목 표시 문제 해결 */
 @media (max-width: 768px) {
   .nav-links.active {
-    height: calc(100vh - 72px);
+    height: calc(100vh - 70px);
     padding: 0;
     display: flex;
     justify-content: center;
