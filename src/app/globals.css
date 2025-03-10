@@ -2506,3 +2506,54 @@ li {
 }
 
 /* 불필요한 애니메이션 및 복잡한 효과 제거 */
+
+/* 클릭 영역 확장 - 모바일 메뉴 */
+@media (max-width: 768px) {
+  /* 메뉴 항목 컨테이너 설정 */
+  .nav-links.active li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+  }
+
+  /* 링크 클릭 영역 최대화 */
+  .nav-links.active li a,
+  .nav-links.active li a:visited {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 1;
+  }
+
+  /* 링크 내용 중앙 정렬을 위한 가상 요소 */
+  .nav-links.active li a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: inherit;
+    font-size: 17px;
+    font-weight: inherit;
+  }
+
+  /* 메뉴 항목 고정 높이 설정 */
+  .nav-links.active li {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  /* 액티브 상태 표시 색상 */
+  .nav-links.active li a.active::before {
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+}
