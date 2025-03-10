@@ -47,6 +47,7 @@ a {
   backdrop-filter: blur(5px);
   padding: 0;
   box-sizing: border-box;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -54,21 +55,21 @@ a {
 @keyframes modalFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
 /* 모달 콘텐츠 스타일 */
 .modal-content {
   background-color: white;
-  margin: 60px auto;
+  margin: auto;
   padding: 30px;
-  width: 70%; 
-  max-width: 700px; 
+  width: 70%;
+  max-width: 700px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -179,15 +180,15 @@ a {
   /* 모달 관련 모바일 스타일 */
   .modal {
     padding: 0;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .modal-content {
     width: 92%;
-    margin: 15% auto;
+    margin: auto;
     padding: 25px 20px;
     border-radius: 10px;
-    max-height: 75vh;
+    max-height: 85vh;
   }
   
   .close-button {

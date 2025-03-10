@@ -10,16 +10,20 @@ export default function Home() {
     const modal = document.getElementById(modalId);
     
     if (modal) {
-      // 모달이 나타나기 전에 스크롤을 상단으로 재설정
-      document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+      // 현재 스크롤 위치 저장
+      const currentScrollPos = window.scrollY;
+      
+      // 배경 스크롤 방지 (스크롤 위치는 유지)
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${currentScrollPos}px`;
+      document.body.style.width = '100%';
       
       // 모달 표시
       modal.style.display = 'block';
       
-      // 모달 내용의 스크롤 위치 재설정
+      // 모달 내용의 스크롤 위치만 재설정 (페이지 스크롤은 변경하지 않음)
       setTimeout(() => {
-        window.scrollTo(0, 0);
-        modal.scrollTo(0, 0);
         const modalContent = modal.querySelector('.modal-content');
         if (modalContent) modalContent.scrollTop = 0;
       }, 10);
@@ -34,8 +38,20 @@ export default function Home() {
     const modal = document.getElementById(modalId);
     
     if (modal) {
+      // 현재 고정된 위치 값 가져오기
+      const scrollY = document.body.style.top;
+      
+      // 모달 닫기
       modal.style.display = 'none';
-      document.body.style.overflow = ''; // 배경 스크롤 복원
+      
+      // 스크롤 복원
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      
+      // 스크롤 위치 복원
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
   };
 
@@ -130,8 +146,20 @@ export default function Home() {
       const modals = document.querySelectorAll('.modal');
       modals.forEach(modal => {
         if (event.target === modal) {
+          // 현재 고정된 위치 값 가져오기
+          const scrollY = document.body.style.top;
+          
+          // 모달 닫기
           modal.style.display = 'none';
-          document.body.style.overflow = ''; // 배경 스크롤 복원
+          
+          // 스크롤 복원
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          
+          // 스크롤 위치 복원
+          window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
       });
     };
