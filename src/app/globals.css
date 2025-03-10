@@ -18,11 +18,14 @@
 body {
   line-height: 1.6;
   color: var(--text-color);
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   overflow-x: hidden;
   width: 100%;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -695,6 +698,7 @@ a {
   padding-bottom: 0;
   position: relative;
   background-color: #ffffff;
+  margin-bottom: 0 !important;
 }
 
 .page-content section {
@@ -1618,7 +1622,8 @@ footer {
   padding: 4rem 0 3rem;
   color: white;
   position: relative;
-  margin-top: 0;
+  margin-top: 0 !important;
+  border-top: none;
 }
 
 .footer-content {
@@ -1930,10 +1935,18 @@ footer {
 
 /* 섹션 간 간격 제거 */
 section {
-  margin: 0;
+  margin: 0 !important;
   padding: 4rem 0;
   width: 100%;
   overflow: hidden;
+  background-color: #ffffff;
+}
+
+section::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
 }
 
 /* 푸터 섹션 간격 제거 */
@@ -1942,7 +1955,7 @@ footer {
   padding: 4rem 0 3rem;
   color: white;
   position: relative;
-  margin-top: 0; /* 상단 마진 제거 */
+  margin-top: 0 !important;
 }
 
 /* 모든 섹션의 배경색 설정 */
@@ -1957,13 +1970,42 @@ footer {
 #hours {
   background-color: var(--secondary-color);
   padding: 4rem 0;
-  margin: 0;
+  margin: 0 !important;
+  position: relative;
 }
 
 /* 페이지 콘텐츠 여백 조정 */
 .page-content {
   min-height: 100vh;
-  padding-bottom: 0; /* 푸터 위 여백 제거 */
+  padding-bottom: 0 !important;
   position: relative;
   background-color: #ffffff;
+}
+
+/* 루트 레이아웃 컨테이너 설정 */
+#__next,
+main,
+.page-content {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 모든 딸브 컨테이너 배경색 통일 */
+div {
+  background-color: transparent;
+}
+
+/* 푸터 위 여백 완전 제거 */
+.page-content {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 모바일 환경 특별 처리 */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
 }
