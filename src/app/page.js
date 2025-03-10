@@ -71,6 +71,10 @@ export default function Home() {
     function initMap() {
       try {
         if (typeof naver !== "undefined" && document.getElementById("map")) {
+          // 지도 컨테이너 사이즈 확인
+          const mapContainer = document.getElementById("map");
+          const containerWidth = mapContainer.clientWidth;
+          
           var mapOptions = {
             center: new naver.maps.LatLng(35.1678376, 129.115742),
             zoom: 17,
@@ -78,9 +82,20 @@ export default function Home() {
             zoomControlOptions: {
               position: naver.maps.Position.TOP_RIGHT,
             },
+            size: new naver.maps.Size(containerWidth, 400),
           };
 
           var map = new naver.maps.Map("map", mapOptions);
+          
+          // 지도 생성 후 스타일 재적용
+          setTimeout(() => {
+            const mapDiv = document.getElementById('map');
+            const mapElements = mapDiv.querySelectorAll('div');
+            mapElements.forEach(el => {
+              el.style.width = '100%';
+              el.style.maxWidth = '100%';
+            });
+          }, 100);
 
           var marker = new naver.maps.Marker({
             position: new naver.maps.LatLng(35.1678376, 129.115742),
@@ -522,8 +537,22 @@ export default function Home() {
       <section id="location" data-aos="fade-up">
         <div className="container">
           <div className="map-content">
-            <div className="map-container">
-              <div id="map" style={{ width: "100%", height: "400px" }}></div>
+            <div className="map-container" 
+              style={{ 
+                width: "100%", 
+                maxWidth: "100%", 
+                overflow: "hidden",
+                position: "relative",
+                border: "1px solid #e0e0e0",
+                borderRadius: "8px"
+              }}>
+              <div id="map" 
+                style={{ 
+                  width: "100%", 
+                  height: "400px",
+                  maxWidth: "100%",
+                  position: "relative" 
+                }}></div>
             </div>
             <div className="location-info">
               <div className="info-card">
