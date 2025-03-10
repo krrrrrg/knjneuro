@@ -2184,3 +2184,102 @@ div[class*="line"] {
   margin: 1rem 0;
   display: block;
 }
+
+/* 진료안내 페이지 글자 잘림 문제 완전 해결 */
+.service-card,
+.service-detail,
+.services-section * {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+/* 서비스 카드 콘텐츠 완전히 표시 */
+.service-card p,
+.service-detail p,
+.services-section p {
+  display: block !important;
+  -webkit-box-orient: unset !important;
+  box-orient: unset !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  line-height: 1.8 !important;
+  max-height: none !important;
+}
+
+/* 모든 블루 라인 및 스크롤바 강제 제거 */
+.blue-line,
+.blue-vertical-line,
+.blue-horizontal-line,
+[class*="blue"],
+[class*="line"],
+[class*="scroll"],
+[class*="divider"],
+.vertical-line,
+.horizontal-line,
+.vertical-divider,
+.horizontal-divider {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -9999 !important;
+}
+
+/* 예약 페이지 스크롤바 강제 제거 */
+html *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+html * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* 예약 페이지 전체 콘텐츠 자동 높이 설정 */
+.reservation-section,
+.reservation-section *,
+.contact-info-container,
+.contact-info-container * {
+  height: auto !important;
+  max-height: none !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* 공통 스타일 강화 */
+body,
+html,
+main,
+div,
+section,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
