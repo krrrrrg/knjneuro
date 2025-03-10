@@ -181,6 +181,18 @@ a {
   
   .detail-content {
     flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+  }
+  
+  .detail-section {
+    min-width: auto; /* 최소 너비 제거 */
+    width: 100%; /* 전체 너비 사용 */
+    padding: 15px; /* 패딩 감소 */
+    margin: 0; /* 마진 제거 */
+    box-sizing: border-box; /* 박스 크기 계산에 패딩 포함 */
   }
   
   .service-detail h2 {
@@ -189,6 +201,35 @@ a {
   
   .service-section h3 {
     font-size: 18px;
+  }
+  
+  .detail-section ul {
+    padding-left: 0;
+  }
+  
+  .detail-section ul li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding-left: 18px;
+  }
+  
+  .detail-section ul li::before {
+    font-size: 0.9rem;
+  }
+  
+  .service-detail.active {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .modal {
+    padding: 0;
+  }
+  
+  .modal-content {
+    margin: 5% auto;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 }
 
@@ -376,9 +417,9 @@ a {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* 카드 너비 축소 280px -> 240px */
+  gap: 25px; /* 간격 줄임 30px -> 25px */
+  margin-top: 40px; /* 간격 조정 50px -> 40px */
   overflow-x: auto;
   padding-bottom: 20px;
   scroll-snap-type: x mandatory;
@@ -387,7 +428,7 @@ a {
 .service-card {
   background-color: white;
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -395,6 +436,8 @@ a {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  height: auto;
+  min-height: 200px;
 }
 
 .service-card:hover {
@@ -403,21 +446,21 @@ a {
 }
 
 .service-card img {
-  width: 70px; /* 이미지 약간 축소 */
-  height: 70px;
-  margin: 0 auto 15px; /* 여백 축소 */
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
   object-fit: contain;
 }
 
 .service-card h3 {
-  margin-bottom: 10px; /* 여백 축소 */
+  margin-bottom: 8px;
   color: #333;
   width: 100%;
-  min-height: 30px; /* 최소 높이 설정 */
+  min-height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem; /* 글자 크기 조정 */
+  font-size: 1.2rem;
 }
 
 .service-card p {
@@ -455,7 +498,30 @@ a {
 /* 모바일 화면 (기본) */
 @media (max-width: 767px) {
   .service-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 모바일에서 2열로 표시 */
+    gap: 15px;
+    padding: 0 5px 15px 5px;
+  }
+  
+  .service-card {
+    min-height: 180px; /* 모바일에서 카드 높이 줄임 */
+    padding: 15px 10px;
+  }
+  
+  .service-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.1rem;
+    min-height: auto;
+  }
+  
+  .service-card p {
+    font-size: 0.9rem;
+    margin-top: 5px;
   }
 }
 
@@ -2687,3 +2753,4 @@ li {
     gap: 2rem;
   }
 }
+
