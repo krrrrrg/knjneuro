@@ -2420,109 +2420,116 @@ li {
   display: block;
 }
 
-/* 메뉴 애니메이션 효과 */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px); /* 애니메이션 시작 위치 조정 */
+/* 모바일 메뉴 UI 완전 개선 - 안정성 중심 */
+@media (max-width: 768px) {
+  /* 햄버거 버튼 심플하게 개선 */
+  .hamburger {
+    display: block;
+    width: 30px;
+    height: 24px;
+    margin-right: 15px;
+    position: relative;
+    z-index: 1002;
   }
-  to {
+
+  .hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
     opacity: 1;
-    transform: translateY(0);
+    left: 0;
+    transition: 0.25s ease-in-out;
   }
-}
 
-.nav-links.active li {
-  animation: fadeInDown 0.3s ease forwards;
-  animation-delay: calc(0.1s * var(--item-index, 0));
-}
-
-/* 각 메뉴 항목에 지연 시간 변수 추가 */
-.nav-links.active li:nth-child(1) {
-  --item-index: 1;
-}
-.nav-links.active li:nth-child(2) {
-  --item-index: 2;
-}
-.nav-links.active li:nth-child(3) {
-  --item-index: 3;
-}
-.nav-links.active li:nth-child(4) {
-  --item-index: 4;
-}
-.nav-links.active li:nth-child(5) {
-  --item-index: 5;
-}
-.nav-links.active li:nth-child(6) {
-  --item-index: 6;
-}
-.nav-links.active li:nth-child(7) {
-  --item-index: 7;
-}
-
-/* 메뉴 항목 리플 애니메이션 */
-@keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    opacity: 0.5;
+  /* 햄버거 버튼 라인 위치 */
+  .hamburger span:nth-child(1) {
+    top: 0px;
   }
-  20% {
-    transform: scale(25, 25);
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(40, 40);
-  }
-}
 
-/* 페이드인 애니메이션 */
-@keyframes fadeIn {
-  from {
+  .hamburger span:nth-child(2) {
+    top: 10px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 20px;
+  }
+
+  /* 햄버거 -> X 변환 심플하게 */
+  .hamburger.active span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
-  to {
+
+  .hamburger.active span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg);
+  }
+
+  /* 네비게이션 메뉴 스타일 단순화 */
+  .nav-links {
+    display: none;
+  }
+
+  /* 메뉴 한 번에 표시하는 심플 스타일 */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: white;
+    z-index: 999;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  /* 메뉴 항목 더 눈에 띄게 */
+  .nav-links.active li {
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  /* 메뉴 링크 스타일 개선 */
+  .nav-links.active li a,
+  .nav-links.active li a:visited {
+    display: block;
+    padding: 18px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  /* 단순한 호버/액티브 효과 */
+  .nav-links.active li a:hover,
+  .nav-links.active li a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+
+  /* 현재 페이지 표시 */
+  .nav-links.active li a.active:before {
+    content: "•";
+    display: inline-block;
+    margin-right: 10px;
+    color: var(--primary-color);
+  }
+
+  /* 애니메이션 관련 복잡한 코드 제거 */
+  .nav-links.active li {
+    animation: none;
     opacity: 1;
   }
 }
 
-/* 메뉴 애니메이션 슬라이드 개선 */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* 각 메뉴 항목 애니메이션 적용 */
-.nav-links.active li {
-  opacity: 0;
-  animation: slideInRight 0.4s ease forwards;
-}
-
-/* 각 메뉴 항목 지연 시간 개선 */
-.nav-links.active li:nth-child(1) {
-  animation-delay: 0.05s;
-}
-.nav-links.active li:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.nav-links.active li:nth-child(3) {
-  animation-delay: 0.15s;
-}
-.nav-links.active li:nth-child(4) {
-  animation-delay: 0.2s;
-}
-.nav-links.active li:nth-child(5) {
-  animation-delay: 0.25s;
-}
-.nav-links.active li:nth-child(6) {
-  animation-delay: 0.3s;
-}
-.nav-links.active li:nth-child(7) {
-  animation-delay: 0.35s;
-}
+/* 불필요한 애니메이션 및 복잡한 효과 제거 */

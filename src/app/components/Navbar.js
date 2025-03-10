@@ -11,12 +11,6 @@ export default function Navbar() {
   // 햄버거 메뉴 토글 함수
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // 메뉴가 열려있을 때 body 스크롤 방지
-    if (!isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
   };
 
   // 화면 크기가 변경될 때 메뉴 상태 관리
@@ -24,7 +18,6 @@ export default function Navbar() {
     const handleResize = () => {
       if (window.innerWidth > 768 && isMenuOpen) {
         setIsMenuOpen(false);
-        document.body.style.overflow = "";
       }
     };
 
@@ -37,7 +30,6 @@ export default function Navbar() {
   // 페이지 변경 시 메뉴 닫기
   useEffect(() => {
     setIsMenuOpen(false);
-    document.body.style.overflow = "";
   }, [pathname]);
 
   return (
