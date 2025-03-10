@@ -13,6 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -2127,7 +2128,6 @@ div[class*="line"] {
   .service-card p {
     line-height: 1.5;
     max-height: none !important;
-    -webkit-line-clamp: initial;
     display: block;
   }
 }
@@ -2209,7 +2209,6 @@ div[class*="line"] {
   box-orient: unset !important;
   overflow: visible !important;
   text-overflow: clip !important;
-  -webkit-line-clamp: unset !important;
   line-height: 1.8 !important;
   max-height: none !important;
 }
@@ -2282,4 +2281,28 @@ ul,
 li {
   overflow-x: visible !important;
   overflow-y: visible !important;
+}
+
+/* 벤더 접두어 경고 해결 */
+.service-card p,
+.services-section p,
+[class*="clamp"] {
+  /* 벤더 접두어와 표준 속성 모두 정의 */
+  display: -webkit-box;
+  display: block;
+  -webkit-box-orient: vertical;
+}
+
+/* 이미 수정된 요소에서도 표준 속성 추가 */
+.services-section p {
+  -webkit-box-orient: unset;
+}
+
+/* 모든 변형 요소에 대한 처리 */
+[class*="-webkit-"] {
+  /* 각 -webkit- 속성에 대응하는 표준 속성 추가 */
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
