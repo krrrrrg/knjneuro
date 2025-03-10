@@ -82,14 +82,17 @@ export default function Home() {
             mapWrapper.style.maxWidth = '100%';
             mapWrapper.style.width = '100%';
             mapWrapper.style.position = 'relative';
+            mapWrapper.style.minHeight = '600px';
           }
           
           // 맵 요소 스타일 강제 적용
           mapContainer.style.width = '100%';
           mapContainer.style.maxWidth = '100%';
-          mapContainer.style.height = '400px';
+          mapContainer.style.height = '100%';
+          mapContainer.style.minHeight = '580px';
           mapContainer.style.position = 'relative';
           mapContainer.style.overflow = 'hidden';
+          mapContainer.style.borderRadius = '10px';
           
           var mapOptions = {
             center: new naver.maps.LatLng(35.1678376, 129.115742),
@@ -97,8 +100,8 @@ export default function Home() {
             zoomControl: true,
             zoomControlOptions: {
               position: naver.maps.Position.TOP_RIGHT,
+              style: naver.maps.ZoomControlStyle.SMALL
             },
-            size: new naver.maps.Size(containerWidth, 400),
           };
 
           var map = new naver.maps.Map("map", mapOptions);
@@ -114,6 +117,13 @@ export default function Home() {
               el.style.maxWidth = '100%';
             });
             
+            // 컨트롤 요소는 크기 제한 해제
+            const controlElements = mapDiv.querySelectorAll('.nmap-control, .nmap-overlay');
+            controlElements.forEach(el => {
+              el.style.width = 'auto';
+              el.style.maxWidth = '40px';
+            });
+            
             // 캔버스 요소에도 스타일 적용
             const canvasElements = mapDiv.querySelectorAll('canvas');
             canvasElements.forEach(canvas => {
@@ -125,7 +135,8 @@ export default function Home() {
             naverElements.forEach(el => {
               el.style.width = '100%';
               el.style.maxWidth = '100%';
-              el.style.height = '400px';
+              el.style.height = '100%';
+              el.style.minHeight = '580px';
               el.style.overflow = 'hidden';
             });
           }, 100);
@@ -136,9 +147,9 @@ export default function Home() {
           });
 
           var contentString = [
-            '<div class="iw_inner" style="padding:10px;">',
-            '   <h3 style="margin-bottom:10px;">강남제신경과</h3>',
-            "   <p>부산시 수영구 수영로 697<br/>",
+            '<div class="iw_inner" style="padding:10px; font-family: \'Noto Sans KR\', sans-serif;">',
+            '   <h3 style="margin-bottom:10px; color: #4A6CF7; font-weight: 700;">강남제신경과</h3>',
+            "   <p style='line-height: 1.5;'>부산시 수영구 수영로 697<br/>",
             "   홍인빌딩 5층<br/>",
             "   Tel: 051-759-7676</p>",
             "</div>",
@@ -577,17 +588,22 @@ export default function Home() {
                 overflow: "hidden",
                 position: "relative",
                 border: "1px solid #e0e0e0",
-                borderRadius: "8px",
-                padding: "0",
-                boxSizing: "border-box"
+                borderRadius: "20px",
+                padding: "1rem",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                boxSizing: "border-box",
+                minHeight: "600px",
+                background: "white"
               }}>
               <div id="map" 
                 style={{ 
                   width: "100%", 
-                  height: "400px",
+                  height: "100%",
+                  minHeight: "580px",
                   maxWidth: "100%",
                   position: "relative",
-                  overflow: "hidden" 
+                  overflow: "hidden",
+                  borderRadius: "10px"
                 }}></div>
             </div>
             <div className="location-info">

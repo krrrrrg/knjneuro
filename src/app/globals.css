@@ -1255,7 +1255,7 @@ a {
 /* Map Page */
 .map-section {
   padding: 6rem 2rem 4rem 2rem;
-  background-color: #ffffff;
+  background: var(--secondary-color);
 }
 
 .map-content {
@@ -1275,15 +1275,17 @@ a {
   overflow: hidden !important;
   position: relative;
   max-width: 100%;
-  height: auto !important;
+  min-height: 600px !important;
 }
 
 #map {
   width: 100% !important;
-  height: 400px !important;
+  height: 100% !important;
+  min-height: 580px !important;
   max-width: 100% !important;
   position: relative !important;
   overflow: hidden !important;
+  border-radius: 10px !important;
 }
 
 #map > div {
@@ -1295,7 +1297,8 @@ a {
 .naver-map, .nmap {
   width: 100% !important;
   max-width: 100% !important;
-  height: 400px !important;
+  height: 100% !important;
+  min-height: 580px !important;
   position: relative !important;
   overflow: hidden !important;
 }
@@ -1304,20 +1307,26 @@ a {
   max-width: 100% !important;
 }
 
-/* 캔버스 및 컨트롤 요소 스타일링 */
-#map canvas, 
+/* 컨트롤 요소 스타일링 */
 #map .nmap-control, 
 #map .nmap-overlay {
+  max-width: 40px !important;
+  width: auto !important;
+}
+
+#map canvas {
   max-width: 100% !important;
 }
 
 .iw_inner {
   font-family: "Noto Sans KR", sans-serif;
+  padding: 10px !important;
 }
 
 .iw_inner h3 {
   color: var(--primary-color);
   font-weight: 700;
+  margin-bottom: 10px !important;
 }
 
 .location-info {
@@ -1337,7 +1346,7 @@ a {
     padding: 1rem 0;
   }
   .map-container {
-    min-height: 300px;
+    min-height: 300px !important;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -1346,7 +1355,7 @@ a {
     overflow: hidden;
   }
   #map {
-    min-height: 250px;
+    min-height: 280px !important;
     width: 100% !important;
     max-width: 100% !important;
     position: relative !important;
@@ -1354,6 +1363,9 @@ a {
   #map > div {
     max-width: 100% !important;
     width: 100% !important;
+  }
+  .naver-map, .nmap {
+    min-height: 280px !important;
   }
   .location-info {
     width: 85%;
