@@ -349,26 +349,22 @@ a {
     left: 0;
     width: 100%;
     height: calc(100vh - 72px);
-    background: linear-gradient(to bottom, #ffffff, #f8f9ff);
+    background-color: white;
     z-index: 999;
     padding: 0;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    overflow-y: auto !important;
-    align-items: center;
-    justify-content: flex-start;
+    margin: 0;
+    overflow-y: auto;
   }
 
   .nav-links.active li:first-child {
-    margin-top: 20px;
+    margin-top: 0;
   }
 
   .nav-links.active li {
-    width: 90%;
-    margin: 5px 0;
+    width: 100%;
     padding: 0;
-    text-align: center;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    margin: 0;
+    border-bottom: 1px solid #eaeaea;
   }
 
   .nav-links.active li a,
@@ -388,39 +384,15 @@ a {
   .nav-links.active li a.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    font-weight: 600;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(45, 91, 255, 0.15);
   }
 
   .nav-links.active li a.active:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background-color: var(--primary-color);
-    border-radius: 0 4px 4px 0;
-    animation: fadeIn 0.5s ease forwards;
+    display: none;
   }
 
-  .nav-links.active li a:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(45, 91, 255, 0.3);
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%, -50%);
-    transform-origin: 50% 50%;
-  }
-
-  .nav-links.active li a:focus:not(:active)::after {
-    animation: ripple 1s ease-out;
+  .nav-links.active li a.active {
+    font-weight: 700;
+    color: var(--primary-color);
   }
 
   /* 메뉴 오버레이 제거 (전체 화면 메뉴로 대체) */
@@ -2489,6 +2461,7 @@ li {
     background-color: white;
     z-index: 999;
     padding: 0;
+    margin: 0;
     overflow-y: auto;
   }
 
@@ -2496,6 +2469,7 @@ li {
   .nav-links.active li {
     width: 100%;
     padding: 0;
+    margin: 0;
     border-bottom: 1px solid #eaeaea;
   }
 
@@ -2513,25 +2487,22 @@ li {
     line-height: 1.2;
   }
 
-  /* 단순한 호버/액티브 효과 */
+  /* 호버 효과 단순화 */
   .nav-links.active li a:hover,
   .nav-links.active li a.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
   }
 
-  /* 현재 페이지 표시 */
+  /* 왼쪽 파란색 표시 제거 */
   .nav-links.active li a.active:before {
-    content: "•";
-    display: inline-block;
-    margin-right: 10px;
-    color: var(--primary-color);
+    display: none;
   }
 
-  /* 애니메이션 관련 복잡한 코드 제거 */
-  .nav-links.active li {
-    animation: none;
-    opacity: 1;
+  /* 진료안내 메뉴 강조 - 파란색 마커 대신 글자 굵기로 표현 */
+  .nav-links.active li a.active {
+    font-weight: 700;
+    color: var(--primary-color);
   }
 }
 
