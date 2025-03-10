@@ -537,62 +537,41 @@ export default function Home() {
       <section id="location" data-aos="fade-up">
         <div className="container">
           <div className="map-content">
-            <div className="map-container" 
-              style={{ 
-                width: "100%", 
-                maxWidth: "100%", 
-                overflow: "hidden",
-                position: "relative",
-                border: "1px solid #e0e0e0",
-                borderRadius: "8px"
-              }}>
-              <div id="map" 
-                style={{ 
-                  width: "100%", 
-                  height: "400px",
-                  maxWidth: "100%",
-                  position: "relative" 
-                }}></div>
+            <div className="map-container">
+              <div id="map" style={{ width: "100%", height: "600px" }}></div>
             </div>
             <div className="location-info">
-              <div className="info-card">
-                <h3>주소</h3>
+              <div className="info-section">
+                <h3 className="info-title">주소</h3>
                 <p>부산시 수영구 수영로 697</p>
                 <p>홍인빌딩 5층</p>
               </div>
-              <div className="info-card">
-                <h3>대중교통</h3>
-                <div className="transport-info">
+
+              <div className="info-section">
+                <h3 className="info-title">대중교통</h3>
+                <div className="transport-details">
                   <h4>지하철</h4>
                   <p>2호선, 3호선 수영역 3번 출구 도보 1분</p>
 
                   <h4>버스</h4>
                   <p>
-                    <strong>일반버스</strong>
-                    <br />
-                    수영교차로 / 수영역 하차 <br />
-                    5-1, 20, 39, 40, 42, 49, 51, 54, 62, 63, 131, 141,
-                    141(심야), 155, 210, 1001, 1003, 1003(심야), 2026
+                    <strong>일반버스</strong><br />
+                    수영교차로 / 수영역 하차<br />
+                    5-1, 20, 39, 40, 42, 49, 51, 54, 62, 63, 131, 141, 141(심야), 155, 210, 1001, 1003, 1003(심야), 2026
                   </p>
                   <p>
-                    <strong>마을버스</strong>
-                    <br />
+                    <strong>마을버스</strong><br />
                     수영교차로.팔도시장 : 해운대구3
                   </p>
                 </div>
               </div>
-              <div className="info-card">
-                <h3>주차</h3>
+
+              <div className="info-section">
+                <h3 className="info-title">주차</h3>
                 <p>지정주차장 : 남강민물장어 주차장</p>
-                <p>
-                  부산시 수영구 수영로 725번길 55 (병원 뒷편, 킹마트 맞은편
-                  가게)
-                </p>
-                <p>※ 주차 후 접수대에 말씀해주시면 주차권 드립니다.</p>
-                <p>
-                  ※ 건물 내에 주차장이 없어서 불편 드린 점 너른 양해
-                  부탁드립니다.
-                </p>
+                <p>부산시 수영구 수영로 725번길 55 (병원 뒷편, 킹마트 맞은편 가게)</p>
+                <p className="parking-note">※ 주차 후 접수대에 말씀해주시면 주차권 드립니다.</p>
+                <p className="parking-note">※ 건물 내에 주차장이 없어서 불편 드린 점 너른 양해 부탁드립니다.</p>
               </div>
             </div>
           </div>
