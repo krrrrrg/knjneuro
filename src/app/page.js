@@ -20,7 +20,7 @@ export default function Home() {
       document.body.style.width = '100%';
       
       // 모달 표시
-      modal.style.display = 'block';
+      modal.style.display = 'flex';
       
       // 모달 내용의 스크롤 위치만 재설정 (페이지 스크롤은 변경하지 않음)
       setTimeout(() => {

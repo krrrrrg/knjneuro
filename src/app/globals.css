@@ -47,7 +47,6 @@ a {
   backdrop-filter: blur(5px);
   padding: 0;
   box-sizing: border-box;
-  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -66,7 +65,7 @@ a {
 /* 모달 콘텐츠 스타일 */
 .modal-content {
   background-color: white;
-  margin: auto;
+  margin: 50px auto;
   padding: 30px;
   width: 70%;
   max-width: 700px;
@@ -181,11 +180,12 @@ a {
   .modal {
     padding: 0;
     align-items: center;
+    display: flex;
   }
 
   .modal-content {
     width: 92%;
-    margin: auto;
+    margin: 0 auto;
     padding: 25px 20px;
     border-radius: 10px;
     max-height: 85vh;
