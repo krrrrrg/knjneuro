@@ -374,14 +374,14 @@ a {
   .nav-links.active li a,
   .nav-links.active li a:visited {
     display: block;
-    padding: 16px 0;
+    padding: 15px 0;
     font-size: 18px;
     font-weight: 500;
     color: var(--text-color);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    line-height: 1.2;
   }
 
   .nav-links.active li a:hover,
@@ -2503,11 +2503,14 @@ li {
   .nav-links.active li a,
   .nav-links.active li a:visited {
     display: block;
-    padding: 18px 0;
+    padding: 15px 0;
     font-size: 18px;
     font-weight: 500;
     color: var(--text-color);
     text-align: center;
+    width: 100%;
+    height: auto;
+    line-height: 1.2;
   }
 
   /* 단순한 호버/액티브 효과 */
