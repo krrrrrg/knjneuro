@@ -1278,104 +1278,122 @@ input[type="text"]::placeholder {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* 모달 기본 스타일 개선 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal.fade-out {
-  opacity: 0;
-}
-
-.modal-content {
-  position: relative;
-  background-color: white;
-  border-radius: 12px;
-  padding: 30px;
-  width: 90%;
-  max-width: 600px;
-  max-height: 80vh; /* 뷰포트 높이의 80%로 제한 */
-  overflow-y: auto; /* 세로 스크롤 활성화 */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-}
-
-/* 모달 헤더 고정 (선택 사항) */
-.modal-header {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #f0f0f0;
-  z-index: 1;
-}
-
-/* 모달 닫기 버튼 */
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #666;
-}
-
-/* 모달 콘텐츠 내부 요소들의 여백 조정 */
-.modal-content h2 {
-  margin-top: 0;
-  color: #1e3bb3;
-  font-size: 24px;
-}
-
-.modal-content ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.modal-content ul li {
-  margin-bottom: 8px;
-}
-
-/* 모달 배경 */
+/* 모달 창 스타일 개선 - 중앙 정렬 및 내부 스크롤 */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1001;
+  z-index: 1100;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  margin: 0;
+}
+
+/* 모달 제목 스타일 */
+.modal-content h2 {
+  color: #1e3bb3;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* 모달 섹션 스타일 */
+.modal-content h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+/* 모달 리스트 스타일 */
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.modal-content ul li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.modal-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #1e3bb3;
+}
+
+/* 모달 닫기 버튼 */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #666;
+  top: 50%;
+  left: 0;
+}
+
+.close-button::before {
+  transform: rotate(45deg);
+}
+
+.close-button::after {
+  transform: rotate(-45deg);
 }
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
   .modal-content {
-    padding: 20px;
     width: 95%;
-    max-height: 70vh; /* 모바일에서는 더 작게 */
-  }
-
-  .modal-header {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    max-height: 75vh;
+    padding: 20px 15px;
   }
 
   .modal-content h2 {
-    font-size: 20px;
+    font-size: 18px;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+  }
+
+  .modal-content ul li {
+    font-size: 14px;
   }
 }
 
@@ -2103,6 +2121,7 @@ div[class*="line"] {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
+  background: transparent !important;
 }
 
 .reservation-section *,
