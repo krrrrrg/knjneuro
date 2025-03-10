@@ -136,9 +136,9 @@ export default function Home() {
           });
 
           var contentString = [
-            '<div style="padding:15px; font-family: \'Noto Sans KR\', sans-serif; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; white-space: nowrap;">',
-            '   <h3 style="margin-bottom:10px; color: #4A6CF7; font-weight: 700; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">강남제신경과</h3>',
-            "   <p style='line-height: 1.6; font-size: 13px; color: #555; margin: 0;'>부산시 수영구 수영로 697<br/>",
+            '<div style="padding:10px 12px; font-family: \'Noto Sans KR\', sans-serif; background: white; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: auto; max-width: 140px;">',
+            '   <h3 style="margin-bottom:6px; color: #4A6CF7; font-weight: 700; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 6px;">강남제신경과</h3>',
+            "   <p style='line-height: 1.4; font-size: 12px; color: #555; margin: 0;'>부산시 수영구 수영로 697<br/>",
             "   홍인빌딩 5층<br/>",
             "   Tel: 051-759-7676</p>",
             "</div>",
@@ -146,9 +146,9 @@ export default function Home() {
 
           var infowindow = new naver.maps.InfoWindow({
             content: contentString,
-            maxWidth: 300,
+            maxWidth: 140,
             backgroundColor: "transparent",
-            borderColor: "transparent",
+            borderColor: "transparent", 
             borderWidth: 0,
             disableAnchor: true,
             pixelOffset: new naver.maps.Point(0, -5)
