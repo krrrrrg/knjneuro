@@ -14,60 +14,44 @@ export default function Services() {
     
     // 모달 표시
     if (modal) {
-      // 모달이 표시되기 전에 스크롤 위치 재설정
-      modal.scrollTop = 0;
+      // 모든 상세 내용을 먼저 숨김
+      const allDetails = document.querySelectorAll(".service-detail");
+      allDetails.forEach((detail) => {
+        detail.style.display = "none";
+        detail.classList.remove("active");
+      });
       
-      // 모달 콘텐츠의 스크롤 위치도 재설정
-      const modalContent = modal.querySelector('.modal-content');
-      if (modalContent) {
-        modalContent.scrollTop = 0;
-      }
-      
-      // 모달 표시
-      modal.style.display = "block";
-      
-      // 약간의 지연 후 다시 한번 스크롤 위치 확인
-      setTimeout(() => {
+      // 선택한 요소만 표시
+      const selectedDetail = document.getElementById(`${serviceId}Detail`);
+      if (selectedDetail) {
+        // 선택한 요소 표시
+        selectedDetail.style.display = "flex";
+        selectedDetail.classList.add("active");
+        console.log(`표시한 요소: ${selectedDetail.id}`);
+        
+        // 모달 표시
+        modal.style.display = "block";
+        
+        // 스크롤 위치 재설정 (여러 번 시도하여 확실히 적용되도록)
         modal.scrollTop = 0;
-        if (modalContent) {
-          modalContent.scrollTop = 0;
-        }
-      }, 50);
+        if (selectedDetail) selectedDetail.scrollTop = 0;
+        
+        // 즉시 한 번 더 실행
+        setTimeout(() => {
+          modal.scrollTop = 0;
+          if (selectedDetail) selectedDetail.scrollTop = 0;
+        }, 10);
+        
+        // 약간의 지연 후 다시 한번 스크롤 위치 재설정
+        setTimeout(() => {
+          modal.scrollTop = 0;
+          if (selectedDetail) selectedDetail.scrollTop = 0;
+        }, 100);
+      } else {
+        console.error(`선택한 서비스 요소를 찾을 수 없음: ${serviceId}Detail`);
+      }
     } else {
       console.error("모달 요소를 찾을 수 없습니다.");
-      return;
-    }
-    
-    // 모든 상세 내용 숨기기 (display 속성 직접 사용)
-    const allDetails = document.querySelectorAll(".service-detail");
-    console.log(`모든 상세 요소 수: ${allDetails.length}`);
-    
-    allDetails.forEach((detail) => {
-      detail.style.display = "none";
-      // 클래스도 제거
-      detail.classList.remove("active");
-      console.log(`숨긴 요소: ${detail.id}`);
-    });
-    
-    // 선택한 요소만 표시
-    const selectedDetail = document.getElementById(`${serviceId}Detail`);
-    if (selectedDetail) {
-      // 직접 스타일과 클래스 모두 설정
-      selectedDetail.style.display = "block";
-      selectedDetail.classList.add("active");
-      console.log(`표시한 요소: ${selectedDetail.id}`);
-      
-      // 선택된 요소의 스크롤 위치도 재설정
-      selectedDetail.scrollTop = 0;
-      
-      // 약간의 지연 후 다시 한번 확인
-      setTimeout(() => {
-        if (modal) modal.scrollTop = 0;
-        if (modalContent) modalContent.scrollTop = 0;
-        selectedDetail.scrollTop = 0;
-      }, 100);
-    } else {
-      console.error(`선택한 서비스 요소를 찾을 수 없음: ${serviceId}Detail`);
     }
   };
 
@@ -84,6 +68,8 @@ export default function Services() {
     if (closeButton) {
       closeButton.addEventListener("click", () => {
         console.log("모달 닫기 버튼 클릭");
+        
+        // 모달 숨기기
         if (modal) modal.style.display = "none";
         
         // 모든 상세 내용 숨기기
@@ -98,6 +84,8 @@ export default function Services() {
     window.addEventListener("click", (event) => {
       if (modal && event.target === modal) {
         console.log("모달 외부 클릭으로 닫기");
+        
+        // 모달 숨기기
         modal.style.display = "none";
         
         // 모든 상세 내용 숨기기
