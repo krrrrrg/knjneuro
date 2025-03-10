@@ -374,7 +374,8 @@ export default function Home() {
               </div>
               <ul>
                 <li>손발 저림 (손목터널, 발목터널 증후군)</li>
-                <li>근골격계 통증 (목, 허리, 어깨통증, 오십견, 근막 통증 증후군 등)</li>
+                <li>근골격계 통증 (목, 허리, 어깨통증,</li> 
+                <li>오십견, 근막 통증 증후군 등)</li>
                 <li>요추, 경추간판장애</li>
                 <li>삼차신경통 (안면마비, 구안와사)</li>
               </ul>
@@ -401,14 +402,14 @@ export default function Home() {
           <div className="detail-content">
             <div className="detail-section">
               <div className="service-section">
-                <h3>주요 진료 분야</h3>
+                <h3>주요 질환</h3>
               </div>
               <ul>
-                <li>고혈압</li>
+                <li>혈압</li>
                 <li>당뇨</li>
-                <li>고지혈증</li>
-                <li>비만</li>
-                <li>영양요법</li>
+                <li>고지혈증 대사증후군</li>
+                <li>비만상담</li>
+                <li>영양요법 상담</li>
               </ul>
             </div>
             <div className="detail-section">
@@ -416,11 +417,12 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>혈액검사</li>
-                <li>소변검사</li>
-                <li>심전도검사</li>
-                <li>체성분 분석</li>
-                <li>당화혈색소 검사</li>
+                <li>동맥경화도검사</li>
+                <li>경동맥초음파검사</li>
+                <li>자율신경계기능검사</li>
+                <li>일반, 특수 피검사</li>
+                <li>종합 피검사</li>
+                <li>영양요법 치료</li>
               </ul>
             </div>
           </div>
