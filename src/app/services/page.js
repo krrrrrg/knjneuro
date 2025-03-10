@@ -209,39 +209,34 @@ export default function Services() {
 
           {/* 수면 클리닉 상세 */}
           <div id="sleepDetail" className="service-detail">
-            <h2>수면 클리닉</h2>
+            <h2>두통 및 어지럼증</h2>
             <div className="detail-content">
               <div className="detail-section">
                 <div className="service-section">
-                  <h3>주요 증상</h3>
+                  <h3>주요 질환</h3>
                 </div>
                 <ul>
-                  <li>수면무호흡증</li>
-                  <li>불면증</li>
-                  <li>하지불안증후군</li>
-                  <li>과다수면</li>
+                  <li>편두통</li>
+                  <li>긴장성 두통</li>
+                  <li>군발성 두통</li>
+                  <li>편두통성 어지럼증</li>
+                  <li>이석증</li>
+                  <li>메니에르병</li>
+                  <li>전정신경염</li>
+                  <li>자율신경실조증</li>
+                  <li>기립성저혈압</li>
                 </ul>
               </div>
               <div className="detail-section">
                 <div className="service-section">
-                  <h3>진단 방법</h3>
+                  <h3>관련 검사</h3>
                 </div>
                 <ul>
-                  <li>수면다원검사</li>
-                  <li>수면 일기 분석</li>
-                  <li>활동기록계 검사</li>
-                  <li>수면 설문지</li>
-                </ul>
-              </div>
-              <div className="detail-section">
-                <div className="service-section">
-                  <h3>치료 방법</h3>
-                </div>
-                <ul>
-                  <li>양압기 치료</li>
-                  <li>약물 치료</li>
-                  <li>수면위생 교육</li>
-                  <li>인지행동치료</li>
+                  <li>뇌혈류 초음파</li>
+                  <li>비디오 안진검사</li>
+                  <li>자율신경기능검사</li>
+                  <li>기립 경사 테이블검사</li>
+                  <li>혈액검사</li>
                 </ul>
               </div>
             </div>
