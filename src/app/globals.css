@@ -18,9 +18,11 @@
 body {
   line-height: 1.6;
   color: var(--text-color);
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   overflow-x: hidden;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -182,6 +184,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  background-color: #ffffff;
 }
 
 #services .container {
@@ -499,7 +502,7 @@ a {
 /* About Section */
 #about {
   padding: 6rem 2rem;
-  background: var(--secondary-color);
+  background-color: #ffffff;
 }
 
 .about-content {
@@ -686,8 +689,9 @@ a {
 /* Page Content Styles */
 .page-content {
   min-height: 100vh;
-  padding-bottom: 100px;
+  padding-bottom: 0;
   position: relative;
+  background-color: #ffffff;
 }
 
 .page-content section {
@@ -707,23 +711,23 @@ a {
 
 /* Section Background Colors */
 #about {
-  background: var(--secondary-color);
+  background-color: #ffffff;
 }
 
 #services {
-  background: white;
+  background-color: #ffffff;
 }
 
 #doctors {
-  background: var(--secondary-color);
+  background-color: #ffffff;
 }
 
 #reservation {
-  background: white;
+  background-color: #ffffff;
 }
 
 #location {
-  background: var(--secondary-color);
+  background-color: #ffffff;
 }
 
 /* Responsive adjustments */
@@ -822,7 +826,7 @@ a {
 /* Policy Pages */
 .policy-section {
   padding: 6rem 2rem;
-  background: var(--secondary-color);
+  background-color: #ffffff;
 }
 
 .policy-content {
@@ -863,7 +867,7 @@ a {
 /* Map Page */
 .map-section {
   padding: 6rem 2rem 4rem 2rem;
-  background: var(--secondary-color);
+  background-color: #ffffff;
 }
 
 .map-content {
@@ -1611,7 +1615,7 @@ footer {
   padding: 4rem 0 3rem;
   color: white;
   position: relative;
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .footer-content {
@@ -1774,7 +1778,7 @@ footer {
 /* 의료진 소개 페이지 스타일 */
 .doctor-profile-section {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
 }
 
 .section-title {
@@ -1907,8 +1911,9 @@ footer {
 /* 페이지 콘텐츠와 푸터 사이의 여백 추가 */
 .page-content {
   min-height: 100vh; /* 최소 높이 설정 */
-  padding-bottom: 100px; /* 푸터 위 여백 확보 */
+  padding-bottom: 0; /* 푸터 위 여백 제거 */
   position: relative;
+  background-color: #ffffff;
 }
 
 /* div.container 여백 조정 */
@@ -1918,4 +1923,44 @@ footer {
   padding: 0 1rem 2rem; /* 하단 패딩 추가 */
   width: 100%;
   overflow-x: hidden;
+}
+
+/* 섹션 간 간격 제거 */
+section {
+  margin: 0;
+  padding: 4rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 푸터 섹션 간격 제거 */
+footer {
+  background-color: #222;
+  padding: 4rem 0 3rem;
+  color: white;
+  position: relative;
+  margin-top: 0; /* 상단 마진 제거 */
+}
+
+/* 모든 섹션의 배경색 설정 */
+#services,
+#doctors,
+#about,
+.doctor-profile-section {
+  background-color: #ffffff;
+}
+
+/* 진료시간 섹션 배경색 통일 */
+#hours {
+  background-color: var(--secondary-color);
+  padding: 4rem 0;
+  margin: 0;
+}
+
+/* 페이지 콘텐츠 여백 조정 */
+.page-content {
+  min-height: 100vh;
+  padding-bottom: 0; /* 푸터 위 여백 제거 */
+  position: relative;
+  background-color: #ffffff;
 }
