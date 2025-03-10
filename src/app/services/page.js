@@ -14,7 +14,25 @@ export default function Services() {
     
     // 모달 표시
     if (modal) {
+      // 모달이 표시되기 전에 스크롤 위치 재설정
+      modal.scrollTop = 0;
+      
+      // 모달 콘텐츠의 스크롤 위치도 재설정
+      const modalContent = modal.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.scrollTop = 0;
+      }
+      
+      // 모달 표시
       modal.style.display = "block";
+      
+      // 약간의 지연 후 다시 한번 스크롤 위치 확인
+      setTimeout(() => {
+        modal.scrollTop = 0;
+        if (modalContent) {
+          modalContent.scrollTop = 0;
+        }
+      }, 50);
     } else {
       console.error("모달 요소를 찾을 수 없습니다.");
       return;
@@ -38,6 +56,16 @@ export default function Services() {
       selectedDetail.style.display = "block";
       selectedDetail.classList.add("active");
       console.log(`표시한 요소: ${selectedDetail.id}`);
+      
+      // 선택된 요소의 스크롤 위치도 재설정
+      selectedDetail.scrollTop = 0;
+      
+      // 약간의 지연 후 다시 한번 확인
+      setTimeout(() => {
+        if (modal) modal.scrollTop = 0;
+        if (modalContent) modalContent.scrollTop = 0;
+        selectedDetail.scrollTop = 0;
+      }, 100);
     } else {
       console.error(`선택한 서비스 요소를 찾을 수 없음: ${serviceId}Detail`);
     }
@@ -207,7 +235,7 @@ export default function Services() {
             </div>
           </div>
 
-          {/* 수면 클리닉 상세 */}
+          {/* 두통 및 어지럼증 상세 */}
           <div id="sleepDetail" className="service-detail">
             <h2>두통 및 어지럼증</h2>
             <div className="detail-content">
