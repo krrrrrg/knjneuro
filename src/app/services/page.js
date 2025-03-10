@@ -19,10 +19,20 @@ export default function Services() {
 
     const showServiceDetail = (serviceId) => {
       modal.style.display = "block";
+      
+      // 모든 서비스 상세 내용에서 active 클래스 제거
       document.querySelectorAll(".service-detail").forEach((detail) => {
-        detail.style.display = "none";
+        detail.classList.remove("active");
       });
-      document.getElementById(`${serviceId}Detail`).style.display = "block";
+      
+      // 선택한 서비스에만 active 클래스 추가
+      const selectedDetail = document.getElementById(`${serviceId}Detail`);
+      if (selectedDetail) {
+        selectedDetail.classList.add("active");
+        console.log(`표시된 서비스: ${serviceId}`);
+      } else {
+        console.error(`서비스 ID를 찾을 수 없음: ${serviceId}`);
+      }
     };
 
     serviceCards.forEach((card) => {
@@ -35,24 +45,52 @@ export default function Services() {
     if (closeButton) {
       closeButton.addEventListener("click", () => {
         modal.style.display = "none";
+        // 모든 서비스 상세 내용에서 active 클래스 제거
+        document.querySelectorAll(".service-detail").forEach((detail) => {
+          detail.classList.remove("active");
+        });
       });
     }
 
     window.addEventListener("click", (event) => {
       if (event.target === modal) {
         modal.style.display = "none";
+        // 모든 서비스 상세 내용에서 active 클래스 제거
+        document.querySelectorAll(".service-detail").forEach((detail) => {
+          detail.classList.remove("active");
+        });
       }
     });
 
     // 컴포넌트 언마운트 시 이벤트 리스너 제거
     return () => {
       serviceCards.forEach((card) => {
-        card.removeEventListener("click", () => {});
+        const handleClick = () => {
+          const serviceId = card.getAttribute("data-service");
+          showServiceDetail(serviceId);
+        };
+        card.removeEventListener("click", handleClick);
       });
+      
       if (closeButton) {
-        closeButton.removeEventListener("click", () => {});
+        const handleClose = () => {
+          modal.style.display = "none";
+          document.querySelectorAll(".service-detail").forEach((detail) => {
+            detail.classList.remove("active");
+          });
+        };
+        closeButton.removeEventListener("click", handleClose);
       }
-      window.removeEventListener("click", () => {});
+      
+      const handleWindowClick = (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+          document.querySelectorAll(".service-detail").forEach((detail) => {
+            detail.classList.remove("active");
+          });
+        }
+      };
+      window.removeEventListener("click", handleWindowClick);
     };
   }, []);
 
