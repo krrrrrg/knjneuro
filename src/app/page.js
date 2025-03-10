@@ -97,11 +97,7 @@ export default function Home() {
           var mapOptions = {
             center: new naver.maps.LatLng(35.1678376, 129.115742),
             zoom: 17,
-            zoomControl: true,
-            zoomControlOptions: {
-              position: naver.maps.Position.TOP_RIGHT,
-              style: naver.maps.ZoomControlStyle.SMALL
-            },
+            zoomControl: false,
           };
 
           var map = new naver.maps.Map("map", mapOptions);
@@ -115,13 +111,6 @@ export default function Home() {
             mapElements.forEach(el => {
               el.style.width = '100%';
               el.style.maxWidth = '100%';
-            });
-            
-            // 컨트롤 요소는 크기 제한 해제
-            const controlElements = mapDiv.querySelectorAll('.nmap-control, .nmap-overlay');
-            controlElements.forEach(el => {
-              el.style.width = 'auto';
-              el.style.maxWidth = '40px';
             });
             
             // 캔버스 요소에도 스타일 적용
@@ -147,9 +136,9 @@ export default function Home() {
           });
 
           var contentString = [
-            '<div class="iw_inner" style="padding:10px; font-family: \'Noto Sans KR\', sans-serif;">',
-            '   <h3 style="margin-bottom:10px; color: #4A6CF7; font-weight: 700;">강남제신경과</h3>',
-            "   <p style='line-height: 1.5;'>부산시 수영구 수영로 697<br/>",
+            '<div style="padding:15px; font-family: \'Noto Sans KR\', sans-serif; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 230px;">',
+            '   <h3 style="margin-bottom:10px; color: #4A6CF7; font-weight: 700; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">강남제신경과</h3>',
+            "   <p style='line-height: 1.6; font-size: 14px; color: #555;'>부산시 수영구 수영로 697<br/>",
             "   홍인빌딩 5층<br/>",
             "   Tel: 051-759-7676</p>",
             "</div>",
@@ -157,13 +146,12 @@ export default function Home() {
 
           var infowindow = new naver.maps.InfoWindow({
             content: contentString,
-            maxWidth: 300,
-            backgroundColor: "#fff",
-            borderColor: "#888",
-            borderWidth: 2,
-            anchorSize: new naver.maps.Size(30, 30),
-            anchorSkew: true,
-            pixelOffset: new naver.maps.Point(20, -20),
+            maxWidth: 250,
+            backgroundColor: "transparent",
+            borderColor: "transparent",
+            borderWidth: 0,
+            disableAnchor: true,
+            pixelOffset: new naver.maps.Point(0, -5)
           });
 
           naver.maps.Event.addListener(marker, "click", function (e) {
