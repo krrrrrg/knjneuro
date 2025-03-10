@@ -114,7 +114,7 @@ export default function Services() {
       {/* 서비스 상세 모달 */}
       <div id="serviceModal" className="modal">
         <div className="modal-content">
-          <span className="close-button"></span>
+          <span className="close-button" title="닫기"></span>
 
           {/* 두통 클리닉 상세 */}
           <div id="headacheDetail" className="service-detail">
