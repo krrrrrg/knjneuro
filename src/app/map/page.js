@@ -93,7 +93,7 @@ export default function Map() {
           <div className="container">
             <h2>오시는 길</h2>
             <div className="map-content">
-              <div className="map-container">
+              <div className="map-container" style={{ width: "100%", maxWidth: "100%", overflow: "hidden" }}>
                 <div id="map" style={{ width: "100%", height: "400px" }}></div>
               </div>
               <div className="location-info">
