@@ -258,13 +258,16 @@ a {
   flex-grow: 1;
   width: 100%;
   overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* 최대 줄 수 증가 */
+  display: box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
-  text-overflow: ellipsis; /* 넘치는 텍스트 ... 처리 */
-  word-break: keep-all; /* 단어 잘림 방지 */
-  font-size: 0.95rem; /* 글자 크기 약간 축소 */
-  max-height: 160px; /* 최대 높이 제한 */
+  box-orient: vertical;
+  word-break: keep-all;
+  font-size: 0.95rem;
+  max-height: 160px;
 }
 
 /* 스크롤바 스타일링 */
