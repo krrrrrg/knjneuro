@@ -84,9 +84,9 @@ export default function Map() {
         });
 
         const contentString = [
-          '<div style="padding:15px; font-family: \'Noto Sans KR\', sans-serif; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 230px;">',
+          '<div style="padding:15px; font-family: \'Noto Sans KR\', sans-serif; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 150px;">',
           '   <h3 style="margin-bottom:10px; color: #4A6CF7; font-weight: 700; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">강남제신경과</h3>',
-          "   <p style='line-height: 1.6; font-size: 14px; color: #555;'>부산시 수영구 수영로 697<br/>",
+          "   <p style='line-height: 1.6; font-size: 13px; color: #555;'>부산시 수영구 수영로 697<br/>",
           "   홍인빌딩 5층<br/>",
           "   Tel: 051-759-7676</p>",
           "</div>",
