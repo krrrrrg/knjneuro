@@ -31,9 +31,20 @@ export default function Doctors() {
               <h3>강남제 원장</h3>
               <p className="doctor-specialty">신경과 전문의</p>
 
-              <div className="doctor-education">
+              <div className="doctor-credentials-card">
                 <p>부산대학교 의과대학, 대학원 졸업</p>
+                <p>前 대동병원 신경과장</p>
+                <p>前 광혜병원 신경과장</p>
+                <p>前 행복한병원 신경과장</p>
+                <p>前 서호병원 신경과장 겸 진료부장</p>
                 <p>대한 신경과학회 정회원</p>
+                <p>대한 뇌졸중학회 정회원</p>
+                <p>대한 치매학회 정회원</p>
+                <p>대한 두통학회 정회원</p>
+                <p>대한 간질학회 정회원</p>
+                <p>대한 신경생리학회 정회원</p>
+                <p>대한 노인신경의학회 정회원</p>
+                <p>대한 MG학회 정회원</p>
               </div>
 
               <div className="doctor-expertise">

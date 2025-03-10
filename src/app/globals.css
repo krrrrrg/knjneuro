@@ -2346,3 +2346,31 @@ li {
     object-fit: cover !important;
   }
 }
+
+/* 의료진 경력 카드 스타일 */
+.doctor-credentials-card {
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-credentials-card p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .doctor-credentials-card {
+    padding: 1.2rem;
+    margin: 1.5rem auto;
+  }
+
+  .doctor-credentials-card p {
+    font-size: 0.9rem;
+  }
+}
