@@ -74,19 +74,19 @@ a {
   gap: 2rem;
 }
 
+/* 기본적으로 햄버거 버튼 숨김 - PC 화면용 */
 .hamburger {
-  display: block;
-  width: 32px;
-  height: 32px;
+  display: none; /* 기본적으로 햄버거 버튼 숨김 */
+  width: 30px;
+  height: 30px;
   position: relative;
-  margin-left: auto !important;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: 0;
   padding: 0;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 1002;
-  transition: all 0.3s ease;
 }
 
 .hamburger span {
@@ -473,16 +473,17 @@ a {
   }
 }
 
+/* PC 화면에서 네비게이션 링크 표시 개선 */
 @media (min-width: 769px) {
   .nav-links {
-    display: flex !important;
-    opacity: 1 !important;
-    transform: none !important;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 
-  .nav-links li {
-    opacity: 1 !important;
-    transform: none !important;
+  .nav-links li a {
+    padding: 0.5rem 0.75rem;
+    font-size: 16px;
   }
 }
 
@@ -2371,32 +2372,33 @@ li {
   display: block;
 }
 
-/* 애플 스타일 모바일 메뉴 */
+/* 애플 스타일 모바일 메뉴 - 완벽한 버전 */
 @media (max-width: 768px) {
   /* 기본 네비게이션 설정 */
   .navbar {
-    height: 60px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
   }
 
   .nav-container {
     padding: 0 16px;
     height: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 100%;
   }
 
-  /* 햄버거 버튼 애플 스타일 */
+  /* 햄버거 버튼 정확한 애플 스타일 */
   .hamburger {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     position: relative;
     margin-left: auto;
-    margin-right: 0;
     padding: 0;
     background: transparent;
     border: none;
@@ -2406,38 +2408,44 @@ li {
 
   .hamburger span {
     position: absolute;
-    width: 22px !important;
+    width: 17px !important;
     height: 1px;
-    background: #000;
-    border-radius: 1px;
-    left: 4px;
-    transition: all 0.2s ease;
+    background-color: #000;
+    border-radius: 0.5px;
+    left: 15px;
+    transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   }
 
   .hamburger span:nth-child(1) {
-    top: 12px;
+    top: 23px;
+    transform-origin: left center;
   }
 
   .hamburger span:nth-child(2) {
-    top: 19px;
+    top: 23px;
+    transform-origin: left center;
   }
 
   .hamburger span:nth-child(3) {
-    top: 26px;
+    top: 31px;
+    transform-origin: left center;
   }
 
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg);
-    top: 19px;
+    top: 20px;
+    left: 17px;
   }
 
   .hamburger.active span:nth-child(2) {
+    width: 0;
     opacity: 0;
   }
 
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg);
-    top: 19px;
+    top: 28px;
+    left: 17px;
   }
 
   /* 애플 스타일 메뉴 컨테이너 */
@@ -2446,114 +2454,87 @@ li {
   }
 
   .nav-links.active {
-    display: flex;
-    flex-direction: column;
+    display: block;
     position: fixed;
-    top: 60px;
+    top: 48px;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    height: calc(100vh - 48px);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
     z-index: 999;
-    padding: 0;
     margin: 0;
+    padding: 0;
     overflow: hidden;
   }
 
-  /* 모든 메뉴 아이템 높이 동일하게 */
+  /* 메뉴 아이템 스타일링 */
   .nav-links.active li {
     width: 100%;
-    padding: 0;
+    height: 44px;
     margin: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transform: translateZ(0);
   }
 
-  /* 모든 메뉴 링크 스타일 통일 */
+  /* 메뉴 아이템 스타일링 */
   .nav-links.active li a,
   .nav-links.active li a:visited {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-    height: 50px;
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
     font-size: 17px;
     font-weight: 400;
-    color: #111;
-    text-align: center;
-    width: 100%;
-    transition: all 0.2s ease;
+    color: #1d1d1f;
+    padding-left: 16px;
+    text-align: left;
+    line-height: 44px;
+    transform: translateZ(0);
   }
 
-  /* 호버/액티브 효과 */
-  .nav-links.active li a:hover,
+  /* 다음 화살표 아이콘 */
+  .nav-links.active li a::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid #d2d2d7;
+    border-right: 1px solid #d2d2d7;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  /* 활성화된 메뉴 스타일 */
   .nav-links.active li a.active {
     color: var(--primary-color);
-    background: transparent;
     font-weight: 500;
   }
 
-  /* 활성 메뉴 표시 */
-  .nav-links.active li a.active::after {
-    display: none;
-  }
-
-  /* 로고 설정 */
+  /* 로고 스타일 */
   .logo img {
-    height: 32px;
+    height: 28px;
+    margin-left: -10px;
   }
 }
 
-/* 불필요한 애니메이션 및 복잡한 효과 제거 */
-
-/* 클릭 영역 확장 - 모바일 메뉴 */
-@media (max-width: 768px) {
-  /* 메뉴 항목 컨테이너 설정 */
-  .nav-links.active li {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    position: relative;
+/* PC 화면에서 네비게이션 링크 표시 개선 */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
   }
 
-  /* 링크 클릭 영역 최대화 */
-  .nav-links.active li a,
-  .nav-links.active li a:visited {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    z-index: 1;
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 
-  /* 링크 내용 중앙 정렬을 위한 가상 요소 */
-  .nav-links.active li a::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    color: inherit;
-    font-size: 17px;
-    font-weight: inherit;
-  }
-
-  /* 메뉴 항목 고정 높이 설정 */
-  .nav-links.active li {
-    height: 60px;
-    line-height: 60px;
-  }
-
-  /* 액티브 상태 표시 색상 */
-  .nav-links.active li a.active::before {
-    color: var(--primary-color);
-    font-weight: 500;
+  .nav-links li a {
+    padding: 0.5rem 0.75rem;
+    font-size: 16px;
   }
 }

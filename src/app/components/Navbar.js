@@ -72,7 +72,6 @@ export default function Navbar() {
               href="/"
               onClick={() => setIsMenuOpen(false)}
               className={pathname === "/" ? "active" : ""}
-              data-text="홈"
             >
               홈
             </Link>
@@ -82,7 +81,6 @@ export default function Navbar() {
               href="/about"
               onClick={() => setIsMenuOpen(false)}
               className={pathname === "/about" ? "active" : ""}
-              data-text="병원소개"
             >
               병원소개
             </Link>
@@ -92,7 +90,6 @@ export default function Navbar() {
               href="/services"
               className={pathname === "/services" ? "active" : ""}
               onClick={() => setIsMenuOpen(false)}
-              data-text="진료 안내"
             >
               진료 안내
             </Link>
@@ -102,7 +99,6 @@ export default function Navbar() {
               href="/doctors"
               onClick={() => setIsMenuOpen(false)}
               className={pathname === "/doctors" ? "active" : ""}
-              data-text="의료진"
             >
               의료진
             </Link>
@@ -112,7 +108,6 @@ export default function Navbar() {
               href="/reservation"
               onClick={() => setIsMenuOpen(false)}
               className={pathname === "/reservation" ? "active" : ""}
-              data-text="진료문의"
             >
               진료문의
             </Link>
@@ -122,7 +117,6 @@ export default function Navbar() {
               href="/map"
               onClick={() => setIsMenuOpen(false)}
               className={pathname === "/map" ? "active" : ""}
-              data-text="오시는 길"
             >
               오시는 길
             </Link>
@@ -133,7 +127,6 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
-              data-text="블로그"
             >
               블로그
             </a>
