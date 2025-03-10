@@ -219,8 +219,11 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 280px; /* 모든 카드의 높이 통일 */
+  height: 320px; /* 높이 증가 */
   width: 100%;
+  margin-bottom: 20px; /* 아래쪽 여백 추가 */
+  position: relative; /* 위치 기준 설정 */
+  overflow: hidden; /* 넘치는 콘텐츠 숨김 */
 }
 
 .service-card:hover {
@@ -229,30 +232,35 @@ a {
 }
 
 .service-card img {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  object-fit: contain; /* 이미지 비율 유지 */
+  width: 70px; /* 이미지 약간 축소 */
+  height: 70px;
+  margin: 0 auto 15px; /* 여백 축소 */
+  object-fit: contain;
 }
 
 .service-card h3 {
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* 여백 축소 */
   color: #333;
-  width: 100%; /* 너비 100%로 설정하여 줄바꿈 통일 */
-  height: 30px; /* 제목 높이 통일 */
+  width: 100%;
+  min-height: 30px; /* 최소 높이 설정 */
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.3rem; /* 글자 크기 조정 */
 }
 
 .service-card p {
   color: #666;
-  flex-grow: 1; /* 남은 공간 채우기 */
+  flex-grow: 1;
   width: 100%;
-  overflow: hidden; /* 텍스트가 너무 길면 잘림 */
+  overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* 최대 3줄 */
+  -webkit-line-clamp: 4; /* 최대 줄 수 증가 */
   -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* 넘치는 텍스트 ... 처리 */
+  word-break: keep-all; /* 단어 잘림 방지 */
+  font-size: 0.95rem; /* 글자 크기 약간 축소 */
+  max-height: 160px; /* 최대 높이 제한 */
 }
 
 /* 스크롤바 스타일링 */
@@ -291,13 +299,14 @@ a {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    gap: 40px; /* 카드 간격 조정 */
+    gap: 50px; /* 카드 간격 더 넓게 */
+    row-gap: 60px; /* 행간 간격 더 넓게 */
   }
 
   .service-card {
     max-width: 400px;
     margin: 0 auto;
-    height: 280px; /* PC 화면에서도 높이 통일 */
+    height: 320px; /* PC 화면에서도 높이 통일 */
   }
 }
 
