@@ -4,6 +4,41 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 export default function Home() {
+  // 모달을 열기 위한 함수 (각 모달마다 분리)
+  const showModal = (modalId) => {
+    console.log(`모달 열기: ${modalId}`);
+    const modal = document.getElementById(modalId);
+    
+    if (modal) {
+      // 모달이 나타나기 전에 스크롤을 상단으로 재설정
+      document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+      
+      // 모달 표시
+      modal.style.display = 'block';
+      
+      // 모달 내용의 스크롤 위치 재설정
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        modal.scrollTo(0, 0);
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) modalContent.scrollTop = 0;
+      }, 10);
+    } else {
+      console.error(`모달을 찾을 수 없음: ${modalId}`);
+    }
+  };
+  
+  // 모달을 닫기 위한 함수 (모든 모달에 공통으로 사용)
+  const hideModal = (modalId) => {
+    console.log(`모달 닫기: ${modalId}`);
+    const modal = document.getElementById(modalId);
+    
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = ''; // 배경 스크롤 복원
+    }
+  };
+
   useEffect(() => {
     // 햄버거 메뉴 기능
     const hamburger = document.querySelector(".hamburger");
@@ -64,75 +99,49 @@ export default function Home() {
             }
           });
 
-          // 초기에 정보창 표시
           infowindow.open(map, marker);
         }
-      } catch (e) {
-        console.error("네이버 지도 API 로드 중 오류 발생:", e);
+      } catch (error) {
+        console.error("지도 초기화 중 오류 발생:", error);
       }
     }
 
-    // 네이버 지도 스크립트 로드
-    const loadNaverMap = () => {
-      const script = document.createElement("script");
-      script.src =
-        "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4h549yr3fc";
-      script.async = true;
-      script.onload = initMap;
-      document.head.appendChild(script);
-    };
+    // 지도 로드
+    function loadNaverMap() {
+      if (typeof window !== "undefined" && document.getElementById("map")) {
+        if (typeof naver === "undefined") {
+          // 네이버 지도 스크립트 로드
+          const script = document.createElement("script");
+          script.src =
+            "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7kndwl5egx";
+          script.async = true;
+          script.onload = initMap;
+          document.head.appendChild(script);
+        } else {
+          initMap();
+        }
+      }
+    }
 
     loadNaverMap();
-
-    // 서비스 상세 모달 기능
-    function showServiceDetail(serviceType) {
-      const modal = document.getElementById("serviceModal");
-      const details = document.querySelectorAll(".service-detail");
-
-      details.forEach((detail) => {
-        detail.style.display = "none";
-      });
-
-      const selectedDetail = document.getElementById(`${serviceType}Detail`);
-      if (selectedDetail) {
-        selectedDetail.style.display = "block";
-      }
-
-      if (modal) {
-        modal.style.display = "flex";
-      }
-    }
-
-    // 서비스 카드 클릭 이벤트 추가
-    const serviceCards = document.querySelectorAll(".service-card");
-    serviceCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const serviceType = card.getAttribute("data-service");
-        showServiceDetail(serviceType);
-      });
-    });
-
-    // 모달 닫기 버튼
-    const closeButton = document.querySelector(".close-button");
-    if (closeButton) {
-      closeButton.addEventListener("click", () => {
-        const modal = document.getElementById("serviceModal");
-        if (modal) {
-          modal.style.display = "none";
+    
+    // 모달 외부 클릭 시 닫기 이벤트 (모든 모달에 공통으로 적용)
+    const handleModalClick = (event) => {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = ''; // 배경 스크롤 복원
         }
       });
-    }
-
-    // 모달 외부 클릭 시 닫기
-    window.addEventListener("click", (e) => {
-      const modal = document.getElementById("serviceModal");
-      if (modal && e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-
-    // 전역 함수로 등록
-    window.showServiceDetail = showServiceDetail;
+    };
+    
+    window.addEventListener('click', handleModalClick);
+    
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener('click', handleModalClick);
+    };
   }, []);
 
   return (
@@ -212,26 +221,23 @@ export default function Home() {
           <div className="service-grid">
             <div
               className="service-card"
-              data-service="headache"
-              onClick={() => window.showServiceDetail("headache")}
+              onClick={() => showModal('headacheModal')}
             >
               <img src="/images/두통.png" alt="두통" />
               <h3>뇌 신경계 질환</h3>
-              <p>뇌졸중, 치매, 파킨슨씨병 , 떨림 등</p>
+              <p>뇌졸중, 치매, 파킨슨씨병, 떨림 등</p>
             </div>
             <div
               className="service-card"
-              data-service="sleep"
-              onClick={() => window.showServiceDetail("sleep")}
+              onClick={() => showModal('sleepModal')}
             >
               <img src="/images/수면.png" alt="수면장애" />
               <h3>두통 및 어지럼증</h3>
-              <p>편두통 및 이석증 , 메니에르병</p>
+              <p>편두통 및 이석증, 메니에르병</p>
             </div>
             <div
               className="service-card"
-              data-service="dementia"
-              onClick={() => window.showServiceDetail("dementia")}
+              onClick={() => showModal('dementiaModal')}
             >
               <img src="/images/치매.png" alt="치매" />
               <h3>신경 통증 클리닉</h3>
@@ -239,112 +245,163 @@ export default function Home() {
             </div>
             <div
               className="service-card"
-              data-service="dementia"
-              onClick={() => window.showServiceDetail("dementia")}
+              onClick={() => showModal('internalModal')}
             >
-              <img src="/images/치매.png" alt="치매" />
+              <img src="/images/치매.png" alt="내과" />
               <h3>내과 진료</h3>
               <p>협압, 당뇨, 비만, 영양요법</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* 진료분야 상세 모달 */}
-        <div id="serviceModal" className="modal">
-          <div className="modal-content">
-            <span className="close-button"></span>
-            <div id="headacheDetail" className="service-detail">
-              <h2>두통 클리닉</h2>
-              <div className="detail-content">
-                <div className="detail-section">
-                  <h3>주요 증상</h3>
-                  <ul>
-                    <li>만성 편두통</li>
-                    <li>긴장성 두통</li>
-                    <li>군발성 두통</li>
-                    <li>경추성 두통</li>
-                  </ul>
-                </div>
-                <div className="detail-section">
-                  <h3>진단 방법</h3>
-                  <ul>
-                    <li>정밀 두통 검사</li>
-                    <li>뇌 MRI/MRA</li>
-                    <li>경추부 X-ray</li>
-                    <li>전문의 상담</li>
-                  </ul>
-                </div>
+      {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
+      
+      {/* 뇌 신경계 질환 모달 */}
+      <div id="headacheModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
+          <h2>뇌 신경계 질환</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 질환</h3>
               </div>
+              <ul>
+                <li>뇌졸중</li>
+                <li>치매</li>
+                <li>파킨슨씨병</li>
+                <li>떨림</li>
+                <li>골다공증</li>
+                <li>자율신경계 이상</li>
+                <li>스트레스</li>
+              </ul>
             </div>
-
-            <div id="sleepDetail" className="service-detail">
-              <h2>수면 클리닉</h2>
-              <div className="detail-content">
-                <div className="detail-section">
-                  <h3>주요 증상</h3>
-                  <ul>
-                    <li>수면무호흡증</li>
-                    <li>불면증</li>
-                    <li>하지불안증후군</li>
-                    <li>과다수면</li>
-                  </ul>
-                </div>
-                <div className="detail-section">
-                  <h3>진단 방법</h3>
-                  <ul>
-                    <li>수면다원검사</li>
-                    <li>수면잠복기검사</li>
-                    <li>활동기록계검사</li>
-                    <li>수면 설문평가</li>
-                  </ul>
-                </div>
-                <div className="detail-section">
-                  <h3>치료 방법</h3>
-                  <ul>
-                    <li>양압기 치료</li>
-                    <li>수면위생교육</li>
-                    <li>인지행동치료</li>
-                    <li>맞춤형 약물치료</li>
-                  </ul>
-                </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
               </div>
-            </div>
-
-            <div id="dementiaDetail" className="service-detail">
-              <h2>치매 클리닉</h2>
-              <div className="detail-content">
-                <div className="detail-section">
-                  <h3>주요 증상</h3>
-                  <ul>
-                    <li>기억력 저하</li>
-                    <li>판단력 감퇴</li>
-                    <li>언어능력 저하</li>
-                    <li>일상생활 어려움</li>
-                  </ul>
-                </div>
-                <div className="detail-section">
-                  <h3>진단 방법</h3>
-                  <ul>
-                    <li>신경인지검사</li>
-                    <li>뇌 CT/MRI</li>
-                    <li>혈액검사</li>
-                    <li>치매선별검사</li>
-                  </ul>
-                </div>
-                <div className="detail-section">
-                  <h3>치료 방법</h3>
-                  <ul>
-                    <li>약물치료</li>
-                    <li>인지재활치료</li>
-                    <li>가족상담</li>
-                    <li>생활수칙 교육</li>
-                  </ul>
-                </div>
-              </div>
+              <ul>
+                <li>동맥경화도검사</li>
+                <li>뇌혈류초음파검사</li>
+                <li>경동맥초음파검사</li>
+                <li>자율신경기능검사</li>
+                <li>스트레스검사</li>
+                <li>심전도검사</li>
+                <li>골밀도검사</li>
+                <li>인지기능(치매)검사</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* 두통 및 어지럼증 모달 */}
+      <div id="sleepModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('sleepModal')}></span>
+          <h2>두통 및 어지럼증</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 질환</h3>
+              </div>
+              <ul>
+                <li>편두통</li>
+                <li>긴장성 두통</li>
+                <li>군발성 두통</li>
+                <li>편두통성 어지럼증</li>
+                <li>이석증</li>
+                <li>메니에르병</li>
+                <li>전정신경염</li>
+                <li>자율신경실조증</li>
+                <li>기립성저혈압</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>뇌혈류 초음파</li>
+                <li>비디오 안진검사</li>
+                <li>자율신경기능검사</li>
+                <li>기립 경사 테이블검사</li>
+                <li>혈액검사</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 신경 통증 클리닉 모달 */}
+      <div id="dementiaModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('dementiaModal')}></span>
+          <h2>신경 통증 클리닉</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 질환</h3>
+              </div>
+              <ul>
+                <li>손발 저림</li>
+                <li>경추통증</li>
+                <li>요통</li>
+                <li>근골격계 통증</li>
+                <li>안면마비</li>
+                <li>삼차신경통</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>신경전도검사</li>
+                <li>근전도검사</li>
+                <li>자율신경검사</li>
+                <li>척추 MRI</li>
+                <li>X-ray 검사</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 내과 진료 모달 */}
+      <div id="internalModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
+          <h2>내과 진료</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 진료 분야</h3>
+              </div>
+              <ul>
+                <li>고혈압</li>
+                <li>당뇨</li>
+                <li>고지혈증</li>
+                <li>비만</li>
+                <li>영양요법</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>혈액검사</li>
+                <li>소변검사</li>
+                <li>심전도검사</li>
+                <li>체성분 분석</li>
+                <li>당화혈색소 검사</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section id="about" data-aos="fade-up">
         <div className="container">
