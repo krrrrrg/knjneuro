@@ -356,14 +356,13 @@ a {
     top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: auto; /* 자동 높이 조정 */
     max-height: calc(100vh - 70px);
     background: white;
     z-index: 999;
     padding: 0;
     margin: 0;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: visible; /* 스크롤 제거 */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
@@ -383,14 +382,21 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 18px 0;
-    font-size: 17px;
+    padding: 12px 0; /* 패딩 축소 */
+    font-size: 16px;
     font-weight: 500;
     color: #444;
     text-align: center;
     width: 100%;
     position: relative;
     transition: all 0.25s ease;
+  }
+
+  .nav-links.active li:last-child a {
+    padding: 12px 0;
+    background-color: #f0f4ff;
+    color: var(--primary-color);
+    font-weight: 500;
   }
 
   .nav-links.active li a:hover,
@@ -2453,14 +2459,13 @@ li {
     top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: auto; /* 자동 높이 조정 */
     background: white;
     z-index: 999;
     padding: 0;
     margin: 0;
-    overflow-y: auto;
+    overflow-y: visible; /* 스크롤 제거 */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
   @keyframes slideDown {
@@ -2494,8 +2499,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 18px 0;
-    font-size: 17px;
+    padding: 12px 0; /* 패딩 축소 */
+    font-size: 16px;
     font-weight: 500;
     color: #444;
     text-align: center;
