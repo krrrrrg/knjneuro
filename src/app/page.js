@@ -259,7 +259,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('sleepModal')}
             >
-              <img src="/images/수면.png" alt="수면장애" />
+              <img src="/images/어지럼증.png" alt="어지럼증" />
               <h3>두통 및 어지럼증</h3>
               <p>편두통 및 이석증, 메니에르병</p>
             </div>
@@ -267,7 +267,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('dementiaModal')}
             >
-              <img src="/images/치매.png" alt="치매" />
+              <img src="/images/근골격계.png" alt="근골격계" />
               <h3>신경 통증 클리닉</h3>
               <p>손발 저림, 근골격계 통증, 안면마비</p>
             </div>
@@ -275,7 +275,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('internalModal')}
             >
-              <img src="/images/치매.png" alt="내과" />
+              <img src="/images/내과.png" alt="내과" />
               <h3>내과 진료</h3>
               <p>협압, 당뇨, 비만, 영양요법</p>
             </div>

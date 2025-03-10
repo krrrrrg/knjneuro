@@ -124,8 +124,8 @@ export default function Services() {
                 onClick={() => showModal('sleepModal')}
               >
                 <Image
-                  src="/images/수면.png"
-                  alt="수면장애"
+                  src="/images/어지럼증.png"
+                  alt="어지럼증"
                   width={100}
                   height={100}
                 />
@@ -137,8 +137,8 @@ export default function Services() {
                 onClick={() => showModal('dementiaModal')}
               >
                 <Image
-                  src="/images/치매.png"
-                  alt="치매"
+                  src="/images/근골격계.png"
+                  alt="근골격계"
                   width={100}
                   height={100}
                 />
@@ -150,7 +150,7 @@ export default function Services() {
                 onClick={() => showModal('internalModal')}
               >
                 <Image
-                  src="/images/치매.png"
+                  src="/images/내과.png"
                   alt="내과"
                   width={100}
                   height={100}
