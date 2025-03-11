@@ -347,7 +347,6 @@ export default function Home() {
                 <li>치매</li>
                 <li>파킨슨씨병</li>
                 <li>떨림</li>
-                <li>골다공증</li>
                 <li>자율신경계 이상</li>
                 <li>스트레스</li>
               </ul>
@@ -363,7 +362,6 @@ export default function Home() {
                 <li>자율신경기능검사</li>
                 <li>스트레스검사</li>
                 <li>심전도검사</li>
-                <li>골밀도검사</li>
                 <li>인지기능(치매)검사</li>
               </ul>
             </div>
@@ -421,6 +419,7 @@ export default function Home() {
               </div>
               <ul>
                 <li>손발 저림 <br /> (손목터널, 발목터널 증후군)</li>
+                <li>골다공증</li>
                 <li>근골격계 통증 <br /> (목, 허리, 어깨통증,오십견, <br />  근막 통증 증후군 등)</li>                <li>요추, 경추간판장애</li>
                 <li>삼차신경통 (안면마비, 구안와사)</li>
               </ul>
@@ -432,6 +431,7 @@ export default function Home() {
               <ul>
                 <li>신경전도검사</li>
                 <li>근전도검사</li>
+                <li>골밀도검사</li>
                 <li>신경, 근 골격 초음파</li>
               </ul>
             </div>
