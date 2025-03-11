@@ -117,7 +117,7 @@ export default function Services() {
                   height={100}
                 />
                 <h3>뇌 신경계 질환</h3>
-                <p>뇌졸중, 치매, 파킨슨씨병, 떨림 등</p>
+                <p>뇌졸중, 치매, 파킨슨, 자율신경병증 등</p>
               </div>
               <div 
                 className="service-card" 
@@ -130,7 +130,7 @@ export default function Services() {
                   height={100}
                 />
                 <h3>두통 및 어지럼증</h3>
-                <p>편두통 및 이석증, 메니에르병</p>
+                <p>편두통, 이석증 , 기립성저혈압 등</p>
               </div>
               <div 
                 className="service-card" 
@@ -156,7 +156,7 @@ export default function Services() {
                   height={100}
                 />
                 <h3>내과 진료</h3>
-                <p>협압, 당뇨, 비만, 영양요법</p>
+                <p>협압, 당뇨, 고지혈증, 비만, 영양요법</p>
               </div>
             </div>
           </div>
@@ -180,7 +180,6 @@ export default function Services() {
                 <li>치매</li>
                 <li>파킨슨씨병</li>
                 <li>떨림</li>
-                <li>골다공증</li>
                 <li>자율신경계 이상</li>
                 <li>스트레스</li>
               </ul>
@@ -196,7 +195,6 @@ export default function Services() {
                 <li>자율신경기능검사</li>
                 <li>스트레스검사</li>
                 <li>심전도검사</li>
-                <li>골밀도검사</li>
                 <li>인지기능(치매)검사</li>
               </ul>
             </div>
@@ -254,6 +252,7 @@ export default function Services() {
               </div>
               <ul>
                 <li>손발 저림 (손목터널, 발목터널 증후군)</li>
+                <li>골다공증</li>
                 <li>근골격계 통증 (목, 허리, 어깨통증, 오십견, 근막 통증 증후군 등)</li>
                 <li>요추, 경추간판장애</li>
                 <li>삼차신경통 (안면마비, 구안와사)</li>
@@ -266,6 +265,7 @@ export default function Services() {
               <ul>
                 <li>신경전도검사</li>
                 <li>근전도검사</li>
+                <li>골밀도검사</li>
                 <li>신경, 근 골격 초음파</li>
               </ul>
             </div>
