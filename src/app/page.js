@@ -300,7 +300,7 @@ export default function Home() {
             >
               <img src="/images/두통.png" alt="두통" />
               <h3>뇌 신경계 질환</h3>
-              <p>뇌졸중, 치매, 파킨슨씨병, 떨림 등</p>
+              <p>뇌졸중, 치매, 파킨슨, 자율신경병증 등</p>
             </div>
             <div
               className="service-card"
@@ -308,7 +308,7 @@ export default function Home() {
             >
               <img src="/images/어지럼증.png" alt="어지럼증" />
               <h3>두통 및 어지럼증</h3>
-              <p>편두통 및 이석증, 메니에르병</p>
+              <p>편두통, 이석증, 기립성저혈압 등</p>
             </div>
             <div
               className="service-card"
@@ -324,7 +324,7 @@ export default function Home() {
             >
               <img src="/images/내과.png" alt="내과" />
               <h3>내과 진료</h3>
-              <p>협압, 당뇨, 비만, 영양요법</p>
+              <p>협압, 당뇨, 고지혈증, 비만, 영양요법</p>
             </div>
           </div>
         </div>
