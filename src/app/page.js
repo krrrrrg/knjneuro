@@ -267,7 +267,7 @@ export default function Home() {
 
       <section id="hero">
         <div className="hero-content" data-aos="fade-up">
-          <h1>
+          {/* <h1>
             당신의 건강한 삶을 위한
             <br />
             최상의 신경과 진료
@@ -283,7 +283,7 @@ export default function Home() {
           >
             강남제신경과는 내 주치의 진료를 표방합니다.
           </p>
-          <br />
+          <br /> */}
           <Link href="/reservation" className="cta-button">
             진료문의
           </Link>

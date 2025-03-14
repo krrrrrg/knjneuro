@@ -104,7 +104,7 @@ export default function Services() {
         <section id="services" data-aos="fade-up">
           <div className="container">
             <br />
-            <h2>진료안내</h2>
+            <h2>진료rhkahr</h2>
             <div className="service-grid">
               <div 
                 className="service-card" 
@@ -158,6 +158,37 @@ export default function Services() {
                 <h3>내과 진료</h3>
                 <p>협압, 당뇨, 고지혈증, 비만, 영양요법</p>
               </div>
+
+              <div 
+                className="service-card" 
+                onClick={() => showModal('internalModal')}
+              >
+                <Image
+                  src="/images/내과.png"
+                  alt="내과"
+                  width={100}
+                  height={100}
+                />
+                <h3>내과 진료</h3>
+                <p>협압, 당뇨, 고지혈증, 비만, 영양요법</p>
+              </div>
+
+              <div 
+                className="service-card" 
+                onClick={() => showModal('internalModal')}
+              >
+                <Image
+                  src="/images/내과.png"
+                  alt="내과"
+                  width={100}
+                  height={100}
+                />
+                <h3>내과 진료</h3>
+                <p>협압, 당뇨, 고지혈증, 비만, 영양요법</p>
+              </div>
+
+
+
             </div>
           </div>
         </section>

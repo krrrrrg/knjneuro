@@ -525,7 +525,7 @@ a {
 
 #hero {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/3.jpg");
+    url("images/main.jpeg");
   background-size: cover;
   background-position: center;
   height: 100vh;
