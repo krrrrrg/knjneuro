@@ -241,7 +241,7 @@ export default function Home() {
               <Link href="/about">병원소개</Link>
             </li>
             <li>
-              <Link href="/services">진료안내</Link>
+              <Link href="/services">진료과목</Link>
             </li>
             <li>
               <Link href="/doctors">의료진</Link>
@@ -292,40 +292,62 @@ export default function Home() {
 
       <section id="services" data-aos="fade-up">
         <div className="container">
-          <h2>주요 진료분야</h2>
+          <h2>주요 진료과목</h2>
           <div className="service-grid">
             <div
               className="service-card"
               onClick={() => showModal('headacheModal')}
             >
               <img src="/images/두통.png" alt="두통" />
-              <h3>뇌 신경계 질환</h3>
-              <p>뇌졸중, 치매, 파킨슨, 자율신경병증 등</p>
+              <h3>뇌 질횐</h3>
+              <p>뇌졸중, 치매, 파킨슨</p>
             </div>
+
+            <div
+              className="service-card"
+              onClick={() => showModal('headacheModal')}
+            >
+              <img src="/images/두통.png" alt="두통" />
+              <h3>두통 및 어지럼증</h3>
+              <p>편두통, 이석증, 경추두개증후군</p>
+            </div>
+
             <div
               className="service-card"
               onClick={() => showModal('sleepModal')}
             >
               <img src="/images/어지럼증.png" alt="어지럼증" />
-              <h3>두통 및 어지럼증</h3>
-              <p>편두통, 이석증, 기립성저혈압 등</p>
+              <h3> 자율신경계 질환</h3>
+              <p>자율신경병증, 기립성 저혈압</p>
             </div>
             <div
               className="service-card"
               onClick={() => showModal('dementiaModal')}
             >
               <img src="/images/근골격계.png" alt="근골격계" />
-              <h3>신경 통증 클리닉</h3>
-              <p>손발 저림, 근골격계 통증, 안면마비</p>
+              <h3>신경계 질환</h3>
+              <p>손발저림, 안면신경마비</p>
             </div>
+            
+            <div
+              className="service-card"
+              onClick={() => showModal('headacheModal')}
+            >
+              <img src="/images/두통.png" alt="두통" />
+              <h3>통증 클리닉</h3>
+              <p>근골격계 통증, 말초신경병증</p>
+            </div>
+            
             <div
               className="service-card"
               onClick={() => showModal('internalModal')}
             >
               <img src="/images/내과.png" alt="내과" />
               <h3>내과 진료</h3>
-              <p>협압, 당뇨, 고지혈증, 비만, 영양요법</p>
+              <p>혈압, 당뇨, 고지혈증, 비만, 영양요법</p>
             </div>
+
+            
           </div>
         </div>
       </section>
