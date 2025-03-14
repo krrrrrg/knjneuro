@@ -273,14 +273,6 @@ export default function Home() {
             className="hero-background-image"
             loading="eager"
             importance="high"
-            style={{
-              width: 'auto',
-              height: 'auto',
-              maxWidth: '100%',
-              maxHeight: '100%',
-              objectFit: 'contain',
-              objectPosition: 'center'
-            }}
           />
           <div className="hero-overlay"></div>
         </div>
