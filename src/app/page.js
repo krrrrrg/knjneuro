@@ -372,15 +372,12 @@ export default function Home() {
           <div className="detail-content">
             <div className="detail-section">
               <div className="service-section">
-                <h3>주요 질환</h3>
+                <h3>뇌 질환</h3>
               </div>
               <ul>
                 <li>뇌졸중</li>
                 <li>치매</li>
-                <li>파킨슨씨병</li>
-                <li>떨림</li>
-                <li>자율신경계 이상</li>
-                <li>스트레스</li>
+                <li>파킨슨병</li>
               </ul>
             </div>
             <div className="detail-section">
@@ -391,9 +388,6 @@ export default function Home() {
                 <li>동맥경화도검사</li>
                 <li>뇌혈류초음파검사</li>
                 <li>경동맥초음파검사</li>
-                <li>자율신경기능검사</li>
-                <li>스트레스검사</li>
-                <li>심전도검사</li>
                 <li>인지기능(치매)검사</li>
               </ul>
             </div>
@@ -419,7 +413,34 @@ export default function Home() {
                 <li>이석증</li>
                 <li>메니에르병</li>
                 <li>전정신경염</li>
-                <li>자율신경실조증</li>
+                <li>경추두개증후군</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>뇌혈류 초음파 검사</li>
+                <li>비디오 안진검사</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 자율신경계질환 모달 */}
+      <div id="dementiaModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('dementiaModal')}></span>
+          <h2>자율신경계 질환</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 질환</h3>
+              </div>
+              <ul>
+                <li>자율신경병증</li>
                 <li>기립성저혈압</li>
               </ul>
             </div>
@@ -428,32 +449,32 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>뇌혈류 초음파</li>
-                <li>비디오 안진검사</li>
-                <li>자율신경기능검사</li>
-                <li>기립 경사 테이블검사</li>
-                <li>혈액검사</li>
+                <li>자율신경 기능 검사</li>
+                <li>기립 경사 테이블 검사</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 신경 통증 클리닉 모달 */}
-      <div id="dementiaModal" className="modal">
+      {/* 신경계 질환 모달 */}
+      <div id="internalModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('dementiaModal')}></span>
-          <h2>신경 통증 클리닉</h2>
+          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
+          <h2>신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
               <div className="service-section">
-                <h3>주요 질환</h3>
+                <h3>주요 진료 분야</h3>
               </div>
               <ul>
-                <li>손발 저림 <br /> (손목터널, 발목터널 증후군)</li>
-                <li>골다공증</li>
-                <li>근골격계 통증 <br /> (목, 허리, 어깨통증,오십견, <br />  근막 통증 증후군 등)</li>                <li>요추, 경추간판장애</li>
-                <li>삼차신경통 (안면마비, 구안와사)</li>
+                <li>손발저림</li>
+                <li>손목터널 증후군</li>
+                <li>발목터널 징후군</li>
+                <li>삼차신경통</li>
+                <li>안면마비</li>
+                <li>구안와사</li>
+
               </ul>
             </div>
             <div className="detail-section">
@@ -461,18 +482,54 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>신경전도검사</li>
-                <li>근전도검사</li>
-                <li>골밀도검사</li>
-                <li>신경, 근 골격 초음파</li>
+                <li>신경전도 검사</li>
+                <li>근전도 검사</li>
+                <li>신경 초음파 검사</li>
+                
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 내과 진료 모달 */}
-      <div id="internalModal" className="modal">
+
+            {/* 통증 클리닉 모달 */}
+            <div id="internalModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
+          <h2>통증 클리닉</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 진료 분야</h3>
+              </div>
+              <ul>
+                <li>근골격계 통증</li>
+                <li>목 통증</li>
+                <li>경추간판장애 (목디스크)</li>
+                <li>허리 통증</li>
+                <li>요추간판장애 (허리디스크)</li>
+                <li>어깨통증, 오십견</li>
+                <li>근막 통증 증후군</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>신경전도 검사</li>
+                <li>근전도 검사</li>
+                <li>근 골격 초음파 검사</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+            {/* 내과 진료 모달 */}
+            <div id="internalModal" className="modal">
         <div className="modal-content">
           <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
           <h2>내과 진료</h2>
@@ -485,8 +542,10 @@ export default function Home() {
                 <li>고혈압</li>
                 <li>당뇨</li>
                 <li>고지혈증</li>
-                <li>비만</li>
-                <li>영양요법</li>
+                <li>골다공증</li>
+                <li>대사증후군</li>
+                <li>비만상담</li>
+                <li>영양요법상담</li>
               </ul>
             </div>
             <div className="detail-section">
@@ -494,11 +553,13 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>혈액검사</li>
-                <li>소변검사</li>
-                <li>심전도검사</li>
-                <li>체성분 분석</li>
-                <li>당화혈색소 검사</li>
+                <li>동맥경화도 검사</li>
+                <li>경동맥 초음파 검사</li>
+                <li>골밀도 검사</li>
+                <li>일반, 특수 피검사</li>
+                <li>종합 피검사 (약80종)</li>
+                <li>수액 치료</li>
+                <li>영양요법 치료</li>
               </ul>
             </div>
           </div>
