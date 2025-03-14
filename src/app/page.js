@@ -299,7 +299,7 @@ export default function Home() {
               onClick={() => showModal('headacheModal')}
             >
               <img src="/images/두통.png" alt="두통" />
-              <h3>뇌 질횐</h3>
+              <h3>뇌 질환</h3>
               <p>뇌졸중, 치매, 파킨슨</p>
             </div>
 
@@ -317,7 +317,7 @@ export default function Home() {
               onClick={() => showModal('sleepModal')}
             >
               <img src="/images/어지럼증.png" alt="어지럼증" />
-              <h3> 자율신경계 질환</h3>
+              <h3>자율신경계 질환</h3>
               <p>자율신경병증, 기립성 저혈압</p>
             </div>
             <div
