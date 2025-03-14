@@ -274,11 +274,9 @@ export default function Home() {
             loading="eager"
             importance="high"
             style={{
-              maxWidth: '100%',
-              maxHeight: '100vh',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
               objectPosition: 'center'
             }}
           />
