@@ -268,7 +268,7 @@ export default function Home() {
       <section id="hero">
         <div className="hero-image-container">
           <img 
-            src="/images/main.jpeg" 
+            src="3.jpeg" 
             alt="강남제신경과 배경" 
             className="hero-background-image"
             loading="eager"
