@@ -306,7 +306,7 @@ export default function Home() {
           <div className="service-grid">
             <div
               className="service-card"
-              onClick={() => showModal('headacheModal')}
+              onClick={() => showModal('brainModal')}
             >
               <img src="/images/두통.png" alt="두통" />
               <h3>뇌 질환</h3>
@@ -324,15 +324,16 @@ export default function Home() {
 
             <div
               className="service-card"
-              onClick={() => showModal('sleepModal')}
+              onClick={() => showModal('autonomicModal')}
             >
               <img src="/images/어지럼증.png" alt="어지럼증" />
               <h3>자율신경계 질환</h3>
               <p>자율신경병증, 기립성 저혈압</p>
             </div>
+
             <div
               className="service-card"
-              onClick={() => showModal('dementiaModal')}
+              onClick={() => showModal('nerveModal')}
             >
               <img src="/images/근골격계.png" alt="근골격계" />
               <h3>신경계 질환</h3>
@@ -341,7 +342,7 @@ export default function Home() {
             
             <div
               className="service-card"
-              onClick={() => showModal('headacheModal')}
+              onClick={() => showModal('painModal')}
             >
               <img src="/images/두통.png" alt="두통" />
               <h3>통증 클리닉</h3>
@@ -365,9 +366,9 @@ export default function Home() {
       {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
       
       {/* 뇌 신경계 질환 모달 */}
-      <div id="headacheModal" className="modal">
+      <div id="brainModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('brainModal')}></span>
           <h2>뇌 신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -396,9 +397,9 @@ export default function Home() {
       </div>
 
       {/* 두통 및 어지럼증 모달 */}
-      <div id="sleepModal" className="modal">
+      <div id="headacheModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('sleepModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
           <h2>두통 및 어지럼증</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -430,9 +431,9 @@ export default function Home() {
       </div>
 
       {/* 자율신경계질환 모달 */}
-      <div id="dementiaModal" className="modal">
+      <div id="autonomicModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('dementiaModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('autonomicModal')}></span>
           <h2>자율신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -458,9 +459,9 @@ export default function Home() {
       </div>
 
       {/* 신경계 질환 모달 */}
-      <div id="internalModal" className="modal">
+      <div id="nerveModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('nerveModal')}></span>
           <h2>신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -494,9 +495,9 @@ export default function Home() {
 
 
             {/* 통증 클리닉 모달 */}
-            <div id="internalModal" className="modal">
+            <div id="painModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('painModal')}></span>
           <h2>통증 클리닉</h2>
           <div className="detail-content">
             <div className="detail-section">
