@@ -179,7 +179,7 @@ export default function Services() {
                 onClick={() => showModal('internalModal')}
               >
                 <Image
-                  src="/images/내과.png"
+                  src="/images/내과2.png"
                   alt="내과"
                   width={100}
                   height={100}
