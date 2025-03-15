@@ -306,9 +306,9 @@ export default function Home() {
           <div className="service-grid">
             <div
               className="service-card"
-              onClick={() => showModal('brainModal')}
+              onClick={() => showModal('headacheModal')}
             >
-              <img src="/images/치매.png" alt="치매" />
+              <img src="/images/두통.png" alt="두통" />
               <h3>뇌 질환</h3>
               <p>뇌졸중, 치매, 파킨슨</p>
             </div>
@@ -317,34 +317,33 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('headacheModal')}
             >
-              <img src="/images/어지럼증.png" alt="두통" />
+              <img src="/images/두통.png" alt="두통" />
               <h3>두통 및 어지럼증</h3>
               <p>편두통, 이석증, 경추두개증후군</p>
             </div>
 
             <div
               className="service-card"
-              onClick={() => showModal('autonomicModal')}
+              onClick={() => showModal('sleepModal')}
             >
-              <img src="/images/두통.png" alt="두통" />
+              <img src="/images/어지럼증.png" alt="어지럼증" />
               <h3>자율신경계 질환</h3>
               <p>자율신경병증, 기립성 저혈압</p>
             </div>
-
             <div
               className="service-card"
-              onClick={() => showModal('nerveModal')}
+              onClick={() => showModal('dementiaModal')}
             >
-              <img src="/images/손발저림.png" alt="손발저림" />
+              <img src="/images/근골격계.png" alt="근골격계" />
               <h3>신경계 질환</h3>
               <p>손발저림, 안면신경마비</p>
             </div>
             
             <div
               className="service-card"
-              onClick={() => showModal('painModal')}
+              onClick={() => showModal('headacheModal')}
             >
-              <img src="/images/근골격계.png" alt="근골격계" />
+              <img src="/images/두통.png" alt="두통" />
               <h3>통증 클리닉</h3>
               <p>근골격계 통증, 말초신경병증</p>
             </div>
@@ -353,7 +352,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('internalModal')}
             >
-              <img src="/images/내과2.png" alt="내과" />
+              <img src="/images/내과.png" alt="내과" />
               <h3>내과 진료</h3>
               <p>혈압, 당뇨, 고지혈증, 비만, 영양요법</p>
             </div>
@@ -365,15 +364,15 @@ export default function Home() {
 
       {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
       
-      {/* 뇌 질환 모달 */}
-      <div id="brainModal" className="modal">
+      {/* 뇌 신경계 질환 모달 */}
+      <div id="headacheModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('brainModal')}></span>
-          <h2>뇌 질환</h2>
+          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
+          <h2>뇌 신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
               <div className="service-section">
-                <h3>주요 질환</h3>
+                <h3>뇌 질환</h3>
               </div>
               <ul>
                 <li>뇌졸중</li>
@@ -397,9 +396,9 @@ export default function Home() {
       </div>
 
       {/* 두통 및 어지럼증 모달 */}
-      <div id="headacheModal" className="modal">
+      <div id="sleepModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('sleepModal')}></span>
           <h2>두통 및 어지럼증</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -431,9 +430,9 @@ export default function Home() {
       </div>
 
       {/* 자율신경계질환 모달 */}
-      <div id="autonomicModal" className="modal">
+      <div id="dementiaModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('autonomicModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('dementiaModal')}></span>
           <h2>자율신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -459,9 +458,9 @@ export default function Home() {
       </div>
 
       {/* 신경계 질환 모달 */}
-      <div id="nerveModal" className="modal">
+      <div id="internalModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('nerveModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
           <h2>신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -495,9 +494,9 @@ export default function Home() {
 
 
             {/* 통증 클리닉 모달 */}
-            <div id="painModal" className="modal">
+            <div id="internalModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('painModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
           <h2>통증 클리닉</h2>
           <div className="detail-content">
             <div className="detail-section">
