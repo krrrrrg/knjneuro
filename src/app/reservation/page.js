@@ -12,7 +12,7 @@ export default function Reservation() {
       <main className="page-content">
         <section id="reservation" data-aos="fade-up">
           <div className="container">
-            <h2>진료문의</h2>
+            <br />
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">
