@@ -104,12 +104,8 @@ export default function Services() {
         <section id="services" data-aos="fade-up">
           <div className="container">
             <br />
+            <br />
             <h2>진료과목</h2>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <div className="service-grid">
               <div 
                 className="service-card" 
