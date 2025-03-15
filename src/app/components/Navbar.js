@@ -91,7 +91,7 @@ export default function Navbar() {
               className={pathname === "/services" ? "active" : ""}
               onClick={() => setIsMenuOpen(false)}
             >
-              진료 안내
+              진료과목
             </Link>
           </li>
           <li>

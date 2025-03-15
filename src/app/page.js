@@ -332,7 +332,7 @@ export default function Home() {
             </div>
             <div
               className="service-card"
-              onClick={() => showModal('denerveModalmentiaModal')}
+              onClick={() => showModal('nerveModal')}
             >
               <img src="/images/손발저림.png" alt="손발저림" />
               <h3>신경계 질환</h3>
