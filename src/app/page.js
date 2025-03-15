@@ -306,9 +306,9 @@ export default function Home() {
           <div className="service-grid">
             <div
               className="service-card"
-              onClick={() => showModal('headacheModal')}
+              onClick={() => showModal('brainModal')}
             >
-              <img src="/images/두통.png" alt="두통" />
+              <img src="/images/치매.png" alt="두통" />
               <h3>뇌 질환</h3>
               <p>뇌졸중, 치매, 파킨슨</p>
             </div>
@@ -352,7 +352,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('internalModal')}
             >
-              <img src="/images/내과.png" alt="내과" />
+              <img src="/images/내과2.png" alt="내과" />
               <h3>내과 진료</h3>
               <p>혈압, 당뇨, 고지혈증, 비만, 영양요법</p>
             </div>
