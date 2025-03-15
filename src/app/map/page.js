@@ -84,7 +84,7 @@ export default function Map() {
         });
 
         const contentString = [
-          '<div style="padding:10px 12px; font-family: \'Noto Sans KR\', sans-serif; background: white; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: auto; max-width: 140px;">',
+          '<div style="padding: 10px 12px; font-family: &quot;Noto Sans KR&quot;, sans-serif; background: white; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; width: 200px; max-width: 200px;">',
           '   <h3 style="margin-bottom:6px; color: #4A6CF7; font-weight: 700; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 6px;">강남제신경과</h3>',
           "   <p style='line-height: 1.4; font-size: 12px; color: #555; margin: 0;'>부산시 수영구 수영로 697<br/>",
           "   홍인빌딩 5층<br/>",
@@ -94,7 +94,7 @@ export default function Map() {
 
         const infowindow = new window.naver.maps.InfoWindow({
           content: contentString,
-          maxWidth: 140,
+          maxWidth: 200,
           backgroundColor: "transparent",
           borderColor: "transparent",
           borderWidth: 0,
