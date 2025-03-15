@@ -3176,18 +3176,18 @@ li {
 }
 
 .equipment-icon {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
 }
 
 .equipment-icon i {
-  font-size: 32px;
+  font-size: 24px;
   color: var(--primary-color);
 }
 
@@ -3241,13 +3241,13 @@ li {
   }
   
   .equipment-icon {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     margin-bottom: 10px;
   }
   
   .equipment-icon i {
-    font-size: 24px;
+    font-size: 20px;
   }
   
   .equipment-card h3 {
@@ -3285,6 +3285,7 @@ li {
   .equipment-card {
     max-width: 220px;
     margin: 0 auto;
+    height: 280px;
   }
 }
 
@@ -3320,6 +3321,7 @@ li {
   .equipment-card {
     max-width: 180px;
     margin: 0 auto;
+    height: 280px;
   }
 }
 
