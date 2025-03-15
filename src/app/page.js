@@ -308,7 +308,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('brainModal')}
             >
-              <img src="/images/두통.png" alt="두통" />
+              <img src="/images/치매.png" alt="치매" />
               <h3>뇌 질환</h3>
               <p>뇌졸중, 치매, 파킨슨</p>
             </div>
@@ -317,7 +317,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('headacheModal')}
             >
-              <img src="/images/두통.png" alt="두통" />
+              <img src="/images/어지럼증.png" alt="두통" />
               <h3>두통 및 어지럼증</h3>
               <p>편두통, 이석증, 경추두개증후군</p>
             </div>
@@ -326,7 +326,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('autonomicModal')}
             >
-              <img src="/images/어지럼증.png" alt="어지럼증" />
+              <img src="/images/두통.png" alt="두통" />
               <h3>자율신경계 질환</h3>
               <p>자율신경병증, 기립성 저혈압</p>
             </div>
@@ -335,7 +335,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('nerveModal')}
             >
-              <img src="/images/근골격계.png" alt="근골격계" />
+              <img src="/images/손발저림.png" alt="손발저림" />
               <h3>신경계 질환</h3>
               <p>손발저림, 안면신경마비</p>
             </div>
@@ -344,7 +344,7 @@ export default function Home() {
               className="service-card"
               onClick={() => showModal('painModal')}
             >
-              <img src="/images/두통.png" alt="두통" />
+              <img src="/images/근골격계.png" alt="근골격계" />
               <h3>통증 클리닉</h3>
               <p>근골격계 통증, 말초신경병증</p>
             </div>
