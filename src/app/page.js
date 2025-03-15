@@ -365,15 +365,15 @@ export default function Home() {
 
       {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
       
-      {/* 뇌 신경계 질환 모달 */}
+      {/* 뇌 질환 모달 */}
       <div id="brainModal" className="modal">
         <div className="modal-content">
           <span className="close-button" title="닫기" onClick={() => hideModal('brainModal')}></span>
-          <h2>뇌 신경계 질환</h2>
+          <h2>뇌 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
               <div className="service-section">
-                <h3>뇌 질환</h3>
+                <h3>주요 질환</h3>
               </div>
               <ul>
                 <li>뇌졸중</li>
