@@ -1249,7 +1249,7 @@ a {
   }
 
   .info-card {
-    min-width: 280px;
+    min-width: 210px;
     flex-shrink: 0;
     scroll-snap-align: start;
     margin: 0.5rem;
@@ -1367,8 +1367,8 @@ a {
 }
 
 #map > div {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 50% !important;
+  width: 50% !important;
 }
 
 /* 네이버 지도 요소 강제 스타일링 */
