@@ -187,9 +187,86 @@ export default function Services() {
               <h3>내과 진료</h3>
               <p>혈압, 당뇨, 고지혈증, 비만, 영양요법</p>
               </div>
+            </div>
+          </div>
+        </section>
 
-
-
+        {/* 의료장비 섹션 추가 */}
+        <section id="medical-equipment" data-aos="fade-up">
+          <div className="container">
+            <br />
+            <br />
+            <h2>첨단 의료장비</h2>
+            <p className="section-description">
+              강남베신경과는 최신 의료장비를 통해 정확한 진단과 효과적인 치료를 제공합니다.
+            </p>
+            
+            <div className="equipment-grid">
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('emgModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-bolt"></i>
+                </div>
+                <h3>근전도 검사</h3>
+                <p>신경 및 근육 질환 진단</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('ultrasoundModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-wave-square"></i>
+                </div>
+                <h3>초음파 검사</h3>
+                <p>신경, 근골격계, 혈관 진단</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('autonomicTestModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-heartbeat"></i>
+                </div>
+                <h3>자율신경 검사</h3>
+                <p>자율신경계 기능 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('boneDensityModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-bone"></i>
+                </div>
+                <h3>골밀도 검사</h3>
+                <p>골다공증 진단 및 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('arterialStiffnessModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-heart"></i>
+                </div>
+                <h3>동맥경화도 검사</h3>
+                <p>혈관 건강 및 심혈관 위험 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('bloodTestModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-vial"></i>
+                </div>
+                <h3>종합 혈액검사</h3>
+                <p>약 80종 항목 검사 가능</p>
+              </div>
             </div>
           </div>
         </section>
@@ -197,6 +274,78 @@ export default function Services() {
 
       {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
       
+      {/* 뇌 질환 모달 */}
+      <div id="brainModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('brainModal')}></span>
+          <h2>뇌 질환</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 진료 분야</h3>
+              </div>
+              <ul>
+                <li>뇌졸중 (중풍)</li>
+                <li>치매</li>
+                <li>파킨슨병</li>
+                <li>뇌전증 (간질)</li>
+                <li>뇌염, 뇌수막염</li>
+                <li>뇌혈관질환</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>뇌 MRI/MRA</li>
+                <li>뇌파검사</li>
+                <li>인지기능검사</li>
+                <li>경동맥 초음파</li>
+                <li>동맥경화도 검사</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 두통 및 어지럼증 모달 */}
+      <div id="headacheModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
+          <h2>두통 및 어지럼증</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 진료 분야</h3>
+              </div>
+              <ul>
+                <li>편두통</li>
+                <li>긴장성 두통</li>
+                <li>군발성 두통</li>
+                <li>이석증</li>
+                <li>메니에르병</li>
+                <li>전정신경염</li>
+                <li>경추성 어지럼증</li>
+                <li>경추두개증후군</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>관련 검사</h3>
+              </div>
+              <ul>
+                <li>두부 MRI/MRA</li>
+                <li>경추 MRI</li>
+                <li>전정기능검사</li>
+                <li>이석정복술</li>
+                <li>경추 초음파</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* 자율신경계질환 모달 */}
       <div id="autonomicModal" className="modal">
         <div className="modal-content">
@@ -329,6 +478,255 @@ export default function Services() {
                 <li>수액 치료</li>
                 <li>영양요법 치료</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 의료장비 모달들 */}
+      {/* 근전도 검사 모달 */}
+      <div id="emgModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('emgModal')}></span>
+          <h2>근전도 검사 (EMG)</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                근전도 검사는 신경과 근육의 전기적 활동을 측정하여 신경 및 근육 질환을 진단하는 검사입니다.
+                신경전도검사(NCS)와 함께 시행되어 말초신경병증, 근육병, 신경근병증 등을 진단하는 데 중요한 역할을 합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 진단 질환</h3>
+              </div>
+              <ul>
+                <li>손목터널 증후군</li>
+                <li>척추 디스크로 인한 신경 압박</li>
+                <li>말초신경병증</li>
+                <li>근육병</li>
+                <li>운동신경원 질환</li>
+                <li>신경근병증</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 과정</h3>
+              </div>
+              <p>
+                검사는 약 30-60분 정도 소요되며, 통증은 경미합니다. 
+                신경전도검사에서는 작은 전기 자극을 통해 신경의 전도 속도를 측정하고, 
+                근전도검사에서는 가는 바늘 전극을 이용해 근육의 전기적 활동을 기록합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 초음파 검사 모달 */}
+      <div id="ultrasoundModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('ultrasoundModal')}></span>
+          <h2>초음파 검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                초음파 검사는 고주파 음파를 이용하여 체내 구조물을 실시간으로 영상화하는 비침습적 검사입니다.
+                방사선 노출 없이 안전하게 신경, 근육, 혈관 등의 상태를 확인할 수 있습니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 종류</h3>
+              </div>
+              <ul>
+                <li>신경 초음파: 손목터널 증후군, 척골신경 포착 등 진단</li>
+                <li>근골격계 초음파: 근육, 힘줄, 인대 손상 평가</li>
+                <li>경동맥 초음파: 경동맥 협착, 동맥경화 평가</li>
+                <li>심장 초음파: 심장 구조 및 기능 평가</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>장점</h3>
+              </div>
+              <p>
+                통증이 없고 방사선 노출이 없어 안전합니다. 실시간으로 영상을 확인할 수 있어 
+                동적 평가가 가능하며, 필요에 따라 반복 검사가 가능합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 자율신경 검사 모달 */}
+      <div id="autonomicTestModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('autonomicTestModal')}></span>
+          <h2>자율신경 기능 검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                자율신경 기능 검사는 심장 박동, 혈압, 발한, 체온 조절 등을 담당하는 자율신경계의 
+                기능을 평가하는 검사입니다. 다양한 생리적 자극에 대한 신체 반응을 측정합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 검사 항목</h3>
+              </div>
+              <ul>
+                <li>기립 경사 테이블 검사: 기립성 저혈압 평가</li>
+                <li>심박변이도 검사: 심장 자율신경 기능 평가</li>
+                <li>발한 검사: 땀샘 기능 평가</li>
+                <li>혈관운동 반응 검사: 혈관 조절 기능 평가</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>적용 질환</h3>
+              </div>
+              <ul>
+                <li>자율신경병증</li>
+                <li>기립성 저혈압</li>
+                <li>실신</li>
+                <li>당뇨병성 자율신경병증</li>
+                <li>만성 피로 증후군</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 골밀도 검사 모달 */}
+      <div id="boneDensityModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('boneDensityModal')}></span>
+          <h2>골밀도 검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                골밀도 검사는 뼈의 밀도를 측정하여 골다공증을 진단하고 골절 위험을 평가하는 검사입니다.
+                저선량 X선을 이용하여 주로 척추와 고관절의 골밀도를 측정합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 대상</h3>
+              </div>
+              <ul>
+                <li>65세 이상 여성, 70세 이상 남성</li>
+                <li>폐경 후 여성</li>
+                <li>골절 위험 요인이 있는 성인</li>
+                <li>스테로이드 장기 복용자</li>
+                <li>골다공증 치료 중인 환자 (치료 효과 모니터링)</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 결과 해석</h3>
+              </div>
+              <p>
+                T-점수를 기준으로 골밀도 상태를 평가합니다:
+                <br />-1.0 이상: 정상
+                <br />-1.0 ~ -2.5: 골감소증
+                <br />-2.5 미만: 골다공증
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 동맥경화도 검사 모달 */}
+      <div id="arterialStiffnessModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('arterialStiffnessModal')}></span>
+          <h2>동맥경화도 검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                동맥경화도 검사는 혈관의 탄력성과 경직도를 측정하여 심혈관 질환의 위험을 평가하는 검사입니다.
+                맥파 속도(PWV)와 맥파 증강 지수(AI)를 측정하여 혈관 건강 상태를 확인합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 방법</h3>
+              </div>
+              <p>
+                팔과 발목에 혈압 커프를 착용하고 맥파를 측정합니다. 비침습적이고 통증이 없으며 
+                약 5-10분 정도 소요됩니다. 검사 전 30분간 카페인, 흡연을 피하고 안정을 취하는 것이 좋습니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>임상적 의의</h3>
+              </div>
+              <ul>
+                <li>조기 동맥경화 발견</li>
+                <li>심혈관 질환 위험 예측</li>
+                <li>고혈압, 당뇨병 환자의 혈관 건강 모니터링</li>
+                <li>심혈관 질환 예방 및 치료 효과 평가</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 종합 혈액검사 모달 */}
+      <div id="bloodTestModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('bloodTestModal')}></span>
+          <h2>종합 혈액검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                종합 혈액검사는 약 80여 가지 항목을 검사하여 전반적인 건강 상태와 질병 위험을 평가합니다.
+                혈액 샘플을 통해 다양한 생화학적 지표, 호르몬, 염증 지표, 영양 상태 등을 확인할 수 있습니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 검사 항목</h3>
+              </div>
+              <ul>
+                <li>일반 혈액검사: 적혈구, 백혈구, 혈소판 등</li>
+                <li>간 기능 검사: AST, ALT, GGT 등</li>
+                <li>신장 기능 검사: BUN, 크레아티닌 등</li>
+                <li>지질 검사: 총 콜레스테롤, HDL, LDL, 중성지방</li>
+                <li>당뇨 관련: 공복혈당, 당화혈색소</li>
+                <li>갑상선 기능: TSH, Free T4</li>
+                <li>염증 지표: CRP, ESR</li>
+                <li>비타민 및 미네랄: 비타민 D, B12, 철분 등</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 준비</h3>
+              </div>
+              <p>
+                정확한 결과를 위해 검사 전 8-12시간 금식이 필요합니다. 
+                물은 마실 수 있으나 카페인, 알코올은 피해야 합니다.
+                복용 중인 약물이 있다면 의사와 상담 후 검사를 진행하는 것이 좋습니다.
+              </p>
             </div>
           </div>
         </div>
