@@ -1159,6 +1159,7 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 2rem 0; /* 섹션 간 간격 줄이기 */
 }
 
 .page-content .container {
@@ -1176,6 +1177,11 @@ a {
 
 #services {
   background-color: #ffffff;
+}
+
+#medical-equipment {
+  background-color: #ffffff;
+  padding-top: 0; /* 상단 패딩 제거 */
 }
 
 #doctors {
@@ -3122,7 +3128,7 @@ li {
 .section-description {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 30px;
+  margin: 0 auto 20px; /* 상단 마진 줄이기 */
   color: #666;
   font-size: 16px;
   line-height: 1.6;
@@ -3132,7 +3138,7 @@ li {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* PC 전체화면에서 6개 카드를 1행으로 표시 */
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 30px; /* 상단 마진 줄이기 */
   overflow-x: visible;
   padding-bottom: 20px;
   width: 100%;

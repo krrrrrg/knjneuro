@@ -104,7 +104,6 @@ export default function Services() {
         <section id="services" data-aos="fade-up">
           <div className="container">
             <br />
-            <br />
             <h2>진료과목</h2>
             <div className="service-grid">
               <div 
@@ -194,7 +193,6 @@ export default function Services() {
         {/* 의료장비 섹션 추가 */}
         <section id="medical-equipment" data-aos="fade-up">
           <div className="container">
-            <br />
             <br />
             <h2>첨단 의료장비</h2>
             <p className="section-description">
