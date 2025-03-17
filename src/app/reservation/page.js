@@ -13,7 +13,7 @@ export default function Reservation() {
         <section id="reservation" data-aos="fade-up">
           <div className="container">
             <br />
-            <br />
+            <h2 className="section-title">진료문의</h2>
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">
@@ -39,24 +39,24 @@ export default function Reservation() {
                     카카오톡: 강남제신경과의원
                   </a>
                 </div>
+                <div className="info-card">
+                  <h3>오시는 길</h3>
+                  <p>부산시 수영구 수영로 697</p>
+                  <p>홍인빌딩 5층</p>
+                  <p className="transport">
+                    <strong>지하철</strong>
+                    <br />
+                    2호선, 3호선 수영역 3번 출구 도보 1분
+                  </p>
+                  <p className="transport">
+                    <strong>버스</strong>
+                    <br />
+                    간선버스: 139, 140, 144
+                    <br />
+                    지선버스: 3, 39, 83
+                  </p>
+                </div>
               </div>
-              {/* <div className="info-card">
-                <h3>오시는 길</h3>
-                <p>부산시 수영구 수영로 697</p>
-                <p>홍인빌딩 5층</p>
-                <p className="transport">
-                  <strong>지하철</strong>
-                  <br />
-                  2호선, 3호선 수영역 3번 출구 도보 1분
-                </p>
-                <p className="transport">
-                  <strong>버스</strong>
-                  <br />
-                  간선버스: 139, 140, 144
-                  <br />
-                  지선버스: 3, 39, 83
-                </p>
-              </div> */}
             </div>
             {/* 주석 처리된 예약 폼 부분은 필요시 주석 해제
             <form className="reservation-form">
