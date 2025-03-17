@@ -3474,8 +3474,8 @@ li {
   }
   #map {
     min-height: 330px !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 50% !important;
+    max-width: 50% !important;
     position: relative !important;
   }
   #map > div {

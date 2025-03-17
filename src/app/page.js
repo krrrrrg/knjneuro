@@ -113,14 +113,6 @@ export default function Home() {
               el.style.maxWidth = '100%';
             });
             
-            // InfoWindow 요소 스타일 조정
-            const overlayElements = mapDiv.querySelectorAll('.nmap-overlay, .nmap-overlay-content, .nmap-overlay-inner');
-            overlayElements.forEach(el => {
-              el.style.width = 'auto';
-              el.style.maxWidth = 'none';
-              el.style.left = 'auto';
-            });
-            
             // 캔버스 요소에도 스타일 적용
             const canvasElements = mapDiv.querySelectorAll('canvas');
             canvasElements.forEach(canvas => {
@@ -154,7 +146,7 @@ export default function Home() {
 
           var infowindow = new naver.maps.InfoWindow({
             content: contentString,
-            maxWidth: 200,
+            maxWidth: 210,
             backgroundColor: "transparent",
             borderColor: "transparent", 
             borderWidth: 0,
@@ -701,14 +693,14 @@ export default function Home() {
                 padding: "1rem",
                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                 boxSizing: "border-box",
-                minHeight: "400px",
+                minHeight: "600px",
                 background: "white"
               }}>
               <div id="map" 
                 style={{ 
                   width: "100%", 
                   height: "100%",
-                  minHeight: "380px",
+                  minHeight: "580px",
                   maxWidth: "100%",
                   position: "relative",
                   overflow: "hidden",
