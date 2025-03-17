@@ -1236,40 +1236,23 @@ a {
   .reservation-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .reservation-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     width: 100%;
   }
 
-  /* 진료문의 페이지 레이아웃 최적화 */
-  @media (min-width: 1024px) {
-    .reservation-info {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .reservation-info {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 767px) {
-    .reservation-info {
-      grid-template-columns: 1fr;
-    }
-  }
-
   .info-card {
-    min-width: 210px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    margin: 0.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .reservation-form {
@@ -1302,6 +1285,27 @@ a {
 
   footer {
     padding: 3rem 0 2rem; /* 모바일에서 패딩 */
+  }
+}
+
+/* 진료문의 페이지 레이아웃 최적화 - 상위 레벨에 배치 */
+@media (min-width: 1024px) {
+  .reservation-info {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .reservation-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .reservation-info {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2030,14 +2034,16 @@ body {
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .reservation-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   width: 100%;
 }
 
@@ -2047,6 +2053,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .info-card:hover {
@@ -2096,7 +2103,7 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -2259,21 +2266,27 @@ footer {
 }
 
 .kakao-link {
-  color: #555;
-  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.kakao-link::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('/images/kakao.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 8px;
 }
 
 .kakao-link:hover {
   color: var(--primary-color);
-}
-
-.kakao-link::before {
-  content: "💬";
-  font-size: 1.2rem;
 }
 
 /* 푸터 전화번호 스타일 수정 */
@@ -3378,6 +3391,13 @@ li {
     max-width: 180px;
     margin: 0 auto;
     height: 195px; /* 높이를 195px로 수정 */
+  }
+}
+
+/* 진료시간과 예약문의 카드 최적화 */
+@media (min-width: 768px) {
+  .info-card {
+    min-height: 320px;
   }
 }
 
