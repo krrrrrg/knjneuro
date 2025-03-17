@@ -109,7 +109,7 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
               className={pathname === "/reservation" ? "active" : ""}
             >
-              진료문의
+              진료안내
             </Link>
           </li>
           <li>

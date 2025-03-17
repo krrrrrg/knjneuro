@@ -247,7 +247,7 @@ export default function Home() {
               <Link href="/doctors">의료진</Link>
             </li>
             <li>
-              <Link href="/reservation">진료문의</Link>
+              <Link href="/reservation">진료안내</Link>
             </li>
             <li>
               <Link href="/map">오시는 길</Link>
