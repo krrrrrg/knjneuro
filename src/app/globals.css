@@ -1386,8 +1386,8 @@ a {
 }
 
 #map > div {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 50% !important;
+  max-width: 50% !important;
 }
 
 /* 네이버 지도 요소 강제 스타일링 */
