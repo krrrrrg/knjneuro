@@ -22,7 +22,7 @@ export default function Reservation() {
                     <li>평일: 09:00 - 17:40</li>
                     <li>수/토요일: 09:00 - 12:30</li>
                     <li>점심시간: 12:50 - 14:00</li>
-                    <li>일요일/공휴일: 휴진</li>
+                    <li>일요일/공휴일: 휴ㅇㅇ진</li>
                   </ul>
                 </div>
                 <div className="info-card">

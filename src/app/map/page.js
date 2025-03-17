@@ -57,8 +57,16 @@ export default function Map() {
           
           // 모든 하위 요소에 스타일 적용
           mapElements.forEach(el => {
-            el.style.width = '100%';
-            el.style.maxWidth = '100%';
+            el.style.width = '50%';
+            el.style.maxWidth = '50%';
+          });
+          
+          // InfoWindow 요소 스타일 조정
+          const overlayElements = mapDiv.querySelectorAll('.nmap-overlay, .nmap-overlay-content, .nmap-overlay-inner');
+          overlayElements.forEach(el => {
+            el.style.width = 'auto';
+            el.style.maxWidth = 'none';
+            el.style.left = 'auto';
           });
           
           // 캔버스 요소에도 스타일 적용
