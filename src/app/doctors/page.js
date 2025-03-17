@@ -28,7 +28,7 @@ export default function Doctors() {
               <div className="doctor-image-wrapper">
                 <img src="/5.png" alt="강남제 원장" />
               </div>
-              <h3>강남제 원장</h3>
+              <h3>강남제 <span style={{ fontSize: '0.8em' }}>원장</span></h3>
               <p className="doctor-specialty">신경과 전문의</p>
 
               <div className="doctor-credentials-card">
@@ -37,8 +37,14 @@ export default function Doctors() {
               </div>
 
               <div className="doctor-expertise">
-                <h4>전문 진료분야</h4>
-                <p>두통 / 수면장애 / 뇌졸중 / 어지럼증</p>
+                <h4 className="doctor-philosophy-title">진료 철학</h4>
+                <div className="doctor-philosophy-content">
+                  <p>강남제신경과는 내 주치의 진료를 표방합니다.</p>
+                  <p>진료 받으시면서 타과 질환에 대해 상담하시면 최선을 다해 안내하여<br />
+                  타병원에서 원활한 진료를 받을 수 있도록 도와 드리고자 합니다.</p>
+                  <p>건강검진결과나 타 병원검사 결과, 영상 자료 등을 가지고 오시면<br />
+                  이에 대한 적합한 방법을 찾아드리겠습니다.</p>
+                </div>
               </div>
             </div>
           </div>

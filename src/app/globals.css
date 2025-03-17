@@ -2356,19 +2356,26 @@ footer {
   .doctor-profile-section .doctor-profile {
     padding: 1.5rem;
   }
-
+   
   .doctor-profile-section .doctor-image-container {
     width: 200px;
     height: 200px;
   }
-
-  #doctors .doctor-profile {
-    padding: 1.5rem;
+   
+  .doctor-name {
+    font-size: 1.8rem;
   }
-
-  #doctors .doctor-image {
-    width: 180px;
-    height: 180px;
+    
+  .doctor-philosophy-content {
+    padding: 1rem;
+  }
+    
+  .doctor-philosophy-content p {
+    font-size: 0.9rem;
+  }
+    
+  .doctor-philosophy-content br {
+    display: none;
   }
 }
 
@@ -2401,6 +2408,32 @@ footer {
 
 .doctor-expertise p {
   color: #555;
+}
+
+.doctor-philosophy-title {
+  font-size: 1.2rem;
+  color: #4A6CF7;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.doctor-philosophy-content {
+  background-color: #f9f9ff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-philosophy-content p {
+  color: #555;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.doctor-philosophy-content p:last-child {
+  margin-bottom: 0;
 }
 
 /* 반응형 스타일 */
