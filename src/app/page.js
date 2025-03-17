@@ -621,8 +621,22 @@ export default function Home() {
                   fontSize: "clamp(12px, 3vw, 16px)",
                 }}
               >
-                두통 / 수면장애 / 뇌졸중 전문
+                부산대학교 의과대학 , 대학원 졸업
               </p>
+
+              <p
+                className="doctor-brief"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  width: "100%",
+                  fontSize: "clamp(12px, 3vw, 16px)",
+                }}
+              >
+                대학 신경과학회 정회원
+              </p>
+              
               <Link href="/doctors" className="more-btn">
                 자세히 보기
               </Link>
