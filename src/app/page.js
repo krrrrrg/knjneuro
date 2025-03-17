@@ -609,8 +609,8 @@ export default function Home() {
           <div className="doctor-profile">
             <img src="/5.png" alt="강남제 원장" className="doctor-image" />
             <div className="doctor-info">
-              <h3>강남제 원장</h3>
-              <p className="doctor-title">신경과 전문의</p>
+            <h3>강남제 <span style={{ fontSize: '0.8em' }}>원장</span></h3>
+            <p className="doctor-title">신경과 전문의</p>
               <p
                 className="doctor-brief"
                 style={{
