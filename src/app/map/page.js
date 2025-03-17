@@ -21,76 +21,44 @@ export default function Map() {
       try {
         // 지도 컨테이너 사이즈 확인
         const mapContainer = document.getElementById("map");
+        const containerWidth = mapContainer.clientWidth;
         
         // 상위 컨테이너 스타일 강제 적용
         const mapWrapper = document.querySelector('.map-container');
         if (mapWrapper) {
-          mapWrapper.style.overflow = 'visible';
+          mapWrapper.style.overflow = 'hidden';
           mapWrapper.style.maxWidth = '100%';
           mapWrapper.style.width = '100%';
           mapWrapper.style.position = 'relative';
-          mapWrapper.style.minHeight = window.innerWidth < 768 ? '350px' : '400px';
+          mapWrapper.style.minHeight = '600px';
         }
         
         // 맵 요소 스타일 강제 적용
         mapContainer.style.width = '100%';
         mapContainer.style.maxWidth = '100%';
         mapContainer.style.height = '100%';
-        mapContainer.style.minHeight = window.innerWidth < 768 ? '330px' : '380px';
+        mapContainer.style.minHeight = '580px';
         mapContainer.style.position = 'relative';
-        mapContainer.style.overflow = 'visible';
+        mapContainer.style.overflow = 'hidden';
         mapContainer.style.borderRadius = '10px';
         
         const mapOptions = {
           center: new window.naver.maps.LatLng(35.1678376, 129.115742),
           zoom: 17,
-          zoomControl: true,
-          zoomControlOptions: {
-            style: window.naver.maps.ZoomControlStyle.SMALL,
-            position: window.naver.maps.Position.TOP_RIGHT
-          },
-          draggable: true,
-          pinchZoom: true,
-          scrollWheel: true,
-          disableDoubleClickZoom: false,
-          disableDoubleTapZoom: false,
+          zoomControl: false,
         };
 
         const map = new window.naver.maps.Map("map", mapOptions);
         
-        // 지도 생성 후 스타일 재적용 및 최적화
+        // 지도 생성 후 스타일 재적용
         setTimeout(() => {
           const mapDiv = document.getElementById('map');
+          const mapElements = mapDiv.querySelectorAll('div');
           
           // 모든 하위 요소에 스타일 적용
-          const mapElements = mapDiv.querySelectorAll('div');
           mapElements.forEach(el => {
             el.style.width = '100%';
             el.style.maxWidth = '100%';
-            el.style.overflow = 'visible';
-            el.style.touchAction = 'auto';
-          });
-          
-          // 터치 이벤트 재설정
-          const enableTouchEvents = () => {
-            const touchElements = mapDiv.querySelectorAll('*');
-            touchElements.forEach(el => {
-              el.style.touchAction = 'auto';
-            });
-          };
-          enableTouchEvents();
-          
-          // 지도에 터치 이벤트 리스너 추가
-          map.addListener('touchstart', () => {
-            enableTouchEvents();
-          });
-          
-          // InfoWindow 요소 스타일 조정
-          const overlayElements = mapDiv.querySelectorAll('.nmap-overlay, .nmap-overlay-content, .nmap-overlay-inner');
-          overlayElements.forEach(el => {
-            el.style.width = 'auto';
-            el.style.maxWidth = 'none';
-            el.style.left = 'auto';
           });
           
           // 캔버스 요소에도 스타일 적용
@@ -108,7 +76,7 @@ export default function Map() {
             el.style.minHeight = '580px';
             el.style.overflow = 'hidden';
           });
-        }, 300);
+        }, 100);
 
         const marker = new window.naver.maps.Marker({
           position: new window.naver.maps.LatLng(35.1678376, 129.115742),
@@ -116,9 +84,9 @@ export default function Map() {
         });
 
         const contentString = [
-          '<div class="map-info-window">',
-          '   <h3>강남제신경과</h3>',
-          "   <p>부산시 수영구 수영로 697<br/>",
+          '<div style="padding: 10px 12px; font-family: &quot;Noto Sans KR&quot;, sans-serif; background: white; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; width: 210px; max-width: 210px;">',
+          '   <h3 style="margin-bottom:6px; color: #4A6CF7; font-weight: 700; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 6px;">강남제신경과</h3>',
+          "   <p style='line-height: 1.4; font-size: 12px; color: #555; margin: 0;'>부산시 수영구 수영로 697<br/>",
           "   홍인빌딩 5층<br/>",
           "   Tel: 051-759-7676</p>",
           "</div>",
@@ -126,7 +94,7 @@ export default function Map() {
 
         const infowindow = new window.naver.maps.InfoWindow({
           content: contentString,
-          maxWidth: 200,
+          maxWidth: 210,
           backgroundColor: "transparent",
           borderColor: "transparent",
           borderWidth: 0,
@@ -183,14 +151,14 @@ export default function Map() {
                   padding: "1rem",
                   boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                   boxSizing: "border-box",
-                  minHeight: "400px",
+                  minHeight: "600px",
                   background: "white"
                 }}>
                 <div id="map" 
                   style={{ 
                     width: "100%", 
                     height: "100%",
-                    minHeight: "380px",
+                    minHeight: "580px",
                     maxWidth: "100%",
                     position: "relative",
                     overflow: "hidden",

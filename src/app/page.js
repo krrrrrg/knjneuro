@@ -136,9 +136,9 @@ export default function Home() {
           });
 
           var contentString = [
-            '<div class="map-info-window">',
-            '   <h3>강남제신경과</h3>',
-            "   <p>부산시 수영구 수영로 697<br/>",
+            '<div style="padding: 10px 12px; font-family: &quot;Noto Sans KR&quot;, sans-serif; background: white; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; width: 210px; max-width: 210px;">',
+            '   <h3 style="margin-bottom:6px; color: #4A6CF7; font-weight: 700; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 6px;">강남제신경과</h3>',
+            "   <p style='line-height: 1.4; font-size: 12px; color: #555; margin: 0;'>부산시 수영구 수영로 697<br/>",
             "   홍인빌딩 5층<br/>",
             "   Tel: 051-759-7676</p>",
             "</div>",
