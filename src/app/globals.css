@@ -1470,8 +1470,8 @@ a {
     position: relative !important;
   }
   #map > div {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 50% !important;
+    max-width: 50% !important;
   }
   .naver-map, .nmap {
     min-height: 330px !important;
@@ -3428,7 +3428,7 @@ li {
   font-size: 15px;
   border-bottom: 1px solid #eee;
   padding-bottom: 6px;
-  text-align: center;
+  text-align: left;
 }
 
 .map-info-window p {
@@ -3436,7 +3436,7 @@ li {
   font-size: 13px;
   color: #555;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* 맵 페이지 인포카드 스타일 - 별도 스타일 */
@@ -3479,8 +3479,8 @@ li {
     position: relative !important;
   }
   #map > div {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 50% !important;
+    max-width: 50% !important;
   }
   .naver-map, .nmap {
     min-height: 330px !important;
