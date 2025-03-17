@@ -1373,23 +1373,21 @@ a {
   overflow: hidden !important;
   position: relative;
   max-width: 100%;
-  min-height: 600px !important;
+  min-height: 400px !important;
   height: 100%;
 }
 
 #map {
   width: 100% !important;
   height: 100% !important;
-  min-height: 580px !important;
+  min-height: 380px !important;
   max-width: 100% !important;
   position: relative !important;
-  overflow: hidden !important;
-  border-radius: 10px !important;
 }
 
 #map > div {
-  max-width: 50% !important;
-  width: 50% !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 /* 네이버 지도 요소 강제 스타일링 */
@@ -1457,7 +1455,7 @@ a {
     padding: 1rem 0;
   }
   .map-container {
-    min-height: 400px !important;
+    min-height: 350px !important;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -1466,21 +1464,24 @@ a {
     overflow: hidden;
   }
   #map {
-    min-height: 380px !important;
+    min-height: 330px !important;
     width: 100% !important;
     max-width: 100% !important;
     position: relative !important;
   }
   #map > div {
-    max-width: 50% !important;
-    width: 50% !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .naver-map, .nmap {
-    min-height: 380px !important;
+    min-height: 330px !important;
   }
   .location-info {
     width: 100%;
     margin: 0 auto;
+  }
+  .location-info .info-card {
+    padding: 1.2rem;
   }
 }
 
@@ -3411,28 +3412,85 @@ li {
 
 /* InfoWindow 디자인 */
 .map-info-window {
-  padding: 10px 12px;
+  padding: 10px 15px;
   font-family: "Noto Sans KR", sans-serif;
   background: white;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 210px;
-  max-width: 210px;
+  width: 200px;
+  max-width: 200px;
 }
 
 .map-info-window h3 {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #4A6CF7;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   border-bottom: 1px solid #eee;
   padding-bottom: 6px;
+  text-align: center;
 }
 
 .map-info-window p {
-  line-height: 1.4;
-  font-size: 12px;
+  line-height: 1.5;
+  font-size: 13px;
   color: #555;
   margin: 0;
+  text-align: center;
+}
+
+/* 맵 페이지 인포카드 스타일 - 별도 스타일 */
+.location-info .info-card {
+  padding: 1.5rem;
+  min-height: auto;
+  height: auto;
+}
+
+.location-info .info-card h3 {
+  margin-bottom: 1rem;
+}
+
+.location-info .info-card p {
+  margin-bottom: 0.5rem;
+}
+
+.location-info .transport-info h4 {
+  margin: 0.8rem 0 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .map-content {
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+  }
+  .map-container {
+    min-height: 350px !important;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #map {
+    min-height: 330px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+  #map > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .naver-map, .nmap {
+    min-height: 330px !important;
+  }
+  .location-info {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .location-info .info-card {
+    padding: 1.2rem;
+  }
 }
 

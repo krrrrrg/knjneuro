@@ -57,8 +57,8 @@ export default function Map() {
           
           // 모든 하위 요소에 스타일 적용
           mapElements.forEach(el => {
-            el.style.width = '50%';
-            el.style.maxWidth = '50%';
+            el.style.width = '100%';
+            el.style.maxWidth = '100%';
           });
           
           // InfoWindow 요소 스타일 조정
@@ -102,7 +102,7 @@ export default function Map() {
 
         const infowindow = new window.naver.maps.InfoWindow({
           content: contentString,
-          maxWidth: 210,
+          maxWidth: 200,
           backgroundColor: "transparent",
           borderColor: "transparent",
           borderWidth: 0,
@@ -159,14 +159,14 @@ export default function Map() {
                   padding: "1rem",
                   boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                   boxSizing: "border-box",
-                  minHeight: "600px",
+                  minHeight: "400px",
                   background: "white"
                 }}>
                 <div id="map" 
                   style={{ 
                     width: "100%", 
                     height: "100%",
-                    minHeight: "580px",
+                    minHeight: "380px",
                     maxWidth: "100%",
                     position: "relative",
                     overflow: "hidden",
