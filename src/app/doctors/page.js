@@ -22,6 +22,7 @@ export default function Doctors() {
       <main className="page-content">
         <section id="doctors" className="doctor-profile-section">
           <div className="container">
+            <br />
             <h2 className="section-title">의료진 소개</h2>
 
             <div className="doctor-card">
