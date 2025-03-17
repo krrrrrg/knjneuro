@@ -1439,8 +1439,8 @@ a {
     position: relative !important;
   }
   #map > div {
-    max-width: 100% !important;
-    width: 100% !important;
+    max-width: 50% !important;
+    width: 50% !important;
   }
   .naver-map, .nmap {
     min-height: 280px !important;
