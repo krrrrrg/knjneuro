@@ -1240,25 +1240,20 @@ a {
 
   .reservation-info {
     display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding: 0.5rem;
-    margin: 0 -1rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .info-card {
-    min-width: 210px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    margin: 0.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  }
-
-  .reservation-form {
-    margin: 0 1rem;
+    flex: 1;
+    background: white;
     padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   /* 스크롤바 스타일링 */
@@ -2019,13 +2014,16 @@ body {
 }
 
 .reservation-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 1.5rem;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .info-card {
+  flex: 1;
   background: white;
   padding: 2rem;
   border-radius: 15px;
@@ -3390,73 +3388,40 @@ li {
   margin-bottom: 20px;
 }
 
-<div class="info-container">
-  <div class="info-box">
-    <h3>진료시간</h3>
-    <ul>
-      <li>평일: 09:00 - 17:40</li>
-      <li>수/토요일: 09:00 - 12:30</li>
-      <li>점심시간: 12:50 - 14:00</li>
-      <li>일요일/공휴일: 휴진</li>
-    </ul>
-  </div>
-  
-  <div class="info-box">
-    <h3>예약문의</h3>
-    <p><a href="tel:051-759-7676">051-759-7676</a></p>
-    <p>카카오톡: 강남제신경과의원</p>
-  </div>
-</div>
-
 @media (max-width: 768px) {
   .info-container {
     flex-direction: column;
   }
 }
 
-<style>
-  /* 박스를 가로로 배치하기 위한 컨테이너 스타일 */
-  .horizontal-boxes {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* 각 박스 스타일 */
-  .horizontal-boxes > div {
-    flex: 1;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  /* 모바일 화면에서는 세로로 배치 */
-  @media (max-width: 768px) {
-    .horizontal-boxes {
-      flex-direction: column;
-    }
-  }
-</style>
+/* 예약 페이지 가로 박스 레이아웃 */
+.reservation-info {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-<div class="horizontal-boxes">
-  <div>
-    <h3 class="page-title">진료시간</h3>
-    <ul>
-      <li>평일: 09:00 - 17:40</li>
-      <li>수/토요일: 09:00 - 12:30</li>
-      <li>점심시간: 12:50 - 14:00</li>
-      <li>일요일/공휴일: 휴진</li>
-    </ul>
-  </div>
+/* 각 정보 카드 스타일 */
+.info-card {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 모바일 화면에서는 세로로 배치 */
+@media (max-width: 768px) {
+  .reservation-info {
+    flex-direction: column;
+  }
   
-  <div>
-    <h3 class="page-title">예약문의</h3>
-    <p><a href="tel:051-759-7676">051-759-7676</a></p>
-    <p>카카오톡: 강남제신경과의원</p>
-  </div>
-</div>
+  .info-card {
+    margin-bottom: 1rem;
+  }
+}
 
