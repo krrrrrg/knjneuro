@@ -10,10 +10,8 @@ export default function Reservation() {
       <Navbar />
 
       <main className="page-content">
-        <section id="reservation" data-aos="fade-up">
+        <section id="reservation" data-aos="fade-up" style={{ minHeight: "80vh", display: "flex", alignItems: "center" }}>
           <div className="container">
-            <br />
-            <br />
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">
