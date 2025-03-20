@@ -3414,3 +3414,49 @@ li {
   }
 }
 
+<style>
+  /* 박스를 가로로 배치하기 위한 컨테이너 스타일 */
+  .horizontal-boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* 각 박스 스타일 */
+  .horizontal-boxes > div {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* 모바일 화면에서는 세로로 배치 */
+  @media (max-width: 768px) {
+    .horizontal-boxes {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="horizontal-boxes">
+  <div>
+    <h3 class="page-title">진료시간</h3>
+    <ul>
+      <li>평일: 09:00 - 17:40</li>
+      <li>수/토요일: 09:00 - 12:30</li>
+      <li>점심시간: 12:50 - 14:00</li>
+      <li>일요일/공휴일: 휴진</li>
+    </ul>
+  </div>
+  
+  <div>
+    <h3 class="page-title">예약문의</h3>
+    <p><a href="tel:051-759-7676">051-759-7676</a></p>
+    <p>카카오톡: 강남제신경과의원</p>
+  </div>
+</div>
+
