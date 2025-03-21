@@ -9,18 +9,21 @@ export default function Reservation() {
     <>
       <Navbar />
 
-      <main className="page-content" style={{ minHeight: "calc(100vh - 160px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <main className="page-content">
         <section id="reservation" data-aos="fade-up">
           <div className="container">
+            <br />
+            <br />
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">
                   <h3>진료시간</h3>
                   <ul>
-                    <li>평일: 09:00 - 17:40</li>
-                    <li>수/토요일: 09:00 - 12:30</li>
-                    <li>점심시간: 12:50 - 14:00</li>
-                    <li>일요일/공휴일: 휴진</li>
+                  <li>월화목금: 09:00 - 17:40</li>
+                  <li>점심시간: 12:50 - 14:00</li>
+                  <li>수/토요일: 09:00 - 12:30</li>
+                  <li>수/토요일은 점심시간 없이 오전진료</li>
+                  <li>일요일/공휴일: 휴진</li>
                   </ul>
                 </div>
                 <div className="info-card">
