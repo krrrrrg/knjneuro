@@ -169,7 +169,7 @@ export default function Map() {
                 <div className="info-card">
                   <h3>주소</h3>
                   <p>부산시 수영구 수영로 697</p>
-                  <p>홍인빌딩 5층</p>
+                  <p>홍인빌딩(수영약국 건물) 5층</p>
                 </div>
                 <div className="info-card">
                   <h3>대중교통</h3>
