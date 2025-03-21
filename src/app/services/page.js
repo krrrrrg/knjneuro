@@ -195,9 +195,9 @@ export default function Services() {
         <section id="medical-equipment" data-aos="fade-up">
           <div className="container">
             <br />
-            <h2>첨단 의료장비</h2>
+            <h2>검사 항목 및 기기 안내</h2>
             <p className="section-description">
-              강남베신경과는 최신 의료장비를 통해 정확한 진단과 효과적인 치료를 제공합니다.
+            강남제신경과는 여러 의료 장비들을 통해 정확한 진단을 위해 노력합니다.
             </p>
             
             <div className="equipment-grid">
