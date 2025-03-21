@@ -597,7 +597,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="about-image">
-              <img src="/2.jpg" alt="병원 내부" />
+              <img src="/2-1.jpeg" alt="병원 내부" />
             </div>
           </div>
         </div>
