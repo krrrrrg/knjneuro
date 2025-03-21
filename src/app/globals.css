@@ -974,23 +974,29 @@ a {
 
 .about-text h3 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #333;
-  font-weight: 500;
-  text-align: left;
-  word-break: keep-all; /* 단어 분리 방지 */
-  word-wrap: break-word; /* 필요시 단어 줄바꿈 */
+  line-height: 1.5;
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  word-break: keep-all;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.about-text h3:hover {
+  padding-left: 1.7rem;
+  color: var(--primary-color);
 }
 
 .about-text p {
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
   font-size: 1.1rem;
-  color: #555;
-  text-align: left;
-  word-break: keep-all; /* 단어 분리 방지 */
-  word-wrap: break-word; /* 필요시 단어 줄바꿈 */
+  line-height: 1.8;
+  color: var(--paragraph-color);
+  margin-bottom: 2rem;
+  word-break: keep-all;
+  padding-left: 1.5rem;
 }
 
 .about-features {
@@ -1077,6 +1083,68 @@ section .section-title {
   section .section-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+  }
+}
+
+/* 모바일 디자인 추가 대응 */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .about-image {
+    order: -1;
+    margin: 0 auto;
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  .feature-list-wrapper {
+    padding: 1.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.15rem;
+  }
+
+  .experience-badge {
+    width: 90px;
+    height: 90px;
+    bottom: -15px;
+    right: 20px;
+  }
+
+  .experience-number {
+    font-size: 2rem;
+  }
+
+  .experience-number span {
+    font-size: 1rem;
+  }
+
+  .experience-text {
+    font-size: 0.75rem;
+  }
+  
+  .about-features li {
+    padding-left: 2.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+  
+  .about-features li::before {
+    width: 24px;
+    height: 24px;
+  }
+  
+  #about {
+    padding: 5rem 1.5rem;
+  }
+  
+  #about::before, #about::after {
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -3481,3 +3549,379 @@ li {
   }
 }
 
+/* 병원소개 섹션 디자인 개선 */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--paragraph-color);
+  font-weight: 500;
+  margin-top: 1.5rem;
+  opacity: 0.85;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  word-break: keep-all;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.about-text h3:hover {
+  padding-left: 1.7rem;
+  color: var(--primary-color);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--paragraph-color);
+  margin-bottom: 2rem;
+  word-break: keep-all;
+  padding-left: 1.5rem;
+}
+
+/* 애니메이션 효과 추가 */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -25px;
+  right: 30px;
+  background: white;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 15px 30px rgba(74, 108, 247, 0.15);
+  z-index: 10;
+  border: 2px solid #f5f9ff;
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.experience-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(74, 108, 247, 0.2);
+}
+
+/* 이미지 효과 개선 */
+.image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px var(--shadow-color);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: all 0.5s ease;
+}
+
+.image-wrapper:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+  box-shadow: 0 30px 50px rgba(74, 108, 247, 0.2);
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.image-wrapper:hover .main-image {
+  transform: scale(1.02);
+}
+
+/* 버튼 스타일 개선 */
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(74, 108, 247, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  background: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(74, 108, 247, 0.3);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* 모바일 대응 스타일 개선 */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+  }
+  
+  .section-title::before {
+    width: 35px;
+    height: 4px;
+    bottom: -12px;
+  }
+  
+  .about-text h3 {
+    font-size: 1.8rem;
+    padding-left: 1.2rem;
+  }
+  
+  .about-text p {
+    font-size: 1.05rem;
+    padding-left: 1.2rem;
+  }
+  
+  .btn-primary {
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+/* 병원소개 페이지 기본 스타일 추가 */
+.about-intro {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.feature-list-wrapper {
+  background-color: #f8faff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(74, 108, 247, 0.05);
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.feature-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.about-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-features li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--paragraph-color);
+  display: flex;
+  align-items: center;
+}
+
+.about-features li:last-child {
+  margin-bottom: 0;
+}
+
+.about-features li span {
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.about-features li:hover span {
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+
+.about-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='%234A6CF7' fill-opacity='0.1'/%3E%3Cpath d='M10.5 16.5L7 13L8.4 11.6L10.5 13.7L15.6 8.6L17 10' stroke='%234A6CF7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.3s ease;
+}
+
+.about-features li:hover::before {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(74, 108, 247, 0.1), rgba(74, 108, 247, 0));
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.experience-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.experience-number span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.experience-text {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-cta {
+  margin-top: 2.5rem;
+}
+
+#about {
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 2rem;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(74, 108, 247, 0.05) 0%, rgba(74, 108, 247, 0.1) 100%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+#about::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(74, 108, 247, 0.05) 0%, rgba(74, 108, 247, 0.1) 100%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 모바일 디자인 추가 대응 */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
