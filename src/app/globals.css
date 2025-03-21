@@ -969,6 +969,7 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .about-text h3 {
@@ -978,6 +979,8 @@ a {
   color: #333;
   font-weight: 500;
   text-align: left;
+  word-break: keep-all; /* 단어 분리 방지 */
+  word-wrap: break-word; /* 필요시 단어 줄바꿈 */
 }
 
 .about-text p {
@@ -986,6 +989,8 @@ a {
   font-size: 1.1rem;
   color: #555;
   text-align: left;
+  word-break: keep-all; /* 단어 분리 방지 */
+  word-wrap: break-word; /* 필요시 단어 줄바꿈 */
 }
 
 .about-features {
@@ -996,12 +1001,28 @@ a {
 .about-features li {
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.about-features li::before {
+  content: "✓";
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 .about-image img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+section .section-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* 모바일 대응을 위한 미디어 쿼리 수정 */
@@ -1013,18 +1034,21 @@ a {
 
   .about-image {
     order: -1; /* 이미지를 텍스트 위로 이동 */
-    margin: 0 1rem; /* 좌우 여백 추가 */
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
   }
 
   .about-image img {
     width: 100%;
-    border-radius: 20px; /* PC 버전과 동일한 둥근 모서리 */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 
   .about-text {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     margin-bottom: 2rem;
+    text-align: left;
   }
 
   .about-text h3 {
@@ -1048,6 +1072,11 @@ a {
   .about-features li {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
+  }
+  
+  section .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
