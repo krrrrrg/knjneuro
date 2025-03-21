@@ -34,14 +34,8 @@ export default function About() {
               </ul>
               </div>
               <div className="about-image">
-                <Image
-                  src="/2-1.jpeg"
-                  alt="강남제신경과의원 내부"
-                  width={500}
-                  height={350}
-                  priority
-                />
-              </div>
+              <img src="/2-1.jpeg" alt="병원 내부" />
+            </div>
             </div>
           </div>
         </section>
