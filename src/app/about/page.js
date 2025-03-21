@@ -44,13 +44,13 @@ export default function About() {
               <div className="about-image">
                 <div className="image-wrapper">
                   <Image
-                    src="/2-1.jpeg"
-                    alt="강남제신경과의원 내부"
+                    src="/images/clinic/clinic-interior.jpg"
+                    alt="KNJ신경과의원"
                     width={500}
-                    height={350}
+                    height={300}
                     priority
                     className="main-image"
-                    style={{ objectFit: "contain", width: "100%", height: "auto" }}
+                    style={{ objectFit: "contain", width: "100%", height: "auto", maxHeight: "none" }}
                   />
                   <div className="image-overlay"></div>
                 </div>
