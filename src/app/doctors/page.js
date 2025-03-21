@@ -25,7 +25,7 @@ export default function Doctors() {
             <br />
             <h2 className="section-title">의료진 소개</h2>
 
-            <div className="doctor-card">
+            <div className="doct`or-card">
               <div className="doctor-image-wrapper">
                 <img src="/5.png" alt="강남제 원장" />
               </div>
@@ -38,7 +38,7 @@ export default function Doctors() {
               </div>
 
               <div className="doctor-expertise">
-                <h4 className="doctor-philosophy-title">진료 철학</h4>
+                <h4 className="doctor-philosophy-title"> </h4>
                 <div className="doctor-philosophy-content">
                   <p>강남제신경과는 내 주치의 진료를 표방합니다.</p>
                   <p>진료 받으시면서 타과 질환에 대해 상담하시면 최선을 다해 안내하여 타병원에서 원활한 진료를 받을 수 있도록 도와 드리고자 합니다.</p>

@@ -1518,8 +1518,8 @@ a {
 .doctor-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   padding: 2rem;
   background-color: white;
   border-radius: 10px;
@@ -1590,6 +1590,7 @@ a {
   font-size: 2.2rem;
   color: var(--text-color);
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .doctor-specialty {
@@ -2381,14 +2382,14 @@ footer {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #333;
-  text-align: left;
+  text-align: center;
 }
 
 .doctor-specialty {
   font-size: 1.2rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .doctor-education {
@@ -2469,8 +2470,8 @@ footer {
 .doctor-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   padding: 2rem;
   background-color: white;
   border-radius: 10px;
@@ -2887,7 +2888,7 @@ li {
   height: 200px;
   border-radius: 50%;
   overflow: hidden !important;
-  margin: 0 0 2rem 0;
+  margin: 0 auto 2rem auto;
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -2927,9 +2928,9 @@ li {
   border-radius: 12px;
   padding: 1.5rem;
   max-width: 600px;
-  margin: 2rem 0;
+  margin: 2rem auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: left;
+  text-align: center;
 }
 
 .doctor-credentials-card p {
@@ -2937,7 +2938,7 @@ li {
   line-height: 1.5;
   color: var(--text-color);
   font-size: 0.95rem;
-  text-align: left;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
