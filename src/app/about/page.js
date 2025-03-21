@@ -50,6 +50,7 @@ export default function About() {
                     height={350}
                     priority
                     className="main-image"
+                    style={{ objectFit: "contain", width: "100%", height: "auto" }}
                   />
                   <div className="image-overlay"></div>
                 </div>
