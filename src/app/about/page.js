@@ -17,7 +17,9 @@ export default function About() {
             <div className="about-content">
               <div className="about-text">
               <h3>
-              몸과 마음의 불편함을 편안히 상담할 수 있도록, 한 분 한 분께 정성을 다해 진료하겠습니다.
+              몸과 마음의 불편함을 편안히 상담할 수 있도록, 
+              <br />
+              한 분 한 분께 정성을 다해 진료하겠습니다.
               </h3>
               <p>
               20년 이상의 풍부한 임상경험을 바탕으로 정확한 진단과 치료를 제공합니다. 
