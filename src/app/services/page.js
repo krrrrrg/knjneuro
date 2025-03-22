@@ -203,50 +203,6 @@ export default function Services() {
             <div className="equipment-grid">
               <div 
                 className="equipment-card" 
-                onClick={() => showModal('emgModal')}
-              >
-                <div className="equipment-icon">
-                  <i className="fas fa-bolt"></i>
-                </div>
-                <h3>근전도 검사</h3>
-                <p>신경 및 근육 질환 진단</p>
-              </div>
-              
-              <div 
-                className="equipment-card" 
-                onClick={() => showModal('ultrasoundModal')}
-              >
-                <div className="equipment-icon">
-                  <i className="fas fa-wave-square"></i>
-                </div>
-                <h3>초음파 검사</h3>
-                <p>신경, 근골격계, 혈관 진단</p>
-              </div>
-              
-              <div 
-                className="equipment-card" 
-                onClick={() => showModal('autonomicTestModal')}
-              >
-                <div className="equipment-icon">
-                  <i className="fas fa-heartbeat"></i>
-                </div>
-                <h3>자율신경 검사</h3>
-                <p>자율신경계 기능 평가</p>
-              </div>
-              
-              <div 
-                className="equipment-card" 
-                onClick={() => showModal('boneDensityModal')}
-              >
-                <div className="equipment-icon">
-                  <i className="fas fa-bone"></i>
-                </div>
-                <h3>골밀도 검사</h3>
-                <p>골다공증 진단 및 평가</p>
-              </div>
-              
-              <div 
-                className="equipment-card" 
                 onClick={() => showModal('arterialStiffnessModal')}
               >
                 <div className="equipment-icon">
@@ -258,12 +214,100 @@ export default function Services() {
               
               <div 
                 className="equipment-card" 
+                onClick={() => showModal('cerebralBloodFlowModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-brain"></i>
+                </div>
+                <h3>뇌혈류 초음파</h3>
+                <p>두개내 혈류 측정 및 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('carotidUltrasoundModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-wave-square"></i>
+                </div>
+                <h3>경동맥 초음파</h3>
+                <p>경동맥 협착 및 혈류 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('vertigoTestModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-street-view"></i>
+                </div>
+                <h3>어지럼증 검사</h3>
+                <p>평형기능 및 전정기능 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('autonomicTestModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-heartbeat"></i>
+                </div>
+                <h3>자율신경계 검사</h3>
+                <p>자율신경계 기능 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('emgModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-bolt"></i>
+                </div>
+                <h3>신경전도, 근전도검사</h3>
+                <p>신경 및 근육 질환 진단</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('ultrasoundModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-wave-square"></i>
+                </div>
+                <h3>근골격계, 신경계 초음파</h3>
+                <p>신경, 근골격계 진단 및 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('boneDensityModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-bone"></i>
+                </div>
+                <h3>골다공증 검사</h3>
+                <p>골밀도 측정 및 골다공증 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
+                onClick={() => showModal('cognitiveTestModal')}
+              >
+                <div className="equipment-icon">
+                  <i className="fas fa-brain"></i>
+                </div>
+                <h3>인지기능(치매)검사</h3>
+                <p>인지능력 및 치매 위험 평가</p>
+              </div>
+              
+              <div 
+                className="equipment-card" 
                 onClick={() => showModal('bloodTestModal')}
               >
                 <div className="equipment-icon">
                   <i className="fas fa-vial"></i>
                 </div>
-                <h3>종합 혈액검사</h3>
+                <h3>종합피검사</h3>
                 <p>약 80종 항목 검사 가능</p>
               </div>
             </div>
@@ -726,6 +770,172 @@ export default function Services() {
                 물은 마실 수 있으나 카페인, 알코올은 피해야 합니다.
                 복용 중인 약물이 있다면 의사와 상담 후 검사를 진행하는 것이 좋습니다.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 뇌혈류 초음파 모달 */}
+      <div id="cerebralBloodFlowModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('cerebralBloodFlowModal')}></span>
+          <h2>뇌혈류 초음파</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                뇌혈류 초음파는 초음파를 이용하여 두개내 혈관의 혈류 속도와 패턴을 측정하는 비침습적 검사입니다.
+                뇌졸중 위험 평가, 혈관 협착 진단, 두개내 혈류 상태 평가 등에 유용합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 방법</h3>
+              </div>
+              <p>
+                초음파 프로브를 측두골 창(temporal window)이나 안와(orbit), 후두하(suboccipital) 부위에 위치시켜
+                두개내 혈관의 혈류를 측정합니다. 통증이 없고 방사선 노출이 없는 안전한 검사입니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>임상적 의의</h3>
+              </div>
+              <ul>
+                <li>뇌졸중 위험 평가</li>
+                <li>두개내 혈관 협착 진단</li>
+                <li>뇌혈관 반응성 평가</li>
+                <li>뇌혈류 역학적 상태 모니터링</li>
+                <li>미세 색전증 감지</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 경동맥 초음파 모달 */}
+      <div id="carotidUltrasoundModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('carotidUltrasoundModal')}></span>
+          <h2>경동맥 초음파</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                경동맥 초음파는 목 부위의 주요 혈관인 경동맥의 구조와 혈류를 평가하는 비침습적 검사입니다.
+                동맥경화, 협착, 혈류 이상 등을 감지하여 뇌졸중 위험을 평가하는 데 중요합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 방법</h3>
+              </div>
+              <p>
+                초음파 프로브를 목 부위에 위치시켜 경동맥의 내막-중막 두께, 플라크 유무, 협착 정도, 혈류 속도 등을 측정합니다. 
+                약 15-20분 소요되며 통증이나 부작용 없이 안전하게 진행됩니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>임상적 의의</h3>
+              </div>
+              <ul>
+                <li>경동맥 협착 진단</li>
+                <li>동맥경화 조기 발견</li>
+                <li>뇌졸중 위험 예측</li>
+                <li>심혈관 질환 위험 평가</li>
+                <li>혈관 수술 전후 평가</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 어지럼증 검사 모달 */}
+      <div id="vertigoTestModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('vertigoTestModal')}></span>
+          <h2>어지럼증 검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                어지럼증 검사는 평형기능과 전정기능을 평가하여 어지럼증의 원인을 파악하는 검사입니다.
+                전정안구반사, 안진, 자세 안정성 등을 측정하여 어지럼증의 유형과 원인을 감별합니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 검사 항목</h3>
+              </div>
+              <ul>
+                <li>Dix-Hallpike 검사: 이석증 진단</li>
+                <li>비디오안진검사(VNG): 안구 움직임 기록 및 분석</li>
+                <li>자세검사: 체위성 어지럼증 평가</li>
+                <li>동적자세검사: 균형 기능 평가</li>
+                <li>회전의자검사: 전정기능 평가</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>적용 질환</h3>
+              </div>
+              <ul>
+                <li>양성돌발성체위성현훈(이석증)</li>
+                <li>메니에르병</li>
+                <li>전정신경염</li>
+                <li>편두통성 어지럼증</li>
+                <li>중추성 어지럼증</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 인지기능(치매) 검사 모달 */}
+      <div id="cognitiveTestModal" className="modal">
+        <div className="modal-content">
+          <span className="close-button" title="닫기" onClick={() => hideModal('cognitiveTestModal')}></span>
+          <h2>인지기능(치매) 검사</h2>
+          <div className="detail-content">
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>검사 개요</h3>
+              </div>
+              <p>
+                인지기능 검사는 기억력, 집중력, 언어능력, 시공간 능력, 실행기능 등 다양한 인지 영역을 평가하여
+                치매나 경도인지장애의 조기 발견 및 진단에 활용되는 검사입니다.
+              </p>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>주요 검사 항목</h3>
+              </div>
+              <ul>
+                <li>간이정신상태검사(MMSE): 전반적 인지기능 선별</li>
+                <li>몬트리올 인지평가(MoCA): 경도인지장애 감별</li>
+                <li>임상치매평가척도(CDR): 치매 중증도 평가</li>
+                <li>전산화 인지기능검사: 다양한 인지영역 세부 평가</li>
+                <li>일상생활수행능력 평가: 기능적 능력 평가</li>
+              </ul>
+            </div>
+            <div className="detail-section">
+              <div className="service-section">
+                <h3>임상적 의의</h3>
+              </div>
+              <ul>
+                <li>치매 조기 발견 및 진단</li>
+                <li>경도인지장애(MCI) 감별</li>
+                <li>인지장애 유형 분류</li>
+                <li>인지기능 변화 추적</li>
+                <li>치료 효과 평가</li>
+              </ul>
             </div>
           </div>
         </div>
