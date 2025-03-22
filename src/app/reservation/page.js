@@ -9,11 +9,9 @@ export default function Reservation() {
     <>
       <Navbar />
 
-      <main className="page-content">
-        <section id="reservation" data-aos="fade-up">
+      <main className="page-content" style={{ minHeight: "calc(100vh - 230px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <section id="reservation" data-aos="fade-up" style={{ flex: "1", display: "flex", alignItems: "center", padding: "2rem 0" }}>
           <div className="container">
-            <br />
-            <br />
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">

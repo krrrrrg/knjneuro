@@ -3444,6 +3444,7 @@ li {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 /* 각 정보 카드 스타일 */
@@ -3453,8 +3454,15 @@ li {
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+}
+
+/* 예약 페이지 컨텐츠 레이아웃 */
+.reservation-content {
+  width: 100%;
+  padding: 2rem 0;
 }
 
 /* 모바일 화면에서는 세로로 배치하고 너비를 조정 */
