@@ -29,7 +29,7 @@ export default function Doctors() {
               <div className="doctor-image-wrapper">
                 <img src="/5.png" alt="강남제 원장" />
               </div>
-              <h3>강남제 <span style={{ fontSize: '0.8em' }}>원장</span></h3>
+              <h3 style={{ textAlign: 'center', width: '100%' }}>강남제 <span style={{ fontSize: '0.8em' }}>원장</span></h3>
               <p className="doctor-specialty">신경과 전문의</p>
 
               <div className="doctor-credentials-card">
