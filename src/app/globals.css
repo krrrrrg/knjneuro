@@ -3209,29 +3209,59 @@ li {
 
 .equipment-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* PC 전체화면에서 6개 카드를 1행으로 표시 */
-  gap: 20px;
-  margin-top: 30px; /* 상단 마진 줄이기 */
-  overflow-x: visible;
-  padding-bottom: 20px;
-  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
+  justify-content: center;
 }
 
-.equipment-grid::-webkit-scrollbar {
-  height: 4px;
+/* 모바일 화면 (기본) */
+@media (max-width: 767px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr); /* 모바일에서 2열로 표시 */
+    gap: 15px;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+  
+  .equipment-card {
+    height: 160px; /* 모바일에서의 높이 조정 */
+    padding: 12px 8px;
+  }
 }
 
-.equipment-grid::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+/* 태블릿 화면 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .equipment-grid {
+    grid-template-columns: repeat(3, 1fr); /* 태블릿에서 3열로 표시 */
+    gap: 20px;
+    max-width: 768px;
+  }
+  
+  .equipment-card {
+    height: 180px;
+  }
 }
 
-.equipment-grid::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 4px;
+/* PC 화면 (중간 크기) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .equipment-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5열로 표시 */
+    gap: 20px;
+    max-width: 1100px;
+  }
+}
+
+/* PC 화면 (큰 화면) */
+@media (min-width: 1280px) {
+  .equipment-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5열로 표시 */
+    gap: 30px;
+    max-width: 1200px;
+  }
 }
 
 .equipment-card {
@@ -3299,6 +3329,2666 @@ li {
   font-size: 0.9rem;
   max-height: 80px; /* Control the text area height */
   line-height: 1.4;
+}
+
+/* 스크롤바 스타일링 */
+.equipment-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.equipment-grid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.equipment-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* 모바일 화면 (기본) */
+@media (max-width: 767px) {
+  .equipment-grid {
+    grid-template-columns: 1fr; /* 모바일에서 1열로 표시 */
+    gap: 20px;
+    padding: 0 20px 15px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .equipment-card {
+    height: 180px; /* 모바일에서의 높이 조정 */
+    padding: 15px 10px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .equipment-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
+  
+  .equipment-icon i {
+    font-size: 20px;
+  }
+  
+  .equipment-card h3 {
+    font-size: 1rem;
+    min-height: auto;
+    margin-bottom: 8px;
+  }
+  
+  .equipment-card p {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    max-height: 60px; /* Control the text area height on mobile */
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .section-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+}
+
+/* 태블릿 화면 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .equipment-grid {
+    grid-template-columns: repeat(3, 1fr); /* 태블릿에서 3열로 표시 (2행) */
+    gap: 25px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+  
+  .equipment-card {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+/* PC 화면 (중간 크기) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .equipment-grid {
+    grid-template-columns: repeat(3, 1fr); /* 작은 PC 화면에서 3열로 표시 (2행) */
+    gap: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  .equipment-card {
+    max-width: 280px;
+    margin: 0 auto;
+    height: 280px;
+  }
+}
+
+/* PC 화면 (큰 화면) */
+@media (min-width: 1280px) {
+  .equipment-grid {
+    grid-template-columns: repeat(6, 1fr); /* 큰 PC 화면에서 6열로 표시 (1행) */
+    gap: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  .equipment-card {
+    max-width: 180px;
+    margin: 0 auto;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+    word-break: keep-all;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    word-break: keep-all;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: auto; /* 자동 높이 조정 */
+    max-height: calc(100vh - 70px);
+    background: white;
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+    overflow-y: visible; /* 스크롤 제거 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active li:first-child {
+    margin-top: 0;
+  }
+
+  .nav-links.active li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(234, 234, 234, 0.5);
+  }
+
+  .nav-links.active li a,
+  .nav-links.active li a:visited {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0; /* 패딩 축소 */
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    transition: all 0.25s ease;
+  }
+
+  .nav-links.active li:last-child a {
+    padding: 12px 0;
+    background-color: #f0f4ff;
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+
+  .nav-links.active li a:hover,
+  .nav-links.active li a.active {
+    color: var(--primary-color);
+    background: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  .nav-links.active li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 12px;
+    width: 20px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    opacity: 1;
+    transform: translateY(8px);
+  }
+
+  .nav-links.active li:active {
+    transform: scale(0.98);
+  }
+
+  .nav-links.active::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .nav-links.active::-webkit-scrollbar-thumb {
+    background: rgba(45, 91, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+
+  .hamburger {
+    margin: 0 0 0 auto;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 10px;
+    width: 24px;
+  }
+
+  .hamburger span:nth-child(2) {
+    top: 18px;
+    width: 24px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 26px;
+    width: 24px;
+  }
+
+  .nav-links.active {
+    overflow-y: scroll !important;
+    height: calc(100vh - 70px);
+    padding-bottom: 100px;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  .menu-overlay {
+    display: none !important;
+  }
+}
+
+/* PC 화면에서 네비게이션 링크 표시 개선 */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links li a {
+    padding: 0.5rem 0.75rem;
+    font-size: 16px;
+  }
+}
+
+/* About Section */
+#about {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .about-text h3 {
+    font-size: 1.4rem;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    white-space: normal;
+  }
+}
+
+.about-features {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.about-features li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 모바일 대응을 위한 미디어 쿼리 수정 */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image {
+    order: -1; /* 이미지를 텍스트 위로 이동 */
+    margin: 0 1rem; /* 좌우 여백 추가 */
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 20px; /* PC 버전과 동일한 둥근 모서리 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+  }
+
+  .about-text {
+    padding: 0 1.5rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .about-features {
+    margin-top: 1.5rem;
+  }
+
+  .about-features li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* Doctors Section */
+#doctors {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+#doctors h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+#doctors .doctor-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+#doctors .doctor-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+#doctors .doctor-info {
+  width: 100%;
+  text-align: center;
+}
+
+#doctors .doctor-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+#doctors .doctor-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+#doctors .doctor-brief {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+#doctors .more-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#doctors .more-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 테두리 효과 */
+#doctors .doctor-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px white;
+  z-index: 2;
+}
+
+/* 배경 효과 */
+#doctors .doctor-image::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background-color: #f0f4ff;
+  z-index: -1;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  #doctors .doctor-profile {
+    padding: 1.5rem;
+  }
+
+  #doctors .doctor-image {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Page Content Styles */
+.page-content {
+  min-height: 100vh;
+  padding-bottom: 0;
+  position: relative;
+  background-color: #ffffff;
+  margin-bottom: 0 !important;
+}
+
+.page-content section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0; /* 섹션 간 간격 줄이기 */
+}
+
+.page-content .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Section Background Colors */
+#about {
+  background-color: #ffffff;
+}
+
+#services {
+  background-color: #ffffff;
+}
+
+#medical-equipment {
+  background-color: #ffffff;
+  padding-top: 0; /* 상단 패딩 제거 */
+}
+
+#doctors {
+  background-color: #ffffff;
+}
+
+#reservation {
+  background-color: #ffffff;
+}
+
+#location {
+  background-color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-content section {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  .modal-content {
+    width: 90%; /* 너비 조정 95% -> 90% */
+    padding: 15px; /* 패딩 축소 20px -> 15px */
+    max-height: 85vh; /* 최대 높이 축소 90vh -> 85vh */
+    overflow-y: auto;
+  }
+
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .detail-section {
+    padding: 1.2rem;
+    margin-bottom: 0.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  .service-detail h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    padding-top: 0.5rem;
+  }
+
+  .detail-section ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .reservation-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reservation-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* 스크롤바 스타일링 */
+  .reservation-info::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .reservation-info::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+
+  .reservation-info::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+  }
+
+  .page-content {
+    padding-bottom: 80px; /* 모바일에서 푸터 위 여백 */
+  }
+
+  #services {
+    padding: 3rem 0 5rem; /* 모바일에서 하단 패딩 */
+  }
+
+  footer {
+    padding: 3rem 0 2rem; /* 모바일에서 패딩 */
+  }
+}
+
+/* Policy Pages */
+.policy-section {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+}
+
+.policy-content {
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.policy-content h3 {
+  color: var(--primary-color);
+  margin: 2.5rem 0 1.2rem;
+  font-size: 1.4rem;
+}
+
+.policy-content h3:first-child {
+  margin-top: 0;
+}
+
+.policy-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.policy-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.policy-content li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Map Page */
+.map-section {
+  padding: 6rem 2rem 4rem 2rem;
+  background: var(--secondary-color);
+}
+
+.map-content {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.map-container {
+  width: 100%;
+  margin-bottom: 20px;
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden !important;
+  position: relative;
+  max-width: 100%;
+  min-height: 600px !important;
+}
+
+#map {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 580px !important;
+  max-width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 10px !important;
+}
+
+#map > div {
+  max-width: 50% !important;
+  width: 50% !important;
+}
+
+/* 네이버 지도 요소 강제 스타일링 */
+.naver-map, .nmap {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  min-height: 580px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.naver-map *, .nmap * {
+  max-width: 100% !important;
+}
+
+/* 컨트롤 요소 스타일링 */
+#map .nmap-control, 
+#map .nmap-overlay {
+  max-width: 40px !important;
+  width: auto !important;
+}
+
+#map canvas {
+  max-width: 100% !important;
+}
+
+.iw_inner {
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 10px !important;
+}
+
+.iw_inner h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 10px !important;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.transport-info h4 {
+  color: var(--primary-color);
+  margin: 1rem 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .map-content {
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+  }
+  .map-container {
+    min-height: 300px !important;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #map {
+    min-height: 280px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+  #map > div {
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  .naver-map, .nmap {
+    min-height: 280px !important;
+  }
+  .location-info {
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+  .info-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 메인 페이지의 의료진 섹션 */
+.home-doctor-section .doctors-grid {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 슬라이드 인디케이터 */
+.slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+}
+
+.slide-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-indicator.active {
+  background: var(--primary-color);
+}
+
+.doctor-info {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+/* 의료진 페이지 전용 스타일 */
+.doctors-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 테두리 효과 */
+.doctor-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px white;
+  z-index: 2;
+}
+
+/* 배경 효과 */
+.doctor-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background-color: #f0f4ff;
+  z-index: -1;
+}
+
+/* 기존 스타일 정리 */
+.clean-doctor-image {
+  display: none;
+}
+
+.doctor-card h3 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.doctor-specialty {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.doctor-credentials {
+  list-style: none;
+  background: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+}
+
+.doctor-credentials li {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.doctor-description {
+  margin-top: 2rem;
+}
+
+.doctor-description h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.doctor-description ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.slide-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.prev-btn,
+.next-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  transform: scale(1.2);
+}
+
+.slide-indicators {
+  display: flex;
+  gap: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .doctors-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .doctor-card img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .doctor-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .doctor-credentials {
+    padding: 1.5rem;
+  }
+
+  .doctor-description ul {
+    gap: 1rem;
+  }
+}
+
+.doctors-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.more-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.more-btn:hover {
+  transform: translateY(-2px);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.3rem;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .checkbox-group {
+    padding: 0.8rem 0;
+  }
+
+  .checkbox-group label {
+    font-size: 0.9rem;
+  }
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* 모바일에서는 여백을 줄임 */
+@media (max-width: 768px) {
+  .policy-content {
+    padding: 2rem;
+    margin: 0 1.5rem;
+  }
+}
+
+/* 페이지 헤더 로고 스타일 */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header img {
+  height: 50px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .page-header img {
+    height: 40px;
+  }
+}
+
+/* 원형 블로그 버튼 스타일 */
+.blog-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #0066ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.blog-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 모달 스타일 완전 개선 - KNJ 신경과 스타일 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  padding: 20px;
+}
+
+.modal-card {
+  position: relative;
+  background: white;
+  width: 95%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 0;
+}
+
+/* 모달 헤더 */
+.modal-header {
+  text-align: center;
+  padding: 25px 20px;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 5;
+}
+
+.modal-title {
+  color: #1e3bb3;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 모달 컨텐츠 */
+.modal-body {
+  padding: 20px;
+}
+
+/* 섹션 스타일 */
+.modal-section {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: #1e3bb3;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+/* 리스트 스타일 */
+.symptom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.symptom-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.symptom-list li:last-child {
+  margin-bottom: 0;
+}
+
+.symptom-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #1e3bb3;
+  font-weight: 500;
+}
+
+/* 닫기 버튼 */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 6;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #666;
+  top: 50%;
+  left: 0;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+  .modal-header {
+    padding: 20px 15px;
+  }
+
+  .modal-title {
+    font-size: 22px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-section {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+}
+
+/* 전체 코드 유지 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* 헤더 스타일 */
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+
+/* 네비게이션 메뉴 */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 메인 컨텐츠 영역 */
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 진료과목 섹션 */
+.departments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* 의료진 소개 */
+.doctors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* 예약 폼 */
+.reservation-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reservation-info {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.info-card {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.info-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.info-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.phone {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phone::before {
+  content: "📞";
+  font-size: 1.4rem;
+}
+
+.transport {
+  margin-top: 1rem;
+}
+
+.transport strong {
+  color: var(--primary-color);
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .reservation-info {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .phone {
+    font-size: 1.5rem;
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .departments,
+  .doctors {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 버튼 스타일 */
+.button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #222;
+  padding: 4rem 0 3rem;
+  color: white;
+  position: relative;
+  margin-top: 0 !important;
+  border-top: none;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer-info p {
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.copyright {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 3rem 0;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 0 2rem;
+  }
+}
+
+.phone-number {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.phone-number:hover {
+  color: #1a3ccc; /* 더 진한 파란색으로 변경 */
+}
+
+/* 모바일에서는 전화 아이콘에 특별한 스타일 적용 */
+@media (max-width: 768px) {
+  .phone-number {
+    font-size: 1.8rem;
+  }
+}
+
+.phone-number::before {
+  content: "☎"; /* 심플한 전화기 아이콘 */
+  font-size: 1.8rem;
+  margin-right: 8px;
+}
+
+.kakao-link {
+  color: #555;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.kakao-link:hover {
+  color: var(--primary-color);
+}
+
+.kakao-link::before {
+  content: "💬";
+  font-size: 1.2rem;
+}
+
+/* 푸터 전화번호 스타일 수정 */
+.footer-info .phone {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.footer-info .phone::before {
+  display: none; /* 푸터에서는 전화 아이콘 숨김 */
+}
+
+/* 메뉴 항목 표시 문제 해결 */
+@media (max-width: 768px) {
+  .nav-links.active {
+    height: calc(100vh - 70px);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 각 메뉴 항목 스타일 강화 */
+  .nav-links.active li {
+    display: block !important; /* 강제 표시 */
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin: 15px 0;
+    width: 100%;
+  }
+}
+
+/* 햄버거 메뉴 블로그 항목 스타일 */
+@media (max-width: 768px) {
+  .nav-links.active li:nth-child(7) {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.7s;
+  }
+
+  .nav-links li a[target="_blank"] {
+    display: block !important;
+    color: #333333 !important;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .nav-links li a[target="_blank"]:hover {
+    color: var(--primary-color) !important;
+  }
+}
+
+/* 의료진 소개 페이지 스타일 */
+.doctor-profile-section {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+/* 깔끔한 의사 이미지 스타일 - 완전히 새로운 접근 */
+.clean-doctor-image {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clean-doctor-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 기존 스타일 제거 */
+.doctor-profile-section .doctor-image-container,
+.doctor-profile-section .doctor-image,
+.doctor-profile-section .doctor-image-container::before,
+.doctor-profile-section .doctor-image-container::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .doctor-profile-section .doctor-profile {
+    padding: 1.5rem;
+  }
+   
+  .doctor-profile-section .doctor-image-container {
+    width: 200px;
+    height: 200px;
+  }
+   
+  .doctor-name {
+    font-size: 1.8rem;
+  }
+    
+  .doctor-philosophy-content {
+    padding: 1rem;
+  }
+    
+  .doctor-philosophy-content p {
+    font-size: 0.9rem;
+  }
+    
+  .doctor-philosophy-content br {
+    display: none;
+  }
+}
+
+.doctor-name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.doctor-specialty {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.doctor-education {
+  margin-bottom: 1.5rem;
+}
+
+.doctor-education p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.doctor-expertise {
+  text-align: center;
+  width: 100%;
+}
+
+.doctor-expertise h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.doctor-expertise p {
+  color: #555;
+  text-align: left;
+}
+
+.doctor-philosophy-title {
+  font-size: 1.2rem;
+  color: #4A6CF7;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.doctor-philosophy-content {
+  background-color: #f9f9ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.doctor-philosophy-content p {
+  color: #555;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.doctor-philosophy-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .doctor-profile-section .doctor-profile {
+    padding: 1.5rem;
+  }
+
+  .doctor-profile-section .doctor-image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .doctor-name {
+    font-size: 1.8rem;
+  }
+}
+
+/* 불필요한 doctor-profile 스타일 제거 */
+.doctor-profile {
+  display: none;
+}
+
+/* doctor-card 스타일 유지 및 강화 */
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 의료진 소개 페이지에서만 doctor-profile 숨기기 */
+.doctor-profile-section .doctor-profile {
+  display: none;
+}
+
+/* 페이지 콘텐츠와 푸터 사이의 여백 추가 */
+.page-content {
+  min-height: 100vh; /* 최소 높이 설정 */
+  padding-bottom: 0; /* 푸터 위 여백 제거 */
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* div.container 여백 조정 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem; /* 하단 패딩 추가 */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 섹션 간 간격 제거 */
+section {
+  margin: 0 !important;
+  padding: 4rem 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+section::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/* 푸터 섹션 간격 제거 */
+footer {
+  background-color: #222;
+  padding: 4rem 0 3rem;
+  color: white;
+  position: relative;
+  margin-top: 0 !important;
+}
+
+/* 모든 섹션의 배경색 설정 */
+#services,
+#doctors,
+#about,
+.doctor-profile-section {
+  background-color: #ffffff;
+}
+
+/* 진료시간 섹션 배경색 통일 */
+#hours {
+  background-color: var(--secondary-color);
+  padding: 4rem 0;
+  margin: 0 !important;
+  position: relative;
+}
+
+/* 페이지 콘텐츠 여백 조정 */
+.page-content {
+  min-height: 100vh;
+  padding-bottom: 0 !important;
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* 루트 레이아웃 컨테이너 설정 */
+#__next,
+main,
+.page-content {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 모든 딸브 컨테이너 배경색 통일 */
+div {
+  background-color: transparent;
+}
+
+/* 푸터 위 여백 완전 제거 */
+.page-content {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 모바일 환경 특별 처리 */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* 진료문의 페이지 파란색 선 완전 제거 */
+.contact-info-container > div,
+.contact-section > div,
+.reservation-section > div,
+#hours > div,
+.contact-section::before,
+.contact-section::after,
+#hours::before,
+#hours::after,
+.contact-info-container > div::before,
+.contact-info-container > div::after,
+.vertical-line,
+.horizontal-line,
+div[class*="divider"],
+div[class*="line"] {
+  border: none !important;
+  background: none !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  position: static !important;
+  box-shadow: none !important;
+}
+
+/* 파란색 선이 있는 요소 완전 제거 */
+.blue-line,
+.divider-line,
+.vertical-divider,
+.horizontal-divider {
+  display: none !important;
+}
+
+/* 진료문의 페이지 헤더와 간격 조정 */
+.reservation-section {
+  padding-top: 120px !important;
+  margin-top: 0 !important;
+}
+
+.reservation-section h2.section-title {
+  margin-top: 0 !important;
+  margin-bottom: 3rem !important;
+  padding-top: 0 !important;
+}
+
+/* 콘텐츠 섹션 스타일 개선 */
+.contact-info-container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 1rem !important;
+}
+
+/* 각 섹션 스타일 향상 */
+.contact-section {
+  background-color: white !important;
+  border-radius: 10px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* 모바일 화면에서 더 큰 여백 */
+@media (max-width: 768px) {
+  .reservation-section {
+    padding-top: 100px !important;
+  }
+
+  .contact-section {
+    padding: 1.5rem !important;
+  }
+}
+
+/* 진료 안내 페이지 (모바일) 글자 잘림 문제 해결 */
+.services-section .service-detail {
+  word-break: keep-all; /* 한글 단어 중간 줄바꿈 방지 */
+  overflow: visible !important;
+}
+
+.services-section .service-detail h3,
+.services-section .service-detail h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  word-break: keep-all;
+}
+
+.services-section .service-detail p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.services-section .service-detail ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-section .service-detail li {
+  margin-bottom: 0.5rem;
+  word-break: keep-all;
+}
+
+/* 모바일 환경에서 추가 최적화 */
+@media (max-width: 768px) {
+  .services-section .service-detail h3,
+  .services-section .service-detail h4 {
+    font-size: 1.2rem;
+  }
+
+  .services-section .service-detail p,
+  .services-section .service-detail li {
+    font-size: 0.95rem;
+  }
+
+  .service-card p {
+    line-height: 1.5;
+    max-height: none !important;
+    display: block;
+  }
+}
+
+/* 진료문의 페이지 스크롤 제거 */
+.reservation-section .contact-info-container > div,
+.reservation-section .contact-section,
+.reservation-section #hours {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* 스크롤바 요소 완전 제거 */
+.reservation-section *::-webkit-scrollbar,
+.contact-info-container *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.reservation-section *,
+.contact-info-container * {
+  overflow: visible !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* 콘텐츠 박스 높이 자동 조정 */
+.reservation-section .contact-info,
+.reservation-section .hours-info,
+.reservation-section .location-info {
+  height: auto !important;
+  min-height: 100px;
+  display: block !important;
+  position: static !important;
+}
+
+/* 콘텐츠 배치 개선 */
+.reservation-section ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.reservation-section li {
+  margin-bottom: 0.8rem;
+}
+
+/* 연락처 강조 */
+.reservation-section .phone {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 1rem 0;
+  display: block;
+}
+
+/* 진료안내 페이지 글자 잘림 문제 완전 해결 */
+.service-card,
+.service-detail,
+.services-section * {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+/* 서비스 카드 콘텐츠 완전히 표시 */
+.service-card p,
+.service-detail p,
+.services-section p {
+  display: block !important;
+  -webkit-box-orient: unset !important;
+  box-orient: unset !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.8 !important;
+  max-height: none !important;
+}
+
+/* 모든 블루 라인 및 스크롤바 강제 제거 */
+.blue-line,
+.blue-vertical-line,
+.blue-horizontal-line,
+[class*="blue"],
+[class*="line"],
+[class*="scroll"],
+[class*="divider"],
+.vertical-line,
+.horizontal-line,
+.vertical-divider,
+.horizontal-divider {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -9999 !important;
+}
+
+/* 예약 페이지 스크롤바 강제 제거 */
+html *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+html * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* 예약 페이지 전체 콘텐츠 자동 높이 설정 */
+.reservation-section,
+.reservation-section *,
+.contact-info-container,
+.contact-info-container * {
+  height: auto !important;
+  max-height: none !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* 공통 스타일 강화 */
+body,
+html,
+main,
+div,
+section,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+/* 벤더 접두어 경고 해결 */
+.service-card p,
+.services-section p,
+[class*="clamp"] {
+  /* 벤더 접두어와 표준 속성 모두 정의 */
+  display: -webkit-box;
+  display: block;
+  -webkit-box-orient: vertical;
+}
+
+/* 이미 수정된 요소에서도 표준 속성 추가 */
+.services-section p {
+  -webkit-box-orient: unset;
+}
+
+/* 모든 변형 요소에 대한 처리 */
+[class*="-webkit-"] {
+  /* 각 -webkit- 속성에 대응하는 표준 속성 추가 */
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* 의료진 페이지 이미지 원형 맞춤 수정 */
+.doctor-profile-section .doctor-image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden !important;
+  margin: 0 auto 2rem auto;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-profile-section .doctor-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover !important;
+  object-position: center top;
+}
+
+/* 모바일 환경에서 원형 이미지 최적화 */
+@media (max-width: 768px) {
+  .doctor-profile-section .doctor-image-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden !important;
+  }
+
+  .doctor-profile-section .doctor-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+
+/* 의료진 경력 카드 스타일 */
+.doctor-credentials-card {
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.doctor-credentials-card p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .doctor-credentials-card {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .doctor-credentials-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 메뉴 배경 오버레이 */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+/* 애플 스타일 모바일 메뉴 - 완벽한 버전 */
+@media (max-width: 768px) {
+  /* 기본 네비게이션 설정 */
+  .navbar {
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-container {
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* 햄버거 버튼 KNJ 스타일 */
+  .hamburger {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-left: auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .hamburger span {
+    position: absolute;
+    width: 22px !important;
+    height: 2px;
+    background-color: #1e3bb3; /* KNJ 메인 색상 */
+    border-radius: 1px;
+    left: 9px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 14px;
+  }
+
+  .hamburger span:nth-child(2) {
+    top: 20px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 26px;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+
+  /* KNJ 스타일 메뉴 컨테이너 */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 메뉴 아이템 스타일링 */
+  .nav-links.active li {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-links.active li:last-child {
+    border-bottom: none;
+  }
+
+  /* 메뉴 아이템 스타일링 */
+  .nav-links.active li a,
+  .nav-links.active li a:visited {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+  }
+
+  /* 활성화된 메뉴 스타일 */
+  .nav-links.active li a.active {
+    color: #1e3bb3; /* KNJ 메인 색상 */
+    font-weight: 500;
+    background-color: #f8f9ff;
+  }
+
+  /* 로고 스타일 */
+  .logo img {
+    height: 36px;
+  }
+}
+
+/* PC 화면에서 네비게이션 링크 표시 */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* 모바일 화면에서 배경 이미지 조정 */
+@media (max-width: 768px) {
+  #hero {
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  .hero-image-container {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-content {
+    padding: 0 1.5rem;
+    z-index: 10;
+  }
+}
+
+/* 모바일 화면에서 이미지 조정 */
+@media (max-width: 768px) {
+  .hero-background-image {
+    object-fit: cover;
+    background-color: #000;
+  }
+  
+  .hero-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 10px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 의료장비 섹션 스타일 */
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px; /* 상단 마진 줄이기 */
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+/* 모바일 화면 (기본) */
+@media (max-width: 767px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr); /* 모바일에서 2열로 표시 */
+    gap: 15px;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+  
+  .equipment-card {
+    height: 160px; /* 모바일에서의 높이 조정 */
+    padding: 12px 8px;
+  }
+}
+
+/* 태블릿 화면 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .equipment-grid {
+    grid-template-columns: repeat(3, 1fr); /* 태블릿에서 3열로 표시 */
+    gap: 20px;
+    max-width: 768px;
+  }
+  
+  .equipment-card {
+    height: 180px;
+  }
+}
+
+/* PC 화면 (중간 크기) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .equipment-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5열로 표시 */
+    gap: 20px;
+    max-width: 1100px;
+  }
+}
+
+/* PC 화면 (큰 화면) */
+@media (min-width: 1280px) {
+  .equipment-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5열로 표시 */
+    gap: 30px;
+    max-width: 1200px;
+  }
+}
+
+.equipment-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  height: 195px; /* 높이를 195px로 수정 */
+  width: 100%;
+}
+
+.equipment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.equipment-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.equipment-icon i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.equipment-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+  width: 100%;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  word-break: keep-all;
+  line-height: 1.3;
+}
+
+.equipment-card p {
+  color: #666;
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  word-break: keep-all;
+  font-size: 0.9rem;
+  max-height: 80px; /* Control the text area height */
+  line-height: 1.4;
+}
+
+/* 스크롤바 스타일링 */
+.equipment-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.equipment-grid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.equipment-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
 }
 
 /* 모바일 화면 (기본) */
@@ -3382,25 +6072,26 @@ li {
   .equipment-card {
     max-width: 280px;
     margin: 0 auto;
-    height: 195px; /* 높이를 195px로 수정 */
+    height: 280px;
   }
 }
 
 /* PC 화면 (큰 화면) */
 @media (min-width: 1280px) {
   .equipment-grid {
-    grid-template-columns: repeat(6, 1fr); /* 큰 PC 화면에서 6열로 표시 (1행) */
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr); /* 큰 PC 화면에서 5열로 표시 (2행) */
+    gap: 30px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 20px;
+    padding: 0 30px;
+    justify-content: center;
   }
 
   .equipment-card {
-    max-width: 180px;
+    max-width: 200px;
     margin: 0 auto;
-    height: 195px; /* 높이를 195px로 수정 */
+    height: 200px; /* 높이를 조금 더 높게 수정 */
   }
 }
 

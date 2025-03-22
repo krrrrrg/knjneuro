@@ -201,6 +201,7 @@ export default function Services() {
             </p>
             
             <div className="equipment-grid">
+              {/* 첫번째 줄 - 5개 */}
               <div 
                 className="equipment-card" 
                 onClick={() => showModal('arterialStiffnessModal')}
@@ -255,7 +256,10 @@ export default function Services() {
                 <h3>자율신경계 검사</h3>
                 <p>자율신경계 기능 평가</p>
               </div>
-              
+            </div>
+            
+            {/* 두번째 줄 - 5개 */}
+            <div className="equipment-grid" style={{ marginTop: "20px" }}>
               <div 
                 className="equipment-card" 
                 onClick={() => showModal('emgModal')}
