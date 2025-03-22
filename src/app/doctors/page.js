@@ -32,13 +32,16 @@ export default function Doctors() {
               <h3 style={{ textAlign: 'center', width: '100%' }}>강남제 <span style={{ fontSize: '0.8em' }}>원장</span></h3>
               <p className="doctor-specialty">신경과 전문의</p>
 
-              <div className="doctor-credentials-card">
-                <p>부산대학교 의과대학, 대학원 졸업</p>
-                <p>대한 신경과학회 정회원</p>
+              <div className="doctor-expertise" style={{ marginTop: '1.5rem' }}>
+                <h4 className="doctor-philosophy-title">학력 및 자격</h4>
+                <div className="doctor-credentials-card">
+                  <p>부산대학교 의과대학, 대학원 졸업</p>
+                  <p>대한 신경과학회 정회원</p>
+                </div>
               </div>
 
-              <div className="doctor-expertise">
-                <h4 className="doctor-philosophy-title"> </h4>
+              <div className="doctor-expertise" style={{ marginTop: '1.5rem' }}>
+                <h4 className="doctor-philosophy-title">진료 철학</h4>
                 <div className="doctor-philosophy-content">
                   <p>강남제신경과는 내 주치의 진료를 표방합니다.</p>
                   <p>진료 받으시면서 타과 질환에 대해 상담하시면 최선을 다해 안내하여 타병원에서 원활한 진료를 받을 수 있도록 도와 드리고자 합니다.</p>
