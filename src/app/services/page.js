@@ -210,7 +210,7 @@ export default function Services() {
                   <i className="fas fa-heart"></i>
                 </div>
                 <h3>동맥경화도 검사</h3>
-                <p>혈관 건강 및 심혈관 위험 평가</p>
+                <p>사지 혈압 및 동맥경화도 측정</p>
               </div>
               
               <div 
@@ -221,7 +221,7 @@ export default function Services() {
                   <i className="fas fa-brain"></i>
                 </div>
                 <h3>뇌혈류 초음파</h3>
-                <p>두개내 혈류 측정 및 평가</p>
+                <p>뇌로 가는 큰 혈관의 속도 및 이상 확인</p>
               </div>
               
               <div 
@@ -232,7 +232,7 @@ export default function Services() {
                   <i className="fas fa-plus"></i>
                 </div>
                 <h3>경동맥 초음파</h3>
-                <p>경동맥 협착 및 혈류 평가</p>
+                <p>경동맥의 협착, 두께 등 확인</p>
               </div>
               
               <div 
@@ -243,7 +243,7 @@ export default function Services() {
                   <i className="fas fa-spinner"></i>
                 </div>
                 <h3>어지럼증 검사</h3>
-                <p>평형기능 및 전정기능 평가</p>
+                <p>이석증 및 어지럼증 확인</p>
               </div>
               
               <div 
@@ -254,7 +254,7 @@ export default function Services() {
                   <i className="fas fa-heartbeat"></i>
                 </div>
                 <h3>자율신경계 검사</h3>
-                <p>자율신경계 기능 평가</p>
+                <p>스트레스 검사 및 기립성 저혈압 검사</p>
               </div>
             </div>
             
@@ -268,7 +268,7 @@ export default function Services() {
                   <i className="fas fa-bolt"></i>
                 </div>
                 <h3>신경전도, 근전도검사</h3>
-                <p>신경 및 근육 질환 진단</p>
+                <p>신경의 전도 속도 및 근육 반응 평가</p>
               </div>
               
               <div 
@@ -279,7 +279,7 @@ export default function Services() {
                   <i className="fas fa-broadcast-tower"></i>
                 </div>
                 <h3>근골격계, 신경계 초음파</h3>
-                <p>신경, 근골격계 진단 및 평가</p>
+                <p>근육과 신경의 이상 확인</p>
               </div>
               
               <div 
@@ -290,7 +290,7 @@ export default function Services() {
                   <i className="fas fa-bone"></i>
                 </div>
                 <h3>골다공증 검사</h3>
-                <p>골밀도 측정 및 골다공증 평가</p>
+                <p>뼈의 밀도를 측정</p>
               </div>
               
               <div 
@@ -301,7 +301,7 @@ export default function Services() {
                   <i className="fas fa-cogs"></i>
                 </div>
                 <h3>인지기능(치매)검사</h3>
-                <p>인지능력 및 치매 위험 평가</p>
+                <p>인지기능장애부터 치매까지 인지기능의 정도 확인</p>
               </div>
               
               <div 
@@ -312,7 +312,7 @@ export default function Services() {
                   <i className="fas fa-vial"></i>
                 </div>
                 <h3>종합피검사</h3>
-                <p>약 80종 항목 검사 가능</p>
+                <p>피검사, 소변검사 등 총 80여 가지 항목 검사</p>
               </div>
             </div>
           </div>
