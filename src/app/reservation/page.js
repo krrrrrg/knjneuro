@@ -11,12 +11,13 @@ export default function Reservation() {
 
       <main className="page-content" style={{ minHeight: "calc(100vh - 230px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
         <section id="reservation" data-aos="fade-up" style={{ flex: "1", display: "flex", alignItems: "center", padding: "2rem 0" }}>
+          <br />
+          <br />
+          <br />
           <div className="container">
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">
-                  <br />
-                  <br />
                   <h3>진료시간</h3>
                   <ul>
                   <li>월화목금: 09:00 - 17:40</li>
