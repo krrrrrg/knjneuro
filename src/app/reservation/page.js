@@ -15,6 +15,8 @@ export default function Reservation() {
             <div className="reservation-content">
               <div className="reservation-info">
                 <div className="info-card">
+                  <br />
+                  <br />
                   <h3>진료시간</h3>
                   <ul>
                   <li>월화목금: 09:00 - 17:40</li>
