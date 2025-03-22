@@ -229,7 +229,7 @@ export default function Services() {
                 onClick={() => showModal('carotidUltrasoundModal')}
               >
                 <div className="equipment-icon">
-                  <i className="fas fa-chart-line"></i>
+                  <i className="fas fa-plus"></i>
                 </div>
                 <h3>경동맥 초음파</h3>
                 <p>경동맥 협착 및 혈류 평가</p>
