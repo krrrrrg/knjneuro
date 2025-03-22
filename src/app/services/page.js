@@ -229,7 +229,7 @@ export default function Services() {
                 onClick={() => showModal('carotidUltrasoundModal')}
               >
                 <div className="equipment-icon">
-                  <i className="fas fa-wave-square"></i>
+                  <i className="fas fa-chart-line"></i>
                 </div>
                 <h3>경동맥 초음파</h3>
                 <p>경동맥 협착 및 혈류 평가</p>
@@ -240,7 +240,7 @@ export default function Services() {
                 onClick={() => showModal('vertigoTestModal')}
               >
                 <div className="equipment-icon">
-                  <i className="fas fa-street-view"></i>
+                  <i className="fas fa-spinner"></i>
                 </div>
                 <h3>어지럼증 검사</h3>
                 <p>평형기능 및 전정기능 평가</p>
@@ -276,7 +276,7 @@ export default function Services() {
                 onClick={() => showModal('ultrasoundModal')}
               >
                 <div className="equipment-icon">
-                  <i className="fas fa-wave-square"></i>
+                  <i className="fas fa-broadcast-tower"></i>
                 </div>
                 <h3>근골격계, 신경계 초음파</h3>
                 <p>신경, 근골격계 진단 및 평가</p>
@@ -295,10 +295,10 @@ export default function Services() {
               
               <div 
                 className="equipment-card" 
-                onClick={() => showModal('cognitiveTestModal')}
+                onClick={() => showModal('cognitiveModal')}
               >
                 <div className="equipment-icon">
-                  <i className="fas fa-brain"></i>
+                  <i className="fas fa-cogs"></i>
                 </div>
                 <h3>인지기능(치매)검사</h3>
                 <p>인지능력 및 치매 위험 평가</p>
@@ -903,9 +903,9 @@ export default function Services() {
       </div>
 
       {/* 인지기능(치매) 검사 모달 */}
-      <div id="cognitiveTestModal" className="modal">
+      <div id="cognitiveModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('cognitiveTestModal')}></span>
+          <span className="close-button" title="닫기" onClick={() => hideModal('cognitiveModal')}></span>
           <h2>인지기능(치매) 검사</h2>
           <div className="detail-content">
             <div className="detail-section">
