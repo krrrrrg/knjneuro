@@ -87,7 +87,7 @@ a {
   right: 15px;
   width: 25px;
   height: 25px;
-  cursor: pointer;
+  cursor: default;
   z-index: 200;
 }
 
@@ -466,7 +466,7 @@ a {
   padding: 0;
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: default;
   z-index: 1002;
 }
 
@@ -594,7 +594,7 @@ a {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   border-radius: 30px;
-  cursor: pointer;
+  cursor: default;
   transition: transform 0.3s ease;
 }
 
@@ -1501,7 +1501,7 @@ a {
   height: 8px;
   border-radius: 50%;
   background: #ddd;
-  cursor: pointer;
+  cursor: default;
   transition: all 0.3s ease;
 }
 
@@ -1664,7 +1664,7 @@ a {
   border: none;
   font-size: 1.5rem;
   color: var(--primary-color);
-  cursor: pointer;
+  cursor: default;
   padding: 0.5rem;
   transition: transform 0.3s ease;
 }
@@ -1926,7 +1926,7 @@ input[type="text"]::placeholder {
   height: 24px;
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: default;
   z-index: 6;
 }
 
@@ -2161,7 +2161,7 @@ body {
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: default;
   transition: background-color 0.3s;
 }
 
@@ -3024,7 +3024,7 @@ li {
     padding: 0;
     background: transparent;
     border: none;
-    cursor: pointer;
+    cursor: default;
     z-index: 1002;
   }
 
@@ -3274,15 +3274,15 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   height: 195px; /* 높이를 195px로 수정 */
   width: 100%;
 }
 
-.equipment-card:hover {
+/* .equipment-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .equipment-icon {
   width: 50px;
@@ -4146,7 +4146,7 @@ li {
   height: 8px;
   border-radius: 50%;
   background: #ddd;
-  cursor: pointer;
+  cursor: default;
   transition: all 0.3s ease;
 }
 
@@ -4309,7 +4309,7 @@ li {
   border: none;
   font-size: 1.5rem;
   color: var(--primary-color);
-  cursor: pointer;
+  cursor: default;
   padding: 0.5rem;
   transition: transform 0.3s ease;
 }
@@ -4571,7 +4571,7 @@ input[type="text"]::placeholder {
   height: 24px;
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: default;
   z-index: 6;
 }
 
@@ -4806,7 +4806,7 @@ body {
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: default;
   transition: background-color 0.3s;
 }
 
@@ -5669,7 +5669,7 @@ li {
     padding: 0;
     background: transparent;
     border: none;
-    cursor: pointer;
+    cursor: default;
     z-index: 1002;
   }
 
@@ -5919,15 +5919,15 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   height: 195px; /* 높이를 195px로 수정 */
   width: 100%;
 }
 
-.equipment-card:hover {
+/* .equipment-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .equipment-icon {
   width: 50px;

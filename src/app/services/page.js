@@ -203,8 +203,7 @@ export default function Services() {
             <div className="equipment-grid">
               {/* 첫번째 줄 - 5개 */}
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('arterialStiffnessModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-heart"></i>
@@ -214,8 +213,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('cerebralBloodFlowModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-brain"></i>
@@ -225,8 +223,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('carotidUltrasoundModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-plus"></i>
@@ -236,8 +233,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('vertigoTestModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-spinner"></i>
@@ -247,8 +243,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('autonomicTestModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-heartbeat"></i>
@@ -261,8 +256,7 @@ export default function Services() {
             {/* 두번째 줄 - 5개 */}
             <div className="equipment-grid" style={{ marginTop: "20px" }}>
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('emgModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-bolt"></i>
@@ -272,8 +266,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('ultrasoundModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-broadcast-tower"></i>
@@ -283,8 +276,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('boneDensityModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-bone"></i>
@@ -294,8 +286,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('cognitiveModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-cogs"></i>
@@ -305,8 +296,7 @@ export default function Services() {
               </div>
               
               <div 
-                className="equipment-card" 
-                onClick={() => showModal('bloodTestModal')}
+                className="equipment-card"
               >
                 <div className="equipment-icon">
                   <i className="fas fa-vial"></i>
