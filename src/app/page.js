@@ -291,7 +291,7 @@ export default function Home() {
               fontSize: "clamp(16px, 4vw, 32px)",
             }}
           >
-            강남제신경과는 내 주치의 진료를 표방합니다.
+            강남제신경과는 내 주치의 진료를 표방합니다. (테스트 수정)
           </p>
           <br />
           <Link href="/reservation" className="cta-button">
