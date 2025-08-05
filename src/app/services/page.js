@@ -368,11 +368,8 @@ export default function Services() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>두부 MRI/MRA</li>
-                <li>경추 MRI</li>
-                <li>전정기능검사</li>
-                <li>이석정복술</li>
-                <li>경추 초음파</li>
+                <li>뇌혈류 초음파 검사</li>
+                <li>비디오 안전 검사 MRI</li>
               </ul>
             </div>
           </div>

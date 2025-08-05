@@ -375,12 +375,9 @@ export default function Home() {
                 <h3>주요 진료 분야</h3>
               </div>
               <ul>
-                <li>뇌졸중 (중풍)</li>
+                <li>뇌졸중</li>
                 <li>치매</li>
-                <li>파킨슨병</li>
-                <li>뇌전증 (간질)</li>
-                <li>뇌염, 뇌수막염</li>
-                <li>뇌혈관질환</li>
+                <li>파킨슨씨병</li>
               </ul>
             </div>
             <div className="detail-section">
@@ -388,11 +385,10 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>뇌 MRI/MRA</li>
-                <li>뇌파검사</li>
-                <li>인지기능검사</li>
-                <li>경동맥 초음파</li>
-                <li>동맥경화도 검사</li>
+              <li>동맥경화도 검시</li>
+                <li>뇌혈류 초음파 검사</li>
+                <li>경동맥 초음파 검사</li>
+                <li>인지기능(치매) 검사</li>
               </ul>
             </div>
           </div>
@@ -410,13 +406,13 @@ export default function Home() {
                 <h3>주요 진료 분야</h3>
               </div>
               <ul>
-                <li>편두통</li>
+              <li>편두통</li>
                 <li>긴장성 두통</li>
                 <li>군발성 두통</li>
+                <li>편두통성 어지럼증</li>
                 <li>이석증</li>
                 <li>메니에르병</li>
                 <li>전정신경염</li>
-                <li>경추성 어지럼증</li>
                 <li>경추두개증후군</li>
               </ul>
             </div>
@@ -425,11 +421,8 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>두부 MRI/MRA</li>
-                <li>경추 MRI</li>
-                <li>전정기능검사</li>
-                <li>이석정복술</li>
-                <li>경추 초음파</li>
+              <li>뇌혈류 초음파 검사</li>
+              <li>비디오 안전 검사 MRI</li>
               </ul>
             </div>
           </div>
