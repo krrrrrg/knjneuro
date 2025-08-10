@@ -388,7 +388,7 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-                <li>동맥경화도 검시</li>
+                <li>동맥경화도 검사</li>
                 <li>뇌혈류 초음파 검사</li>
                 <li>경동맥 초음파 검사</li>
                 <li>인지기능(치매) 검사</li>
@@ -429,7 +429,7 @@ export default function Home() {
               </div>
               <ul>
                 <li>뇌혈류 초음파 검사</li>
-                <li>비디오 안전 검사 MRI</li>
+                <li>비디오 안전 검사</li>
               </ul>
             </div>
           </div>

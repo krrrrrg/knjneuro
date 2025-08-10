@@ -358,7 +358,7 @@ export default function Services() {
               </div>
               <ul>
                 <li>뇌혈류 초음파 검사</li>
-                <li>비디오 안전 검사</li>
+                <li>비디오 안전 검사 MRI</li>
               </ul>
             </div>
           </div>
