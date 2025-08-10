@@ -269,7 +269,7 @@ export default function Home() {
       <section id="hero">
         <div className="hero-image-container">
           <img
-            src="3.jpg"
+            src="1.jpg"
             alt="강남제신경과 배경"
             className="hero-background-image"
             loading="eager"
