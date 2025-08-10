@@ -8,50 +8,50 @@ export default function Home() {
   const showModal = (modalId) => {
     console.log(`모달 열기: ${modalId}`);
     const modal = document.getElementById(modalId);
-    
+
     if (modal) {
       // 현재 스크롤 위치 저장
       const currentScrollPos = window.scrollY;
-      
+
       // 배경 스크롤 방지 (스크롤 위치는 유지)
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
       document.body.style.top = `-${currentScrollPos}px`;
-      document.body.style.width = '100%';
-      
+      document.body.style.width = "100%";
+
       // 모달 표시
-      modal.style.display = 'flex';
-      
+      modal.style.display = "flex";
+
       // 모달 내용의 스크롤 위치만 재설정 (페이지 스크롤은 변경하지 않음)
       setTimeout(() => {
-        const modalContent = modal.querySelector('.modal-content');
+        const modalContent = modal.querySelector(".modal-content");
         if (modalContent) modalContent.scrollTop = 0;
       }, 10);
     } else {
       console.error(`모달을 찾을 수 없음: ${modalId}`);
     }
   };
-  
+
   // 모달을 닫기 위한 함수 (모든 모달에 공통으로 사용)
   const hideModal = (modalId) => {
     console.log(`모달 닫기: ${modalId}`);
     const modal = document.getElementById(modalId);
-    
+
     if (modal) {
       // 현재 고정된 위치 값 가져오기
       const scrollY = document.body.style.top;
-      
+
       // 모달 닫기
-      modal.style.display = 'none';
-      
+      modal.style.display = "none";
+
       // 스크롤 복원
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
       // 스크롤 위치 복원
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
   };
 
@@ -74,26 +74,26 @@ export default function Home() {
           // 지도 컨테이너 사이즈 확인
           const mapContainer = document.getElementById("map");
           const containerWidth = mapContainer.clientWidth;
-          
+
           // 상위 컨테이너 스타일 강제 적용
-          const mapWrapper = document.querySelector('.map-container');
+          const mapWrapper = document.querySelector(".map-container");
           if (mapWrapper) {
-            mapWrapper.style.overflow = 'hidden';
-            mapWrapper.style.maxWidth = '100%';
-            mapWrapper.style.width = '100%';
-            mapWrapper.style.position = 'relative';
-            mapWrapper.style.minHeight = '600px';
+            mapWrapper.style.overflow = "hidden";
+            mapWrapper.style.maxWidth = "100%";
+            mapWrapper.style.width = "100%";
+            mapWrapper.style.position = "relative";
+            mapWrapper.style.minHeight = "600px";
           }
-          
+
           // 맵 요소 스타일 강제 적용
-          mapContainer.style.width = '100%';
-          mapContainer.style.maxWidth = '100%';
-          mapContainer.style.height = '100%';
-          mapContainer.style.minHeight = '580px';
-          mapContainer.style.position = 'relative';
-          mapContainer.style.overflow = 'hidden';
-          mapContainer.style.borderRadius = '10px';
-          
+          mapContainer.style.width = "100%";
+          mapContainer.style.maxWidth = "100%";
+          mapContainer.style.height = "100%";
+          mapContainer.style.minHeight = "580px";
+          mapContainer.style.position = "relative";
+          mapContainer.style.overflow = "hidden";
+          mapContainer.style.borderRadius = "10px";
+
           var mapOptions = {
             center: new naver.maps.LatLng(35.1678376, 129.115742),
             zoom: 17,
@@ -101,32 +101,33 @@ export default function Home() {
           };
 
           var map = new naver.maps.Map("map", mapOptions);
-          
+
           // 지도 생성 후 스타일 재적용
           setTimeout(() => {
-            const mapDiv = document.getElementById('map');
-            const mapElements = mapDiv.querySelectorAll('div');
-            
+            const mapDiv = document.getElementById("map");
+            const mapElements = mapDiv.querySelectorAll("div");
+
             // 모든 하위 요소에 스타일 적용
-            mapElements.forEach(el => {
-              el.style.width = '100%';
-              el.style.maxWidth = '100%';
+            mapElements.forEach((el) => {
+              el.style.width = "100%";
+              el.style.maxWidth = "100%";
             });
-            
+
             // 캔버스 요소에도 스타일 적용
-            const canvasElements = mapDiv.querySelectorAll('canvas');
-            canvasElements.forEach(canvas => {
-              canvas.style.maxWidth = '100%';
+            const canvasElements = mapDiv.querySelectorAll("canvas");
+            canvasElements.forEach((canvas) => {
+              canvas.style.maxWidth = "100%";
             });
-            
+
             // 클래스로 네이버 지도 요소 선택해서 스타일 적용
-            const naverElements = document.querySelectorAll('.naver-map, .nmap');
-            naverElements.forEach(el => {
-              el.style.width = '100%';
-              el.style.maxWidth = '100%';
-              el.style.height = '100%';
-              el.style.minHeight = '580px';
-              el.style.overflow = 'hidden';
+            const naverElements =
+              document.querySelectorAll(".naver-map, .nmap");
+            naverElements.forEach((el) => {
+              el.style.width = "100%";
+              el.style.maxWidth = "100%";
+              el.style.height = "100%";
+              el.style.minHeight = "580px";
+              el.style.overflow = "hidden";
             });
           }, 100);
 
@@ -148,10 +149,10 @@ export default function Home() {
             content: contentString,
             maxWidth: 210,
             backgroundColor: "transparent",
-            borderColor: "transparent", 
+            borderColor: "transparent",
             borderWidth: 0,
             disableAnchor: true,
-            pixelOffset: new naver.maps.Point(0, -5)
+            pixelOffset: new naver.maps.Point(0, -5),
           });
 
           naver.maps.Event.addListener(marker, "click", function (e) {
@@ -187,35 +188,35 @@ export default function Home() {
     }
 
     loadNaverMap();
-    
+
     // 모달 외부 클릭 시 닫기 이벤트 (모든 모달에 공통으로 적용)
     const handleModalClick = (event) => {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(modal => {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach((modal) => {
         if (event.target === modal) {
           // 현재 고정된 위치 값 가져오기
           const scrollY = document.body.style.top;
-          
+
           // 모달 닫기
-          modal.style.display = 'none';
-          
+          modal.style.display = "none";
+
           // 스크롤 복원
-          document.body.style.overflow = '';
-          document.body.style.position = '';
-          document.body.style.top = '';
-          document.body.style.width = '';
-          
+          document.body.style.overflow = "";
+          document.body.style.position = "";
+          document.body.style.top = "";
+          document.body.style.width = "";
+
           // 스크롤 위치 복원
-          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+          window.scrollTo(0, parseInt(scrollY || "0") * -1);
         }
       });
     };
-    
-    window.addEventListener('click', handleModalClick);
-    
+
+    window.addEventListener("click", handleModalClick);
+
     // 컴포넌트 언마운트 시 이벤트 리스너 제거
     return () => {
-      window.removeEventListener('click', handleModalClick);
+      window.removeEventListener("click", handleModalClick);
     };
   }, []);
 
@@ -267,9 +268,9 @@ export default function Home() {
 
       <section id="hero">
         <div className="hero-image-container">
-          <img 
-            src="3.jpg" 
-            alt="강남제신경과 배경" 
+          <img
+            src="3.jpg"
+            alt="강남제신경과 배경"
             className="hero-background-image"
             loading="eager"
             importance="high"
@@ -306,16 +307,16 @@ export default function Home() {
           <div className="service-grid">
             <div
               className="service-card"
-              onClick={() => showModal('brainModal')}
+              onClick={() => showModal("brainModal")}
             >
               <img src="/images/치매.png" alt="치매" />
               <h3>뇌 질환</h3>
-              <p>뇌졸중, 치매, 파킨슨</p>
+              <p>뇌졸중, 치매, 파킨슨씨병</p>
             </div>
 
             <div
               className="service-card"
-              onClick={() => showModal('headacheModal')}
+              onClick={() => showModal("headacheModal")}
             >
               <img src="/images/어지럼증.png" alt="어지럼증" />
               <h3>두통 및 어지럼증</h3>
@@ -324,7 +325,7 @@ export default function Home() {
 
             <div
               className="service-card"
-              onClick={() => showModal('autonomicModal')}
+              onClick={() => showModal("autonomicModal")}
             >
               <img src="/images/두통.png" alt="두통" />
               <h3>자율신경계 질환</h3>
@@ -332,42 +333,44 @@ export default function Home() {
             </div>
             <div
               className="service-card"
-              onClick={() => showModal('nerveModal')}
+              onClick={() => showModal("nerveModal")}
             >
               <img src="/images/손발저림.png" alt="손발저림" />
               <h3>신경계 질환</h3>
               <p>손발저림, 안면신경마비</p>
             </div>
-            
+
             <div
               className="service-card"
-              onClick={() => showModal('painModal')}
+              onClick={() => showModal("painModal")}
             >
               <img src="/images/근골격계.png" alt="근골격계" />
               <h3>통증 클리닉</h3>
               <p>근골격계 통증, 말초신경병증</p>
             </div>
-            
+
             <div
               className="service-card"
-              onClick={() => showModal('internalModal')}
+              onClick={() => showModal("internalModal")}
             >
               <img src="/images/내과2.png" alt="내과" />
               <h3>내과 진료</h3>
               <p>혈압, 당뇨, 고지혈증, 비만, 영양요법</p>
             </div>
-
-            
           </div>
         </div>
       </section>
 
-            {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
-      
+      {/* 서비스 상세 모달들 - 각 모달을 완전히 분리 */}
+
       {/* 뇌 질환 모달 */}
       <div id="brainModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('brainModal')}></span>
+          <span
+            className="close-button"
+            title="닫기"
+            onClick={() => hideModal("brainModal")}
+          ></span>
           <h2>뇌 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -385,7 +388,7 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-              <li>동맥경화도 검시</li>
+                <li>동맥경화도 검시</li>
                 <li>뇌혈류 초음파 검사</li>
                 <li>경동맥 초음파 검사</li>
                 <li>인지기능(치매) 검사</li>
@@ -398,7 +401,11 @@ export default function Home() {
       {/* 두통 및 어지럼증 모달 */}
       <div id="headacheModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('headacheModal')}></span>
+          <span
+            className="close-button"
+            title="닫기"
+            onClick={() => hideModal("headacheModal")}
+          ></span>
           <h2>두통 및 어지럼증</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -406,7 +413,7 @@ export default function Home() {
                 <h3>주요 진료 분야</h3>
               </div>
               <ul>
-              <li>편두통</li>
+                <li>편두통</li>
                 <li>긴장성 두통</li>
                 <li>군발성 두통</li>
                 <li>편두통성 어지럼증</li>
@@ -421,8 +428,8 @@ export default function Home() {
                 <h3>관련 검사</h3>
               </div>
               <ul>
-              <li>뇌혈류 초음파 검사</li>
-              <li>비디오 안전 검사 MRI</li>
+                <li>뇌혈류 초음파 검사</li>
+                <li>비디오 안전 검사 MRI</li>
               </ul>
             </div>
           </div>
@@ -432,7 +439,11 @@ export default function Home() {
       {/* 자율신경계질환 모달 */}
       <div id="autonomicModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('autonomicModal')}></span>
+          <span
+            className="close-button"
+            title="닫기"
+            onClick={() => hideModal("autonomicModal")}
+          ></span>
           <h2>자율신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -460,7 +471,11 @@ export default function Home() {
       {/* 신경계 질환 모달 */}
       <div id="nerveModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('nerveModal')}></span>
+          <span
+            className="close-button"
+            title="닫기"
+            onClick={() => hideModal("nerveModal")}
+          ></span>
           <h2>신경계 질환</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -474,7 +489,6 @@ export default function Home() {
                 <li>삼차신경통</li>
                 <li>안면마비</li>
                 <li>구안와사</li>
-
               </ul>
             </div>
             <div className="detail-section">
@@ -485,18 +499,20 @@ export default function Home() {
                 <li>신경전도 검사</li>
                 <li>근전도 검사</li>
                 <li>신경 초음파 검사</li>
-                
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-
-            {/* 통증 클리닉 모달 */}
-            <div id="painModal" className="modal">
+      {/* 통증 클리닉 모달 */}
+      <div id="painModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('painModal')}></span>
+          <span
+            className="close-button"
+            title="닫기"
+            onClick={() => hideModal("painModal")}
+          ></span>
           <h2>통증 클리닉</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -527,11 +543,14 @@ export default function Home() {
         </div>
       </div>
 
-
-            {/* 내과 진료 모달 */}
-            <div id="internalModal" className="modal">
+      {/* 내과 진료 모달 */}
+      <div id="internalModal" className="modal">
         <div className="modal-content">
-          <span className="close-button" title="닫기" onClick={() => hideModal('internalModal')}></span>
+          <span
+            className="close-button"
+            title="닫기"
+            onClick={() => hideModal("internalModal")}
+          ></span>
           <h2>내과 진료</h2>
           <div className="detail-content">
             <div className="detail-section">
@@ -573,13 +592,14 @@ export default function Home() {
           <div className="about-content">
             <div className="about-text">
               <h3>
-              몸과 마음의 불편함을 편안히 상담할 수 있도록, 
-              <br />
-              한 분 한 분께 정성을 다해 진료하겠습니다.              </h3>
+                몸과 마음의 불편함을 편안히 상담할 수 있도록,
+                <br />한 분 한 분께 정성을 다해 진료하겠습니다.{" "}
+              </h3>
               <p>
-              20년 이상의 풍부한 임상경험을 바탕으로 정확한 진단과 치료를 제공합니다. 
-              <br />
-              편안한 진료환경에서 여러분의 건강을 책임지겠습니다.
+                20년 이상의 풍부한 임상경험을 바탕으로 정확한 진단과 치료를
+                제공합니다.
+                <br />
+                편안한 진료환경에서 여러분의 건강을 책임지겠습니다.
               </p>
               <ul className="about-features">
                 <li>✓ 신경과 전문의의 정확한 진단</li>
@@ -602,8 +622,10 @@ export default function Home() {
           <div className="doctor-profile">
             <img src="/5.png" alt="강남제 원장" className="doctor-image" />
             <div className="doctor-info">
-            <h3>강남제 <span style={{ fontSize: '0.8em' }}>원장</span></h3>
-            <p className="doctor-title">신경과 전문의</p>
+              <h3>
+                강남제 <span style={{ fontSize: "0.8em" }}>원장</span>
+              </h3>
+              <p className="doctor-title">신경과 전문의</p>
               <p
                 className="doctor-brief"
                 style={{
@@ -629,7 +651,7 @@ export default function Home() {
               >
                 대학 신경과학회 정회원
               </p>
-              
+
               <Link href="/doctors" className="more-btn">
                 자세히 보기
               </Link>
@@ -676,10 +698,11 @@ export default function Home() {
       <section id="location" data-aos="fade-up">
         <div className="container">
           <div className="map-content">
-            <div className="map-container" 
-              style={{ 
-                width: "100%", 
-                maxWidth: "100%", 
+            <div
+              className="map-container"
+              style={{
+                width: "100%",
+                maxWidth: "100%",
                 overflow: "hidden",
                 position: "relative",
                 border: "1px solid #e0e0e0",
@@ -688,18 +711,21 @@ export default function Home() {
                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                 boxSizing: "border-box",
                 minHeight: "600px",
-                background: "white"
-              }}>
-              <div id="map" 
-                style={{ 
-                  width: "100%", 
+                background: "white",
+              }}
+            >
+              <div
+                id="map"
+                style={{
+                  width: "100%",
                   height: "100%",
                   minHeight: "580px",
                   maxWidth: "100%",
                   position: "relative",
                   overflow: "hidden",
-                  borderRadius: "10px"
-                }}></div>
+                  borderRadius: "10px",
+                }}
+              ></div>
             </div>
             <div className="location-info">
               <div className="info-card">
@@ -732,26 +758,44 @@ export default function Home() {
               </div>
               <div className="info-card">
                 <h3>지정 주차장 안내</h3>
-                
+
                 <div style={{ marginBottom: "20px" }}>
                   <h4>1. 재성 밀면 주차장 (구.남강민물장어)</h4>
-                  <p><strong>부산시 수영구 수영로725번길 55</strong></p>
+                  <p>
+                    <strong>부산시 수영구 수영로725번길 55</strong>
+                  </p>
                   <p>병원 뒤편 골목, 킹마트 맞은편 / 보도 2분 소요 (약 150m)</p>
                   <p style={{ fontSize: "14px", color: "#666" }}>
-                    기존 지정 주차장이었던 '남강민물장어'가게가<br/>
-                    '재성밀면' 가게로 변경되었습니다 주차는 이전과 똑같이 이용하시면 됩니다.
+                    기존 지정 주차장이었던 '남강민물장어'가게가
+                    <br />
+                    '재성밀면' 가게로 변경되었습니다 주차는 이전과 똑같이
+                    이용하시면 됩니다.
                   </p>
                 </div>
 
                 <div style={{ marginBottom: "20px" }}>
                   <h4>2. 신한 민영 주차장</h4>
-                  <p><strong>부산시 수영구 망미번영로52번길 107</strong></p>
-                  <p>맥도날드 뒤편 골목, 브라운 도트 호텔 맞은편 / 보도 3분 소요 (약 230m)</p>
+                  <p>
+                    <strong>부산시 수영구 망미번영로52번길 107</strong>
+                  </p>
+                  <p>
+                    맥도날드 뒤편 골목, 브라운 도트 호텔 맞은편 / 보도 3분 소요
+                    (약 230m)
+                  </p>
                 </div>
 
-                <div style={{ borderTop: "1px solid #eee", paddingTop: "15px", marginTop: "20px" }}>
+                <div
+                  style={{
+                    borderTop: "1px solid #eee",
+                    paddingTop: "15px",
+                    marginTop: "20px",
+                  }}
+                >
                   <p>※ 주차 후 접수대에 말씀해주시면 주차권 드리겠습니다.</p>
-                  <p>※ 건물 내에 주차장이 없어서 불편드린점 너른 양해 부탁드립니다</p>
+                  <p>
+                    ※ 건물 내에 주차장이 없어서 불편드린점 너른 양해
+                    부탁드립니다
+                  </p>
                 </div>
               </div>
             </div>
