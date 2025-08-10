@@ -5,17 +5,6 @@ export const metadata = {
   title: "강남제신경과의원",
   description:
     "부산 수영구 수영역 도보 1분, 두통/수면장애/뇌졸중 전문 강남제신경과의원입니다.",
-  icons: {
-    icon: [
-      { url: "/images/logo2.png", sizes: "16x16", type: "image/png" },
-      { url: "/images/logo2.png", sizes: "32x32", type: "image/png" },
-    ],
-    shortcut: "/images/logo2.png",
-    apple: [{ url: "/images/logo2.png", sizes: "180x180", type: "image/png" }],
-    other: [
-      { url: "/images/logo2.png", sizes: "192x192", type: "image/png" },
-    ],
-  },
   openGraph: {
     title: "강남제신경과의원 | 두통 / 수면장애 / 뇌졸중 전문",
     description:
@@ -38,26 +27,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/images/logo2.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/images/logo2.png"
-        />
+        <link rel="icon" href="/images/logo2.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/logo2.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/logo2.png" />
         <link rel="shortcut icon" href="/images/logo2.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo2.png" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/images/logo2.png"
-        />
+        <link rel="apple-touch-icon" href="/images/logo2.png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
           rel="stylesheet"
